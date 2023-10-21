@@ -23,4 +23,16 @@ final class LoginCoordinator: Coordinator {
     let loginViewController = UIHostingController(rootView: LoginView(viewModel: vm))
     self.rootViewController.viewControllers = [loginViewController]
   }
+
+  func next(havePhone: Bool) {
+    if havePhone {
+      
+    } else {
+      let regCoordinator = RegistrationCoordinator()
+      regCoordinator.start()
+      childCoordinators.append(regCoordinator)
+      let vc = regCoordinator.rootViewController
+      self.rootViewController.pushViewController(vc, animated: true)
+    }
+  }
 }
