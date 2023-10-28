@@ -9,6 +9,7 @@ import SwiftUI
 
 final class LoginCoordinator: Coordinator {
 
+  var parentCoordinator: Coordinator?
   var rootViewController: UINavigationController
 
   var childCoordinators: [Coordinator] = []
@@ -26,7 +27,7 @@ final class LoginCoordinator: Coordinator {
 
   func next(havePhone: Bool) {
     if havePhone {
-      
+
     } else {
       let regCoordinator = RegistrationCoordinator()
       regCoordinator.start()
