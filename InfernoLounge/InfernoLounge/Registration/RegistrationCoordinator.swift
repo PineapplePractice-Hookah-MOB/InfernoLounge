@@ -9,6 +9,7 @@ import SwiftUI
 
 final class RegistrationCoordinator: Coordinator {
 
+  var parentCoordinator: Coordinator?
   var rootViewController = UIViewController()
   var childCoordinators: [Coordinator] = []
 
@@ -17,5 +18,13 @@ final class RegistrationCoordinator: Coordinator {
     let pickViewController = UIHostingController(rootView: RegistationView(vm: vm))
 
     rootViewController = pickViewController
+  }
+
+  func toMain() {
+    let mainCoordinator = MainCoordinator()
+    mainCoordinator.start()
+    childCoordinators.append(mainCoordinator)
+    let vc = mainCoordinator.rootViewController
+    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
   }
 }

@@ -10,7 +10,8 @@ import Combine
 
 class AppCoordinator: Coordinator {
 
-  var rootViewController: UIViewController = UINavigationController()
+  var parentCoordinator: Coordinator?
+  var rootViewController: UIViewController? = UINavigationController()
 
   var childCoordinators: [Coordinator] = []
 

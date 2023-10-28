@@ -19,6 +19,6 @@ final class RegistrationViewModel: ObservableObject {
   let coordinator: RegistrationCoordinator
 
   func main() {
-
+    coordinator.toMain()
   }
 }
