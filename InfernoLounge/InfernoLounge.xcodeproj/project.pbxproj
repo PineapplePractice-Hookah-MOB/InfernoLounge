@@ -33,6 +33,12 @@
 		7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75B72AE4FF71006BD516 /* SaleViewModel.swift */; };
 		7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75B92AE4FF7A006BD516 /* SaleCoordinator.swift */; };
 		7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75BE2AE505C4006BD516 /* SaleScrollView.swift */; };
+		7F69846E2AED9DEF0017720B /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69846D2AED9DEF0017720B /* TableView.swift */; };
+		7F6984722AED9E130017720B /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984712AED9E130017720B /* TableViewModel.swift */; };
+		7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984732AED9E1F0017720B /* TableCoordinator.swift */; };
+		7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984752AEDA32E0017720B /* DatePickerView.swift */; };
+		7F6984782AEE37F00017720B /* PickerPeopleCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984772AEE37F00017720B /* PickerPeopleCountView.swift */; };
+		7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984792AEE3E320017720B /* WishesTextEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,12 @@
 		7F5A75B72AE4FF71006BD516 /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
 		7F5A75B92AE4FF7A006BD516 /* SaleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCoordinator.swift; sourceTree = "<group>"; };
 		7F5A75BE2AE505C4006BD516 /* SaleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleScrollView.swift; sourceTree = "<group>"; };
+		7F69846D2AED9DEF0017720B /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		7F6984712AED9E130017720B /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		7F6984732AED9E1F0017720B /* TableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCoordinator.swift; sourceTree = "<group>"; };
+		7F6984752AEDA32E0017720B /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		7F6984772AEE37F00017720B /* PickerPeopleCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPeopleCountView.swift; sourceTree = "<group>"; };
+		7F6984792AEE3E320017720B /* WishesTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishesTextEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,7 @@
 				7F5A75812AE3AA95006BD516 /* Registration */,
 				7F5A75982AE3C122006BD516 /* Main */,
 				7F5A75B42AE4FF35006BD516 /* SaleView */,
+				7F69846C2AED9DDE0017720B /* Table */,
 				7F2273082AADFBDB0036BC9C /* Common */,
 				7F2273042AADFB8E0036BC9C /* SupportingFiles */,
 				7F2272FE2AADFAD60036BC9C /* Info.plist */,
@@ -279,6 +292,43 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		7F69846C2AED9DDE0017720B /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				7F6984702AED9DFE0017720B /* View */,
+				7F69846F2AED9DF40017720B /* TableViewModel */,
+				7F6984732AED9E1F0017720B /* TableCoordinator.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		7F69846F2AED9DF40017720B /* TableViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F6984712AED9E130017720B /* TableViewModel.swift */,
+			);
+			path = TableViewModel;
+			sourceTree = "<group>";
+		};
+		7F6984702AED9DFE0017720B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F69846D2AED9DEF0017720B /* TableView.swift */,
+				7F69847B2AEE44830017720B /* SubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F69847B2AEE44830017720B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F6984752AEDA32E0017720B /* DatePickerView.swift */,
+				7F6984772AEE37F00017720B /* PickerPeopleCountView.swift */,
+				7F6984792AEE3E320017720B /* WishesTextEditor.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,18 +405,24 @@
 				7F5A758B2AE3AB70006BD516 /* CustomTextField.swift in Sources */,
 				7F5A75A82AE3C2D0006BD516 /* PointView.swift in Sources */,
 				7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */,
+				7F69846E2AED9DEF0017720B /* TableView.swift in Sources */,
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75AF2AE3FB0E006BD516 /* MyTabBar.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
+				7F6984722AED9E130017720B /* TableViewModel.swift in Sources */,
 				7F2273072AADFBD70036BC9C /* AppCoordinator.swift in Sources */,
+				7F6984782AEE37F00017720B /* PickerPeopleCountView.swift in Sources */,
 				7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */,
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
+				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,
 				7F2273122AADFE410036BC9C /* LoginViewModel.swift in Sources */,
+				7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */,
 				7F2273102AADFDD10036BC9C /* LoginCoordinator.swift in Sources */,
 				7F5A75AA2AE3F187006BD516 /* SaleSubView.swift in Sources */,
+				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
 				7F5A75A32AE3C249006BD516 /* Sale.swift in Sources */,
 				7F2272F12AADFAD40036BC9C /* AppDelegate.swift in Sources */,
 				7F5A758D2AE3AF1B006BD516 /* MarkText.swift in Sources */,

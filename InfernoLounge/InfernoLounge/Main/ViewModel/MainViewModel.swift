@@ -26,7 +26,7 @@ final class MainViewModel: ObservableObject {
     case .sale:
       coordinator.toSale()
     case .table:
-      print("toTable")
+      coordinator.toTable()
     case .menu:
       print("toMenu")
     case .others:
