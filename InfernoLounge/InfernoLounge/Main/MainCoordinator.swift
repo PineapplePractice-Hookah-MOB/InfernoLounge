@@ -31,4 +31,12 @@ final class MainCoordinator: Coordinator {
     let vc = saleCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
   }
+
+  func toTable() {
+    let tableCoordinator = TableCoordinator()
+    tableCoordinator.start()
+    childCoordinators.append(tableCoordinator)
+    let vc = tableCoordinator.rootViewController
+    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+  }
 }
