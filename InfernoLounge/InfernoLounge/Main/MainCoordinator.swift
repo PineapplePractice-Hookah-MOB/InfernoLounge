@@ -39,4 +39,12 @@ final class MainCoordinator: Coordinator {
     let vc = tableCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
   }
+
+  func toMenu() {
+    let menuCoordinator = MenuCoordinator()
+    menuCoordinator.start()
+    childCoordinators.append(menuCoordinator)
+    let vc = menuCoordinator.rootViewController
+    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+  }
 }

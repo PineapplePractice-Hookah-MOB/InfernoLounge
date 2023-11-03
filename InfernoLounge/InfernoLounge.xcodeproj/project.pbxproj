@@ -39,6 +39,14 @@
 		7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984752AEDA32E0017720B /* DatePickerView.swift */; };
 		7F6984782AEE37F00017720B /* PickerPeopleCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984772AEE37F00017720B /* PickerPeopleCountView.swift */; };
 		7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984792AEE3E320017720B /* WishesTextEditor.swift */; };
+		7F6984892AEE47B20017720B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984882AEE47B20017720B /* MenuView.swift */; };
+		7F69848B2AEE47BD0017720B /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69848A2AEE47BD0017720B /* MenuViewModel.swift */; };
+		7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69848C2AEE47C60017720B /* MenuCoordinator.swift */; };
+		7F69848F2AEE4FE40017720B /* MenuCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69848E2AEE4FE40017720B /* MenuCategoriesView.swift */; };
+		7F6984912AF26CE40017720B /* TeaAndHookahType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984902AF26CE40017720B /* TeaAndHookahType.swift */; };
+		7F6984932AF26D7B0017720B /* MenuEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984922AF26D7B0017720B /* MenuEnums.swift */; };
+		7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984942AF57D6A0017720B /* MenuProduct.swift */; };
+		7F6984972AF57E040017720B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984962AF57E040017720B /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +84,14 @@
 		7F6984752AEDA32E0017720B /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		7F6984772AEE37F00017720B /* PickerPeopleCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPeopleCountView.swift; sourceTree = "<group>"; };
 		7F6984792AEE3E320017720B /* WishesTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishesTextEditor.swift; sourceTree = "<group>"; };
+		7F6984882AEE47B20017720B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		7F69848A2AEE47BD0017720B /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		7F69848C2AEE47C60017720B /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
+		7F69848E2AEE4FE40017720B /* MenuCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategoriesView.swift; sourceTree = "<group>"; };
+		7F6984902AF26CE40017720B /* TeaAndHookahType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaAndHookahType.swift; sourceTree = "<group>"; };
+		7F6984922AF26D7B0017720B /* MenuEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEnums.swift; sourceTree = "<group>"; };
+		7F6984942AF57D6A0017720B /* MenuProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProduct.swift; sourceTree = "<group>"; };
+		7F6984962AF57E040017720B /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +130,7 @@
 				7F5A75982AE3C122006BD516 /* Main */,
 				7F5A75B42AE4FF35006BD516 /* SaleView */,
 				7F69846C2AED9DDE0017720B /* Table */,
+				7F6984852AEE47730017720B /* Menu */,
 				7F2273082AADFBDB0036BC9C /* Common */,
 				7F2273042AADFB8E0036BC9C /* SupportingFiles */,
 				7F2272FE2AADFAD60036BC9C /* Info.plist */,
@@ -242,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				7F5A75A22AE3C249006BD516 /* Sale.swift */,
+				7F6984962AF57E040017720B /* Menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +347,36 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		7F6984852AEE47730017720B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7F6984862AEE477C0017720B /* View */,
+				7F6984872AEE47810017720B /* ViewModel */,
+				7F69848C2AEE47C60017720B /* MenuCoordinator.swift */,
+				7F6984922AF26D7B0017720B /* MenuEnums.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		7F6984862AEE477C0017720B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F6984882AEE47B20017720B /* MenuView.swift */,
+				7F69848E2AEE4FE40017720B /* MenuCategoriesView.swift */,
+				7F6984902AF26CE40017720B /* TeaAndHookahType.swift */,
+				7F6984942AF57D6A0017720B /* MenuProduct.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F6984872AEE47810017720B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F69848A2AEE47BD0017720B /* MenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -401,18 +449,25 @@
 			files = (
 				7F22730B2AADFBF60036BC9C /* Coordinator.swift in Sources */,
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
+				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
+				7F6984892AEE47B20017720B /* MenuView.swift in Sources */,
+				7F69848F2AEE4FE40017720B /* MenuCategoriesView.swift in Sources */,
 				7F5A759A2AE3C132006BD516 /* MainView.swift in Sources */,
 				7F5A758B2AE3AB70006BD516 /* CustomTextField.swift in Sources */,
 				7F5A75A82AE3C2D0006BD516 /* PointView.swift in Sources */,
 				7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */,
+				7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */,
 				7F69846E2AED9DEF0017720B /* TableView.swift in Sources */,
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75AF2AE3FB0E006BD516 /* MyTabBar.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
+				7F6984912AF26CE40017720B /* TeaAndHookahType.swift in Sources */,
+				7F6984932AF26D7B0017720B /* MenuEnums.swift in Sources */,
 				7F6984722AED9E130017720B /* TableViewModel.swift in Sources */,
 				7F2273072AADFBD70036BC9C /* AppCoordinator.swift in Sources */,
 				7F6984782AEE37F00017720B /* PickerPeopleCountView.swift in Sources */,
+				7F69848B2AEE47BD0017720B /* MenuViewModel.swift in Sources */,
 				7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */,
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
 				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
@@ -422,6 +477,7 @@
 				7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */,
 				7F2273102AADFDD10036BC9C /* LoginCoordinator.swift in Sources */,
 				7F5A75AA2AE3F187006BD516 /* SaleSubView.swift in Sources */,
+				7F6984972AF57E040017720B /* Menu.swift in Sources */,
 				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
 				7F5A75A32AE3C249006BD516 /* Sale.swift in Sources */,
 				7F2272F12AADFAD40036BC9C /* AppDelegate.swift in Sources */,
