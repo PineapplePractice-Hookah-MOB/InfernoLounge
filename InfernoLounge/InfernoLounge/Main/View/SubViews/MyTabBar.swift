@@ -48,7 +48,6 @@ enum TabbedItems: Int, CaseIterable {
 struct MyTabBar: View {
   @EnvironmentObject var viewModel: MainViewModel
 
-  let tabs = TabbedItems.allCases
   @State var selectedTab: Int
 
   var body: some View {
