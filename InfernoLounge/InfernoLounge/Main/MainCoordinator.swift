@@ -47,4 +47,12 @@ final class MainCoordinator: Coordinator {
     let vc = menuCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
   }
+
+  func toOther() {
+    let otherCoordinator = OtherCoordinator()
+    otherCoordinator.start()
+    childCoordinators.append(otherCoordinator)
+    let vc = otherCoordinator.rootViewController
+    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+  }
 }

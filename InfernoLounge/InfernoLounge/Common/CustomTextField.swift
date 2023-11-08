@@ -13,16 +13,17 @@ struct CustomTextField: View {
 
   var body: some View {
     VStack(alignment: .center) {
-      ZStack {
-        RoundedRectangle(cornerRadius: 15)
-          .stroke(.black, lineWidth: 1)
-          .foregroundColor(.white)
-          .frame(width: 360, height: 45)
+
         TextField(placeHolder, text: $text)
-          .frame(width: 360, height: 45)
+          .frame(width: 348, height: 45)
           .multilineTextAlignment(.center)
+          .overlay(
+                                      Rectangle()
+                                          .fill(Color.black)
+                                          .frame(width: 348, height: 1)
+                                      , alignment: .bottom
+                                  )
       }
-    }
   }
 }
 
