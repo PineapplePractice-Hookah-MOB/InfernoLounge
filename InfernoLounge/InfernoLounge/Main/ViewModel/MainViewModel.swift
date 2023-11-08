@@ -30,7 +30,7 @@ final class MainViewModel: ObservableObject {
     case .menu:
       coordinator.toMenu()
     case .others:
-      print("toOthers")
+      coordinator.toOther()
     }
   }
 
