@@ -18,6 +18,12 @@
 		7F2273142AADFE960036BC9C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2273132AADFE960036BC9C /* LoginView.swift */; };
 		7F27BE682AFBEB56005E5E39 /* ProfileAndPoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE672AFBEB56005E5E39 /* ProfileAndPoinView.swift */; };
 		7F27BE6A2AFBF902005E5E39 /* OtherElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE692AFBF902005E5E39 /* OtherElement.swift */; };
+		7F27BE6D2AFC0115005E5E39 /* BonusHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE6C2AFC0115005E5E39 /* BonusHistoryView.swift */; };
+		7F27BE702AFC0128005E5E39 /* BonusHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE6F2AFC0128005E5E39 /* BonusHistoryViewModel.swift */; };
+		7F27BE722AFC0134005E5E39 /* BonusHistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE712AFC0134005E5E39 /* BonusHistoryCoordinator.swift */; };
+		7F27BE742AFC1439005E5E39 /* BonusHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE732AFC1439005E5E39 /* BonusHistory.swift */; };
+		7F27BE782AFC1558005E5E39 /* SaleAndBonusInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE772AFC1558005E5E39 /* SaleAndBonusInfo.swift */; };
+		7F27BE7A2AFC1705005E5E39 /* HistoryBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE792AFC1705005E5E39 /* HistoryBonus.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
@@ -68,6 +74,12 @@
 		7F2273132AADFE960036BC9C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7F27BE672AFBEB56005E5E39 /* ProfileAndPoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndPoinView.swift; sourceTree = "<group>"; };
 		7F27BE692AFBF902005E5E39 /* OtherElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherElement.swift; sourceTree = "<group>"; };
+		7F27BE6C2AFC0115005E5E39 /* BonusHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusHistoryView.swift; sourceTree = "<group>"; };
+		7F27BE6F2AFC0128005E5E39 /* BonusHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusHistoryViewModel.swift; sourceTree = "<group>"; };
+		7F27BE712AFC0134005E5E39 /* BonusHistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusHistoryCoordinator.swift; sourceTree = "<group>"; };
+		7F27BE732AFC1439005E5E39 /* BonusHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusHistory.swift; sourceTree = "<group>"; };
+		7F27BE772AFC1558005E5E39 /* SaleAndBonusInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleAndBonusInfo.swift; sourceTree = "<group>"; };
+		7F27BE792AFC1705005E5E39 /* HistoryBonus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBonus.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -142,6 +154,7 @@
 				7F69846C2AED9DDE0017720B /* Table */,
 				7F6984852AEE47730017720B /* Menu */,
 				7F6984982AF586BA0017720B /* Other */,
+				7F27BE6B2AFC00FF005E5E39 /* BonusHistory */,
 				7F2273082AADFBDB0036BC9C /* Common */,
 				7F2273042AADFB8E0036BC9C /* SupportingFiles */,
 				7F2272FE2AADFAD60036BC9C /* Info.plist */,
@@ -222,6 +235,42 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		7F27BE6B2AFC00FF005E5E39 /* BonusHistory */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE762AFC1534005E5E39 /* View */,
+				7F27BE6E2AFC0118005E5E39 /* ViewModel */,
+				7F27BE712AFC0134005E5E39 /* BonusHistoryCoordinator.swift */,
+			);
+			path = BonusHistory;
+			sourceTree = "<group>";
+		};
+		7F27BE6E2AFC0118005E5E39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE6F2AFC0128005E5E39 /* BonusHistoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F27BE752AFC1521005E5E39 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE772AFC1558005E5E39 /* SaleAndBonusInfo.swift */,
+				7F27BE792AFC1705005E5E39 /* HistoryBonus.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		7F27BE762AFC1534005E5E39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE6C2AFC0115005E5E39 /* BonusHistoryView.swift */,
+				7F27BE752AFC1521005E5E39 /* SubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7F5A75812AE3AA95006BD516 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +329,7 @@
 			children = (
 				7F5A75A22AE3C249006BD516 /* Sale.swift */,
 				7F6984962AF57E040017720B /* Menu.swift */,
+				7F27BE732AFC1439005E5E39 /* BonusHistory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,9 +548,11 @@
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
 				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
 				7F6984892AEE47B20017720B /* MenuView.swift in Sources */,
+				7F27BE702AFC0128005E5E39 /* BonusHistoryViewModel.swift in Sources */,
 				7F69848F2AEE4FE40017720B /* MenuCategoriesView.swift in Sources */,
 				7F5A759A2AE3C132006BD516 /* MainView.swift in Sources */,
 				7F5A758B2AE3AB70006BD516 /* CustomTextField.swift in Sources */,
+				7F27BE7A2AFC1705005E5E39 /* HistoryBonus.swift in Sources */,
 				7F5A75A82AE3C2D0006BD516 /* PointView.swift in Sources */,
 				7F27BE6A2AFBF902005E5E39 /* OtherElement.swift in Sources */,
 				7F69849A2AF586CE0017720B /* OtherView.swift in Sources */,
@@ -508,10 +560,12 @@
 				7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */,
 				7F69846E2AED9DEF0017720B /* TableView.swift in Sources */,
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
+				7F27BE722AFC0134005E5E39 /* BonusHistoryCoordinator.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75AF2AE3FB0E006BD516 /* MyTabBar.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
 				7F6984912AF26CE40017720B /* TeaAndHookahType.swift in Sources */,
+				7F27BE742AFC1439005E5E39 /* BonusHistory.swift in Sources */,
 				7F6984932AF26D7B0017720B /* MenuEnums.swift in Sources */,
 				7F6984722AED9E130017720B /* TableViewModel.swift in Sources */,
 				7F2273072AADFBD70036BC9C /* AppCoordinator.swift in Sources */,
@@ -524,6 +578,7 @@
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,
 				7F2273122AADFE410036BC9C /* LoginViewModel.swift in Sources */,
+				7F27BE6D2AFC0115005E5E39 /* BonusHistoryView.swift in Sources */,
 				7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */,
 				7F2273102AADFDD10036BC9C /* LoginCoordinator.swift in Sources */,
 				7F5A75AA2AE3F187006BD516 /* SaleSubView.swift in Sources */,
@@ -534,6 +589,7 @@
 				7F5A758D2AE3AF1B006BD516 /* MarkText.swift in Sources */,
 				7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */,
 				7F27BE682AFBEB56005E5E39 /* ProfileAndPoinView.swift in Sources */,
+				7F27BE782AFC1558005E5E39 /* SaleAndBonusInfo.swift in Sources */,
 				7F2272F32AADFAD40036BC9C /* SceneDelegate.swift in Sources */,
 				7F5A75A02AE3C156006BD516 /* MainCoordinator.swift in Sources */,
 				7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */,

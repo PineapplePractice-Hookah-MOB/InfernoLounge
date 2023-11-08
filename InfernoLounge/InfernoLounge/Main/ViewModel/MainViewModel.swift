@@ -38,4 +38,8 @@ final class MainViewModel: ObservableObject {
     coordinator.toSale()
   }
 
+  func toBonusHistory() {
+    coordinator.toBonusHistory()
+  }
+
 }
