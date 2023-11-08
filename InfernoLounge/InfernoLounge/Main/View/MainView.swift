@@ -19,6 +19,9 @@ struct MainView: View {
           .padding(.leading, 20)
           .padding(.top, 80)
         PointView()
+          .onTapGesture {
+            viewModel.toBonusHistory()
+          }
         MarkText("Акции", size: 25)
           .padding([.top, .leading], 20)
         SaleSubView(sales: $viewModel.sale)

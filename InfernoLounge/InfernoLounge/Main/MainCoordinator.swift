@@ -55,4 +55,12 @@ final class MainCoordinator: Coordinator {
     let vc = otherCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
   }
+
+  func toBonusHistory() {
+    let bonusHistoryCoordinator = BonusHistoryCoordinator()
+    bonusHistoryCoordinator.start()
+    childCoordinators.append(bonusHistoryCoordinator)
+    let vc = bonusHistoryCoordinator.rootViewController
+    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+  }
 }
