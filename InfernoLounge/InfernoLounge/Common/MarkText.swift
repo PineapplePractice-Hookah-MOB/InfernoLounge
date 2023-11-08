@@ -9,10 +9,10 @@ import SwiftUI
 
 struct MarkText: View {
   enum FontWeight: String {
-    case regular = "MarkPro-Regular"
-    case medium = "Mark Pro Medium"
-    case bold = "Mark Pro Bold"
-    case heavy = "Mark Pro Heavy"
+    case regular = "Montserrat-Regular"
+    case medium = "Montserrat-Medium"
+    case bold = "Montserrat-Bold"
+    case heavy = "Montserrat-SemiBold"
   }
   init(_ text: String, size: CGFloat, weight: FontWeight = .regular) {
     self.text = text

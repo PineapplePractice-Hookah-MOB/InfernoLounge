@@ -15,19 +15,20 @@ struct MainView: View {
       VStack(alignment: .leading) {
         TopView()
           .padding(.top, 16)
-        MarkText("Бонусы", size: 25)
+        MarkText("Бонусы", size: 25, weight: .bold)
           .padding(.leading, 20)
           .padding(.top, 80)
         PointView()
           .onTapGesture {
             viewModel.toBonusHistory()
           }
-        MarkText("Акции", size: 25)
+        MarkText("Акции", size: 25, weight: .bold)
           .padding([.top, .leading], 20)
         SaleSubView(sales: $viewModel.sale)
           .onTapGesture {
           viewModel.toSale()
         }
+          .padding(.leading, 10)
         Spacer()
       }
       MyTabBar(selectedTab: 0)
