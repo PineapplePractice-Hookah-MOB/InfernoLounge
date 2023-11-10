@@ -7,44 +7,6 @@
 
 import SwiftUI
 
-enum TabbedItems: Int, CaseIterable {
-  case home = 0
-  case sale
-  case table
-  case menu
-  case others
-
-  var iconName: String {
-    switch self {
-    case .home:
-      return "home"
-    case .sale:
-      return "sale"
-    case .table:
-      return "table"
-    case .menu:
-      return "menu"
-    case .others:
-      return "others"
-    }
-  }
-  var tapIconName: String {
-    switch self {
-    case .home:
-      return "tapMain"
-    case .sale:
-      return "tapSale"
-    case .table:
-      return "tapTable"
-    case .menu:
-      return "tapMenu"
-    case .others:
-      return "tapOther"
-    }
-  }
-
-}
-
 struct MyTabBar: View {
   @StateObject var viewModel: TabBarViewModel
 

@@ -13,17 +13,16 @@ struct CustomTextField: View {
 
   var body: some View {
     VStack(alignment: .center) {
+      TextField("", text: $text, prompt: Text(placeHolder).foregroundColor(.white))
+        .foregroundColor(.white)
+        .frame(width: 348, height: 45)
+        .multilineTextAlignment(.center)
+        .overlay(
+        Rectangle()
+          .fill(Color.white)
+          .frame(width: 348, height: 1), alignment: .bottom)
 
-        TextField(placeHolder, text: $text)
-          .frame(width: 348, height: 45)
-          .multilineTextAlignment(.center)
-          .overlay(
-                                      Rectangle()
-                                          .fill(Color.black)
-                                          .frame(width: 348, height: 1)
-                                      , alignment: .bottom
-                                  )
-      }
+    }
   }
 }
 
