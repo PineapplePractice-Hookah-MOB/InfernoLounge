@@ -21,10 +21,15 @@ final class RegistrationCoordinator: Coordinator {
   }
 
   func toMain() {
-    let mainCoordinator = MainCoordinator()
-    mainCoordinator.start()
-    childCoordinators.append(mainCoordinator)
-    let vc = mainCoordinator.rootViewController
+//    let mainCoordinator = MainCoordinator()
+//    mainCoordinator.start()
+//    childCoordinators.append(mainCoordinator)
+//    let vc = mainCoordinator.rootViewController
+//    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+    let tabBarCoordinator = TabBarCoordinator()
+    tabBarCoordinator.start()
+    let vc = tabBarCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+
   }
 }

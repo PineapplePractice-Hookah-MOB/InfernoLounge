@@ -23,9 +23,8 @@ struct OtherView: View {
           OtherElement(image: "phone", text: "Контакты")
           OtherElement(image: "vk", text: "Соц. сети")
           OtherElement(image: "quit", text: "Выйти")
-            .padding(.top, 161)
+            .padding(.top, 151)
           Spacer()
-          MyTabBar(selectedTab: 4)
         }
 
       }

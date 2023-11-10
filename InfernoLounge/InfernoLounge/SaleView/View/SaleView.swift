@@ -18,8 +18,6 @@ struct SaleView: View {
         SaleScrollView(sales: $viewModel.sales)
         Spacer()
       }
-      MyTabBar(selectedTab: 1)
-        .environmentObject(MainViewModel(coordinator: MainCoordinator()))
     }
 
   }

@@ -31,8 +31,6 @@ struct MainView: View {
           .padding(.leading, 10)
         Spacer()
       }
-      MyTabBar(selectedTab: 0)
-        .environmentObject(viewModel)
     }
   }
 }

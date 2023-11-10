@@ -50,8 +50,6 @@ struct TableView: View {
         .padding([.bottom], 60)
 
         }
-      MyTabBar(selectedTab: 2)
-        .environmentObject(MainViewModel(coordinator: MainCoordinator()))
     }
 }
 

@@ -46,20 +46,30 @@ enum TabbedItems: Int, CaseIterable {
 }
 
 struct MyTabBar: View {
-  @EnvironmentObject var viewModel: MainViewModel
+  @StateObject var viewModel: TabBarViewModel
 
   @State var selectedTab: Int
 
   var body: some View {
-    ZStack {
-      Image("tab")
-      Image("circ")
-      HStack {
-        ForEach(TabbedItems.allCases, id: \.self) { tab in
-          Button {
-            viewModel.didTapTabBar(tab)
-          } label: {
-            customTabItem(imageName: tab.iconName, tapImageName: tab.tapIconName, isActive: (selectedTab == tab.rawValue))
+    ZStack(alignment: .bottom) {
+      TabView(selection: $selectedTab) {
+        MainView(viewModel: MainViewModel(coordinator: MainCoordinator())).tag(0)
+        SaleView(viewModel: SaleViewModel(coordinator: SaleCoordinator())).tag(1)
+        TableView(viewModel: TableViewModel(coordinator: TableCoordinator())).tag(2)
+        MenuView(viewModel: MenuViewModel(coordinator: MenuCoordinator())).tag(3)
+        OtherView(viewModel: OtherViewModel(coordinator: OtherCoordinator())).tag(4)
+      }
+      ZStack {
+        Image("tab")
+        Image("circ")
+        HStack {
+          ForEach(TabbedItems.allCases, id: \.self) { tab in
+            Button {
+//              viewModel.didTapTabBar(tab)
+              selectedTab = tab.rawValue
+            } label: {
+              customTabItem(imageName: tab.iconName, tapImageName: tab.tapIconName, isActive: (selectedTab == tab.rawValue))
+            }
           }
         }
       }
@@ -68,7 +78,7 @@ struct MyTabBar: View {
 }
 
 #Preview {
-  MyTabBar(selectedTab: 0)
+  MyTabBar(viewModel: TabBarViewModel(coordinator: TabBarCoordinator()), selectedTab: 0)
     .environmentObject(MainViewModel(coordinator: MainCoordinator()))
 }
 

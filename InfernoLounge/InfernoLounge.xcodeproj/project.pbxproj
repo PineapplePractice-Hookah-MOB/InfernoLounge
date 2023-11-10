@@ -29,6 +29,8 @@
 		7F27BE822AFC1DB0005E5E39 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F27BE7E2AFC1DB0005E5E39 /* Montserrat-Bold.ttf */; };
 		7F27BE832AFC1DB0005E5E39 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F27BE7F2AFC1DB0005E5E39 /* Montserrat-SemiBold.ttf */; };
 		7F27BE862AFC2019005E5E39 /* ExtColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE852AFC2019005E5E39 /* ExtColor.swift */; };
+		7F27BE8F2AFEAAB2005E5E39 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */; };
+		7F27BE912AFEAABB005E5E39 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
@@ -90,6 +92,8 @@
 		7F27BE7E2AFC1DB0005E5E39 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		7F27BE7F2AFC1DB0005E5E39 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		7F27BE852AFC2019005E5E39 /* ExtColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtColor.swift; sourceTree = "<group>"; };
+		7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 		7F2272EF2AADFAD40036BC9C /* InfernoLounge */ = {
 			isa = PBXGroup;
 			children = (
+				7F27BE8D2AFEAA9E005E5E39 /* TabBar */,
 				7F5A75A12AE3C23C006BD516 /* Model */,
 				7F2273052AADFB990036BC9C /* Login */,
 				7F5A75812AE3AA95006BD516 /* Registration */,
@@ -302,6 +307,16 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		7F27BE8D2AFEAA9E005E5E39 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */,
+				7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */,
+				7F5A75AE2AE3FB0E006BD516 /* MyTabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		7F5A75812AE3AA95006BD516 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,7 +386,6 @@
 				7F5A75A52AE3C277006BD516 /* TopView.swift */,
 				7F5A75A72AE3C2D0006BD516 /* PointView.swift */,
 				7F5A75A92AE3F187006BD516 /* SaleSubView.swift */,
-				7F5A75AE2AE3FB0E006BD516 /* MyTabBar.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -579,11 +593,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F27BE912AFEAABB005E5E39 /* TabBarViewModel.swift in Sources */,
 				7F22730B2AADFBF60036BC9C /* Coordinator.swift in Sources */,
 				7F27BE862AFC2019005E5E39 /* ExtColor.swift in Sources */,
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
 				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
 				7F6984892AEE47B20017720B /* MenuView.swift in Sources */,
+				7F27BE8F2AFEAAB2005E5E39 /* TabBarCoordinator.swift in Sources */,
 				7F27BE702AFC0128005E5E39 /* BonusHistoryViewModel.swift in Sources */,
 				7F69848F2AEE4FE40017720B /* MenuCategoriesView.swift in Sources */,
 				7F5A759A2AE3C132006BD516 /* MainView.swift in Sources */,
