@@ -11,38 +11,59 @@ struct RegistationView: View {
 
   @StateObject var vm: RegistrationViewModel
 
+
+
   var body: some View {
-    VStack {
-      Image("лого")
-        .padding(.top, 36)
+    ZStack(alignment: .bottom) {
+      Color(uiColor: .darkBackground)
+        .ignoresSafeArea()
+      Image("Smokemini")
+      VStack {
+        Image("лого")
+          .padding(.top, 55)
 
-      MarkText("Вход", size: 25, weight: .bold)
-        .padding(.top, 50)
-      MarkText("Введите имя и дату вашего рождения", size: 16)
-        .padding([.trailing, .leading], 94)
-        .padding(.top, 10)
-        .multilineTextAlignment(.center)
-      CustomTextField(placeHolder: "Введите ваше имя", text: $vm.name)
-        .padding(.top, 65)
-      CustomTextField(placeHolder: "Введите дату рождения", text: $vm.birthDay)
-        .padding(.top, 30)
-      Spacer()
-      Button(action: {
-        vm.main()
-      }, label: {
-          ZStack {
-            RoundedRectangle(cornerRadius: 12)
-              .stroke(.black, lineWidth: 1)
-              .foregroundColor(.white)
-              .frame(width: 278, height: 72)
-            MarkText("Далее", size: 16)
-              .font(.system(size: 16, weight: .bold))
-              .foregroundColor(.black)
-          }
-        })
-        .padding([.bottom], 120)
+        MarkText("Вход", size: 25, weight: .bold)
+          .padding(.top, 50)
+        MarkText("Введите имя и дату вашего рождения", size: 16)
+          .multilineTextAlignment(.center)
+          .padding([.trailing, .leading], 94)
+          .padding(.top, 10)
 
+        CustomTextField(placeHolder: "Введите ваше имя", text: $vm.name)
+          .padding(.top, 25)
+
+        CustomTextField(placeHolder: "Введите дату рождения", text: $vm.birthDay)
+          .padding(.top, 20)
+
+        Agree(isTap: false)
+          .padding(.top, 50)
+
+        Button(action: {
+          vm.main()
+        }, label: {
+            ZStack {
+              HStack {
+                Image("left")
+                  .padding(.top, 40)
+                  .padding(.leading, 52)
+                Spacer()
+                Image("right")
+                  .padding(.bottom, 40)
+                  .padding(.trailing, 52)
+              }
+              RoundedRectangle(cornerRadius: 5)
+                .stroke(.white, lineWidth: 1)
+                .foregroundColor(.clear)
+                .frame(width: 278, height: 72)
+              MarkText("Далее", size: 16)
+                .font(.system(size: 16, weight: .bold))
+            }
+          })
+          .padding(.top, 54)
+        Spacer()
+      }
     }
+      .ignoresSafeArea()
   }
 }
 

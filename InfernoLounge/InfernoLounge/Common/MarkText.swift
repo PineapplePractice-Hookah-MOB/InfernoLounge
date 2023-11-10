@@ -27,5 +27,6 @@ struct MarkText: View {
   var body: some View {
     Text(text)
       .font(.custom(weight.rawValue, size: size))
+      .foregroundColor(.white)
   }
 }

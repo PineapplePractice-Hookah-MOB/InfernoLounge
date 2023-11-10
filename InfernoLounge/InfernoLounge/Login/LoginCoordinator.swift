@@ -29,10 +29,10 @@ final class LoginCoordinator: Coordinator {
     if havePhone {
 
     } else {
-      let regCoordinator = RegistrationCoordinator()
-      regCoordinator.start()
-      childCoordinators.append(regCoordinator)
-      let vc = regCoordinator.rootViewController
+      let SMSConfirmationCoordinator = SMSConfirmationCoordinator()
+      SMSConfirmationCoordinator.start()
+      childCoordinators.append(SMSConfirmationCoordinator)
+      let vc = SMSConfirmationCoordinator.rootViewController
       self.rootViewController.pushViewController(vc, animated: true)
     }
   }
