@@ -28,4 +28,12 @@ class AppCoordinator: Coordinator {
     window.rootViewController = loginCoordinator.rootViewController
     window.makeKeyAndVisible()
   }
+
+  func goToTabBar() {
+
+//    let TabBarCoordinator = TabB
+//      tabBarCoordinator = TabBarCoordinator(root: root, dependencies: dependencies)
+//      tabBarCoordinator.coordinatorDelegate = self
+//      tabBarCoordinator.start()
+     }
 }

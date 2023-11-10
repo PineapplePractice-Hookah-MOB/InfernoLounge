@@ -46,7 +46,6 @@ struct MenuView: View {
         Spacer()
       }
     }
-    MyTabBar(selectedTab: 3)
   }
 }
 
