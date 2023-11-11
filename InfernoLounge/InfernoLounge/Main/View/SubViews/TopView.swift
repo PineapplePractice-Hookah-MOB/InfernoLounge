@@ -9,16 +9,16 @@ import SwiftUI
 
 struct TopView: View {
   var body: some View {
-    HStack {
-      Image("logo")
-      Spacer()
-      VStack {
-        Image("profile")
-        MarkText("Андрей", size: 17, weight: .medium)
+      HStack {
+        Image("logo")
+        Spacer()
+        VStack {
+          Image("profile")
+          MarkText("Андрей", size: 17, weight: .medium)
+        }
       }
-    }
       .padding()
-  }
+    }
 }
 
 #Preview {

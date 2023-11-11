@@ -10,8 +10,9 @@ import SwiftUI
 struct PointView: View {
   var body: some View {
     ZStack {
+      
       RoundedRectangle(cornerRadius: 5)
-        .stroke(.black, lineWidth: 1)
+        .stroke(.white, lineWidth: 1)
         .frame(width: 350, height: 168)
       VStack {
         HStack {

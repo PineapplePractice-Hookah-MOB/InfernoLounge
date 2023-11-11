@@ -17,7 +17,7 @@ struct SaleSubView: View {
         ForEach(sales, id: \.id) { sale in
           ZStack {
             RoundedRectangle(cornerRadius: 5)
-              .stroke(.black, lineWidth: 1)
+              .stroke(.white, lineWidth: 1)
               .frame(width: 350, height: 140)
               .foregroundColor(.white)
             MarkText("\(sale.sale)", size: 15)
