@@ -11,13 +11,15 @@ struct MainView: View {
 
   @StateObject var viewModel: MainViewModel
   var body: some View {
-    ZStack(alignment: .bottom) {
+    ZStack {
+      Color(uiColor: .darkBackground)
+        .ignoresSafeArea()
       VStack(alignment: .leading) {
         TopView()
-          .padding(.top, 16)
+          .padding(.top, 14)
         MarkText("Бонусы", size: 25, weight: .bold)
           .padding(.leading, 20)
-          .padding(.top, 80)
+          .padding(.top, 90)
         PointView()
           .onTapGesture {
             viewModel.toBonusHistory()
@@ -29,6 +31,7 @@ struct MainView: View {
           viewModel.toSale()
         }
           .padding(.leading, 10)
+          .padding(.top)
         Spacer()
       }
     }
