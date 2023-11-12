@@ -16,14 +16,14 @@ struct TeaAndHookahType: View {
   var body: some View {
 
     ZStack {
-      Color(uiColor: isSelected ? UIColor(.black) : UIColor.white)
+      Color(uiColor: isSelected ? UIColor.white : UIColor.dark)
           .frame(width: 111, height: 32)
           .clipShape(RoundedRectangle(cornerRadius: 1))
       MarkText(name, size: 12)
+        .foregroundColor(isSelected ? .black : .white)
         .clipShape(RoundedRectangle(cornerRadius: 1))
         .frame(width: 111, height: 32)
-        .border(.black, width: 1)
-        .foregroundColor(isSelected ? .white : .black)
+
     }
     .onTapGesture {
         vm.selectedCategory = name

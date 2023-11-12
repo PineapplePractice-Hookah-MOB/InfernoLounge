@@ -19,11 +19,10 @@ struct MenuCategoriesView: View {
     ZStack {
 RoundedRectangle(cornerRadius: 1)
         .frame(width: 170, height: 77)
-        .border(.black, width: 1)
-        .background(isActive ? .black : .white)
+        .background(isActive ? .white : Color(uiColor: .dark))
       HStack(spacing: 14) {
         MarkText(name, size: 20, weight: .medium)
-          .foregroundStyle(isActive ? .white : .black)
+          .foregroundColor(isActive ? .black : .white)
         Image(isActive ? tapImageName : imageName)
       }
     }

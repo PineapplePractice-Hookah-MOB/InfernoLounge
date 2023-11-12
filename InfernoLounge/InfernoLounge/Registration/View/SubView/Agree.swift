@@ -27,12 +27,9 @@ struct Agree: View {
           }
         }
         MarkText("Я согласен на обработку персональных данных", size: 12, weight: .medium)
+          .foregroundColor(.white)
 
       }
     }
   }
-}
-
-#Preview {
-  Agree(isTap: false)
 }

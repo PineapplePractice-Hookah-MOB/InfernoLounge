@@ -39,6 +39,7 @@ struct DatePickerView: View {
                 .foregroundColor(.clear)
                 .frame(width: 278, height: 72)
               MarkText("Подтвердить", size: 16)
+                .foregroundColor(.white)
                 .font(.system(size: 16, weight: .bold))
             }
           })

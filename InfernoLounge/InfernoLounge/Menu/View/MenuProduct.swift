@@ -17,15 +17,21 @@ struct MenuProduct: View {
               .stroke(lineWidth: 1)
               .frame(width: 170, height: 170)
             VStack(spacing: 10) {
-              Image(uiImage: ((menuProduct.image ?? UIImage(named: "menuPlaceHolder"))!))
+              Image(menuProduct.image ?? "menuPlaceHolder")
+                .foregroundColor(.white)
+                .padding(.top)
               MarkText(menuProduct.name, size: 14)
+                .foregroundColor(.white)
               MarkText(menuProduct.taste, size: 10)
+                .foregroundColor(.white)
                 .foregroundColor(.gray)
                 .padding(.top, 1)
               HStack {
                 MarkText(menuProduct.size, size: 17)
+                  .foregroundColor(.white)
                 Spacer()
                 MarkText(menuProduct.price, size: 17)
+                  .foregroundColor(.white)
               }
               .padding([.bottom, .trailing, .leading])
             }

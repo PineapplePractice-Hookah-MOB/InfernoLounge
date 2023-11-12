@@ -23,8 +23,10 @@ struct RegistationView: View {
           .padding(.top, 55)
 
         MarkText("Вход", size: 25, weight: .bold)
+          .foregroundColor(.white)
           .padding(.top, 50)
         MarkText("Введите имя и дату вашего рождения", size: 16)
+          .foregroundColor(.white)
           .multilineTextAlignment(.center)
           .padding([.trailing, .leading], 94)
           .padding(.top, 10)
@@ -56,6 +58,7 @@ struct RegistationView: View {
                 .foregroundColor(.clear)
                 .frame(width: 278, height: 72)
               MarkText("Далее", size: 16)
+                .foregroundColor(.white)
                 .font(.system(size: 16, weight: .bold))
             }
           })

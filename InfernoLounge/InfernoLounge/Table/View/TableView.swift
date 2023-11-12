@@ -21,9 +21,11 @@ struct TableView: View {
         VStack(alignment: .leading) {
           TopView()
           MarkText("Забронировать столик", size: 25, weight: .bold)
+            .foregroundColor(.white)
             .padding(.top, 20)
             .padding(.leading)
           MarkText("Дата и Время", size: 16, weight: .heavy)
+            .foregroundColor(.white)
             .padding(.leading)
             .padding(.top, 30)
           ZStack(alignment: .leading) {
@@ -32,6 +34,7 @@ struct TableView: View {
             HStack {
               Image("date")
               MarkText("\(viewModel.selectedDate.formatted(date: .numeric, time: .shortened))", size: 15)
+                .foregroundColor(.white)
               Spacer()
               Image(systemName: "chevron.down")
                 .foregroundColor(.white)
@@ -50,12 +53,14 @@ struct TableView: View {
             DatePickerView(date: $viewModel.selectedDate)
           })
           MarkText("Количество гостей", size: 16, weight: .heavy)
+            .foregroundColor(.white)
             .padding([.trailing, .leading, .top])
 
           PickerPeopleCountView(selectedOption: $viewModel.count)
             .environmentObject(viewModel)
             .padding([.trailing, .leading])
           MarkText("Пожелания", size: 16, weight: .heavy)
+            .foregroundColor(.white)
             .padding([.trailing, .leading, .top])
           WishesTextEditor(text: $viewModel.wishes)
             .padding([.leading])
@@ -78,6 +83,7 @@ struct TableView: View {
               .foregroundColor(.clear)
               .frame(width: 278, height: 72)
             MarkText("Забронировать", size: 16)
+              .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
           }
         })

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MenuProducts {
   let id: Int
-  let image: UIImage?
+  let image: String?
   let name: String
   let taste: String
   let size: String

@@ -21,7 +21,7 @@ struct PickerPeopleCountView: View {
       VStack(spacing: 10) {
         HStack {
           MarkText("\(selectedOption)" , size: 16)
-            .foregroundColor(.black)
+            .foregroundColor(.white)
           Spacer()
           Image(systemName: "chevron.down")
             .foregroundColor(.white)

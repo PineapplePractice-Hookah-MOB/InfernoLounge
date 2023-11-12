@@ -21,6 +21,7 @@ struct SaleSubView: View {
               .frame(width: 350, height: 140)
               .foregroundColor(.white)
             MarkText("\(sale.sale)", size: 15)
+              .foregroundColor(.white)
           }
         }
       })

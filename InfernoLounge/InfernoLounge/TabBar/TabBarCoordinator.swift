@@ -17,15 +17,11 @@ final class TabBarCoordinator: Coordinator {
   func start() {
     let vm = TabBarViewModel(coordinator: self)
     let pickViewController = UIHostingController(rootView: MyTabBar(viewModel: vm, selectedTab: 0))
-
     rootViewController = pickViewController
+
     let mainCoordinator = MainCoordinator()
     childCoordinators.append(mainCoordinator)
     mainCoordinator.start()
-
-    let saleCoordinator = SaleCoordinator()
-    childCoordinators.append(saleCoordinator)
-
   }
 
   func toHome() {
