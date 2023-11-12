@@ -21,7 +21,6 @@ struct CustomTextField: View {
         Rectangle()
           .fill(Color.white)
           .frame(width: 348, height: 1), alignment: .bottom)
-
     }
   }
 }

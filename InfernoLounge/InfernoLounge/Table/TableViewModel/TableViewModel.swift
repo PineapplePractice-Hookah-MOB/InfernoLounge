@@ -13,11 +13,15 @@ final class TableViewModel: ObservableObject {
     self.coordinator = coordinator
   }
 
-  @Published var count = "1"
-  @Published var wishes = "Напишите нам свои пожелания по выбору столика..."
   private var coordinator: TableCoordinator
 
-  let peopleCount = ["1", "2", "3", "4"]
+  @Published var count = "1 человек"
+  @Published var wishes = "Напишите нам свои пожелания по выбору столика..."
+  @Published var selectedDate: Date = .init()
+  @Published var datePickerSheetPresenting: Bool = false
 
-  @Published var date = Date.now
+  let peopleCount = ["1 человек", "2 человека", "3 человека", "4 человека", "5 человек", "6 и более"]
+
+
+
 }
