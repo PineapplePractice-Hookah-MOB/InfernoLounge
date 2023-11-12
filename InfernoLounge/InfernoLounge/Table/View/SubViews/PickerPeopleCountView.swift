@@ -34,7 +34,7 @@ struct PickerPeopleCountView: View {
           ForEach(vm.peopleCount.filter({$0 != selectedOption}), id: \.self) { count in
             HStack {
                 MarkText(count, size: 16)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                 Spacer()
             }
             .padding(.leading)

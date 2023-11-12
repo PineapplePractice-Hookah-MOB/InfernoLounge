@@ -18,12 +18,12 @@ struct SaleScrollView: View {
         ForEach(sales, id: \.id) { sale in
           ZStack {
             RoundedRectangle(cornerRadius: 5)
-              .stroke(.black, lineWidth: 1)
               .frame(width: 350, height: 140)
-              .foregroundColor(.white)
+              .foregroundColor(Color(uiColor: .dark))
             VStack {
               HStack {
                 MarkText("\(sale.sale)", size: 15)
+                  .foregroundColor(.white)
                   .multilineTextAlignment(.center)
                 Spacer()
               }
@@ -32,6 +32,7 @@ struct SaleScrollView: View {
               HStack {
                 Spacer()
                 MarkText("\(sale.price)", size: 30)
+                  .foregroundColor(.white)
 
               }
                 .padding(.trailing, 20)
