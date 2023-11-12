@@ -11,48 +11,83 @@ struct TableView: View {
 
 
   @StateObject var viewModel: TableViewModel
-  
-    var body: some View {
+  @State var date = Date.self
+
+  var body: some View {
+    ZStack {
+      Color(uiColor: .darkBackground)
+        .ignoresSafeArea()
       VStack {
         VStack(alignment: .leading) {
           TopView()
           MarkText("Забронировать столик", size: 25, weight: .bold)
-            .padding()
-          MarkText("Дата и Время", size: 16)
+            .padding(.top, 20)
             .padding(.leading)
-          DatePickerView(date: $viewModel.date)
-            .padding([.leading, .trailing ])
-          MarkText("Количество гостей", size: 16)
+          MarkText("Дата и Время", size: 16, weight: .heavy)
+            .padding(.leading)
+            .padding(.top, 30)
+          ZStack(alignment: .leading) {
+            RoundedRectangle(cornerRadius: 5)
+              .foregroundColor(Color(uiColor: .dark))
+            HStack {
+              Image("date")
+              MarkText("\(viewModel.selectedDate.formatted(date: .numeric, time: .shortened))", size: 15)
+              Spacer()
+              Image(systemName: "chevron.down")
+                .foregroundColor(.white)
+            }
+            .padding([.trailing, .leading])
+          }
+          .onTapGesture {
+            viewModel.datePickerSheetPresenting = true
+          }
+          .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
+            DatePickerView(date: $viewModel.selectedDate)
+          })
+          .frame(height: 45)
+          .padding([.trailing, .leading])
+          .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
+            DatePickerView(date: $viewModel.selectedDate)
+          })
+          MarkText("Количество гостей", size: 16, weight: .heavy)
             .padding([.trailing, .leading, .top])
 
           PickerPeopleCountView(selectedOption: $viewModel.count)
             .environmentObject(viewModel)
             .padding([.trailing, .leading])
-          MarkText("Пожелания", size: 16)
+          MarkText("Пожелания", size: 16, weight: .heavy)
             .padding([.trailing, .leading, .top])
           WishesTextEditor(text: $viewModel.wishes)
             .padding([.leading])
           Spacer()
-
         }
         Button(action: {
-
         }, label: {
           ZStack {
-            RoundedRectangle(cornerRadius: 12)
-              .stroke(.black, lineWidth: 1)
-              .foregroundColor(.white)
+            HStack {
+              Image("left")
+                .padding(.top, 40)
+                .padding(.leading, 52)
+              Spacer()
+              Image("right")
+                .padding(.bottom, 40)
+                .padding(.trailing, 52)
+            }
+            RoundedRectangle(cornerRadius: 5)
+              .stroke(.white, lineWidth: 1)
+              .foregroundColor(.clear)
               .frame(width: 278, height: 72)
             MarkText("Забронировать", size: 16)
-              .foregroundColor(.black)
+              .font(.system(size: 16, weight: .bold))
           }
         })
         .padding([.bottom], 60)
-
-        }
+      }
     }
+  }
 }
 
 #Preview {
   TableView(viewModel: TableViewModel(coordinator: TableCoordinator()))
 }
+

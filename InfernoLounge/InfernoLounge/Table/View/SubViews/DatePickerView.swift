@@ -9,41 +9,41 @@ import SwiftUI
 
 struct DatePickerView: View {
 
+  @Environment(\.dismiss) var dismiss
   @Binding var date: Date
-  @State private var isShowCalendar = false
-  @State var height: CGFloat = 45
 
   var body: some View {
     ZStack {
-      RoundedRectangle(cornerRadius: 5)
-        .stroke(.black, lineWidth: 1)
-      VStack(spacing: 10, content: {
-        HStack {
-          MarkText("\(date.formatted(date: .numeric, time: .shortened))", size: 15)
-            
-          Spacer()
-          Image(systemName: "chevron.down")
-            .rotationEffect(.degrees(isShowCalendar ? -540 : 0))
-            .animation(.linear, value: isShowCalendar)
-        }
-        .padding([.leading, .trailing])
-        if isShowCalendar {
-              DatePicker("",
-                         selection: $date, displayedComponents: [.date, .hourAndMinute])
-              .datePickerStyle(GraphicalDatePickerStyle())
-        }
-      })
-    }
-    .onTapGesture {
-      withAnimation {
-        isShowCalendar.toggle()
-        if isShowCalendar {
-          height = 400
-        } else {
-          height = 45
-        }
+      Color(uiColor: .darkBackground)
+      VStack {
+        DatePicker("", selection: $date, displayedComponents: [.date, .hourAndMinute])
+          .datePickerStyle(.graphical)
+          .background(Color(uiColor: .dark))
+          .colorInvert()
+          .accentColor(.white)
+        Button(action: {
+          dismiss()
+        }, label: {
+            ZStack {
+              HStack {
+                Image("left")
+                  .padding(.top, 40)
+                  .padding(.leading, 52)
+                Spacer()
+                Image("right")
+                  .padding(.bottom, 40)
+                  .padding(.trailing, 52)
+              }
+              RoundedRectangle(cornerRadius: 5)
+                .stroke(.white, lineWidth: 1)
+                .foregroundColor(.clear)
+                .frame(width: 278, height: 72)
+              MarkText("Подтвердить", size: 16)
+                .font(.system(size: 16, weight: .bold))
+            }
+          })
+        .padding(.top, 50)
       }
     }
-    .frame(height: height)
   }
 }

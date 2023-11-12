@@ -21,13 +21,19 @@ struct MyTabBar: View {
         MenuView(viewModel: MenuViewModel(coordinator: MenuCoordinator())).tag(3)
         OtherView(viewModel: OtherViewModel(coordinator: OtherCoordinator())).tag(4)
       }
-      ZStack {
+      ZStack(alignment: .bottom) {
         Image("tab")
-        Image("circ")
+        if selectedTab == 2 {
+          Image("circw")
+            .padding(.bottom, -8)
+        } else {
+          Image("circ")
+            .padding(.bottom, -8)
+          }
+
         HStack {
           ForEach(TabbedItems.allCases, id: \.self) { tab in
             Button {
-//              viewModel.didTapTabBar(tab)
               selectedTab = tab.rawValue
             } label: {
               customTabItem(imageName: tab.iconName, tapImageName: tab.tapIconName, isActive: (selectedTab == tab.rawValue))
@@ -35,6 +41,7 @@ struct MyTabBar: View {
           }
         }
       }
+      .ignoresSafeArea()
     }
   }
 }

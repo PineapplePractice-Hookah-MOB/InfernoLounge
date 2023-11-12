@@ -11,20 +11,20 @@ struct PickerPeopleCountView: View {
 
   @EnvironmentObject var vm: TableViewModel
   @Binding var selectedOption: String
-  @State var people = "человек"
   @State var isExpanded: Bool = false
   @State var height: CGFloat = 45
 
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 5)
-        .stroke(.black, lineWidth: 1)
+        .foregroundColor(Color(uiColor: .dark))
       VStack(spacing: 10) {
         HStack {
-          MarkText("\(selectedOption) \(people)" , size: 16)
+          MarkText("\(selectedOption)" , size: 16)
             .foregroundColor(.black)
           Spacer()
           Image(systemName: "chevron.down")
+            .foregroundColor(.white)
             .rotationEffect(.degrees(isExpanded ? -540 : 0))
             .animation(.linear, value: isExpanded)
         }
@@ -39,14 +39,9 @@ struct PickerPeopleCountView: View {
             }
             .padding(.leading)
             .onTapGesture {
+              selectedOption = count
               isExpanded = false
               height = 45
-              if selectedOption == "1" {
-                selectedOption = count
-              } else {
-                selectedOption = count
-                people = "человека"
-              }
             }
           }
           .transition(.scale)
