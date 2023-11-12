@@ -13,6 +13,8 @@ struct SaleView: View {
 
   var body: some View {
     ZStack(alignment: .bottom) {
+      Color(uiColor: .darkBackground)
+        .ignoresSafeArea()
       VStack {
         TopView()
         SaleScrollView(sales: $viewModel.sales)
