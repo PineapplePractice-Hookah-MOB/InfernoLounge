@@ -20,40 +20,13 @@ final class MainCoordinator: Coordinator {
     rootViewController = pickViewController
   }
 
-  func toHome() {
-
-  }
-
   func toSale() {
     let saleCoordinator = SaleCoordinator()
     saleCoordinator.start()
     childCoordinators.append(saleCoordinator)
     let vc = saleCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
-  }
-
-  func toTable() {
-    let tableCoordinator = TableCoordinator()
-    tableCoordinator.start()
-    childCoordinators.append(tableCoordinator)
-    let vc = tableCoordinator.rootViewController
-    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
-  }
-
-  func toMenu() {
-    let menuCoordinator = MenuCoordinator()
-    menuCoordinator.start()
-    childCoordinators.append(menuCoordinator)
-    let vc = menuCoordinator.rootViewController
-    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
-  }
-
-  func toOther() {
-    let otherCoordinator = OtherCoordinator()
-    otherCoordinator.start()
-    childCoordinators.append(otherCoordinator)
-    let vc = otherCoordinator.rootViewController
-    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
+    print("he")
   }
 
   func toBonusHistory() {

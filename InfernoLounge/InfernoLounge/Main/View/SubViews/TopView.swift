@@ -15,6 +15,7 @@ struct TopView: View {
         VStack {
           Image("profile")
           MarkText("Андрей", size: 17, weight: .medium)
+            .foregroundColor(.white)
         }
       }
       .padding()

@@ -20,8 +20,10 @@ struct SMSConfirmationView: View {
           Image("лого")
             .padding(.top, 55)
           MarkText("Вход", size: 25, weight: .bold)
+            .foregroundColor(.white)
             .padding(.top, 50)
           MarkText("Введите 4 последние цифры номера", size: 16)
+            .foregroundColor(.white)
             .padding([.leading, .trailing], 40)
             .padding(.top, 10)
           CustomTextField(placeHolder: "Введите код из смс", text: $viewModel.sms)
@@ -44,6 +46,7 @@ struct SMSConfirmationView: View {
                 .foregroundColor(.clear)
                 .frame(width: 278, height: 72)
               MarkText("Далее", size: 16)
+                .foregroundColor(.white)
                 .font(.system(size: 16, weight: .bold))
             }
           })

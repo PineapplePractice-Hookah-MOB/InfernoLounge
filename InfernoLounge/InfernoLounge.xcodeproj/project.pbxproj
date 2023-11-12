@@ -168,8 +168,8 @@
 		7F2272EF2AADFAD40036BC9C /* InfernoLounge */ = {
 			isa = PBXGroup;
 			children = (
-				7F27BE8D2AFEAA9E005E5E39 /* TabBar */,
 				7F5A75A12AE3C23C006BD516 /* Model */,
+				7F27BE8D2AFEAA9E005E5E39 /* TabBar */,
 				7F2273052AADFB990036BC9C /* Login */,
 				7F27BE942AFECAF0005E5E39 /* SMSConfirmation */,
 				7F5A75812AE3AA95006BD516 /* Registration */,
