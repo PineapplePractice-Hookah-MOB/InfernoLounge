@@ -35,6 +35,7 @@
 		7F27BE982AFECB1B005E5E39 /* SMSConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */; };
 		7F27BE9A2AFECB29005E5E39 /* SMSConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE992AFECB29005E5E39 /* SMSConfirmationCoordinator.swift */; };
 		7F27BEA12B00093E005E5E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F27BEA02B00093E005E5E39 /* Assets.xcassets */; };
+		7F27BEA52B0695A1005E5E39 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
@@ -47,7 +48,6 @@
 		7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75A52AE3C277006BD516 /* TopView.swift */; };
 		7F5A75A82AE3C2D0006BD516 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75A72AE3C2D0006BD516 /* PointView.swift */; };
 		7F5A75AA2AE3F187006BD516 /* SaleSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75A92AE3F187006BD516 /* SaleSubView.swift */; };
-		7F5A75AF2AE3FB0E006BD516 /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75AE2AE3FB0E006BD516 /* MyTabBar.swift */; };
 		7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75B52AE4FF42006BD516 /* SaleView.swift */; };
 		7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75B72AE4FF71006BD516 /* SaleViewModel.swift */; };
 		7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75B92AE4FF7A006BD516 /* SaleCoordinator.swift */; };
@@ -102,6 +102,7 @@
 		7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmationViewModel.swift; sourceTree = "<group>"; };
 		7F27BE992AFECB29005E5E39 /* SMSConfirmationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmationCoordinator.swift; sourceTree = "<group>"; };
 		7F27BEA02B00093E005E5E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -114,7 +115,6 @@
 		7F5A75A52AE3C277006BD516 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		7F5A75A72AE3C2D0006BD516 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
 		7F5A75A92AE3F187006BD516 /* SaleSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleSubView.swift; sourceTree = "<group>"; };
-		7F5A75AE2AE3FB0E006BD516 /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		7F5A75B52AE4FF42006BD516 /* SaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleView.swift; sourceTree = "<group>"; };
 		7F5A75B72AE4FF71006BD516 /* SaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewModel.swift; sourceTree = "<group>"; };
 		7F5A75B92AE4FF7A006BD516 /* SaleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleCoordinator.swift; sourceTree = "<group>"; };
@@ -319,9 +319,9 @@
 		7F27BE8D2AFEAA9E005E5E39 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				7F27BEA62B069F2E005E5E39 /* ViewModel */,
+				7F27BEA72B069F3C005E5E39 /* View */,
 				7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */,
-				7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */,
-				7F5A75AE2AE3FB0E006BD516 /* MyTabBar.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -358,6 +358,22 @@
 				7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F27BEA62B069F2E005E5E39 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F27BEA72B069F3C005E5E39 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7F5A75812AE3AA95006BD516 /* Registration */ = {
@@ -639,6 +655,7 @@
 			files = (
 				7F27BE912AFEAABB005E5E39 /* TabBarViewModel.swift in Sources */,
 				7F22730B2AADFBF60036BC9C /* Coordinator.swift in Sources */,
+				7F27BEA52B0695A1005E5E39 /* CustomTabBarController.swift in Sources */,
 				7F27BE862AFC2019005E5E39 /* ExtColor.swift in Sources */,
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
 				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
@@ -661,7 +678,6 @@
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
 				7F27BE722AFC0134005E5E39 /* BonusHistoryCoordinator.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
-				7F5A75AF2AE3FB0E006BD516 /* MyTabBar.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
 				7F6984912AF26CE40017720B /* TeaAndHookahType.swift in Sources */,
 				7F27BE982AFECB1B005E5E39 /* SMSConfirmationViewModel.swift in Sources */,

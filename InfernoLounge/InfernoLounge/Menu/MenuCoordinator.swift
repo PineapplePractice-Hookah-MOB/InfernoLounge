@@ -17,6 +17,8 @@ final class MenuCoordinator: Coordinator {
     let pickViewController = UIHostingController(rootView: MenuView(viewModel: vm))
 
     rootViewController = pickViewController
+    pickViewController.tabBarItem.image = UIImage(named: "menu")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapMenu")
   }
   
   

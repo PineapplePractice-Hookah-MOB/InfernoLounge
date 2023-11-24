@@ -19,6 +19,4 @@ final class TableCoordinator: Coordinator {
 
     rootViewController = pickViewController
   }
-  
-  
 }

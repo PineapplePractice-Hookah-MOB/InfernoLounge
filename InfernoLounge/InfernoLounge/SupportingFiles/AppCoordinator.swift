@@ -11,7 +11,7 @@ import Combine
 class AppCoordinator: Coordinator {
 
   var parentCoordinator: Coordinator?
-  var rootViewController: UIViewController? = UINavigationController()
+  var rootViewController: UIViewController = UINavigationController()
 
   var childCoordinators: [Coordinator] = []
 
@@ -28,12 +28,4 @@ class AppCoordinator: Coordinator {
     window.rootViewController = loginCoordinator.rootViewController
     window.makeKeyAndVisible()
   }
-
-  func goToTabBar() {
-
-//    let TabBarCoordinator = TabB
-//      tabBarCoordinator = TabBarCoordinator(root: root, dependencies: dependencies)
-//      tabBarCoordinator.coordinatorDelegate = self
-//      tabBarCoordinator.start()
-     }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 protocol Coordinator {
+
+  var rootViewController: UIViewController { get set }
   var parentCoordinator: Coordinator? { get set }
   var childCoordinators: [Coordinator] { get set }
 

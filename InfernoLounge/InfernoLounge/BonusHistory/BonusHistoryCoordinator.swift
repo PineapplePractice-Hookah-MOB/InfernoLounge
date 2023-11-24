@@ -19,8 +19,4 @@ final class BonusHistoryCoordinator: Coordinator {
 
     rootViewController = pickViewController
   }
-  
-
-
-
 }

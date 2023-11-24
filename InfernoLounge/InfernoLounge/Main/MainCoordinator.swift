@@ -16,8 +16,9 @@ final class MainCoordinator: Coordinator {
   func start() {
     let vm = MainViewModel(coordinator: self)
     let pickViewController = UIHostingController(rootView: MainView(viewModel: vm))
-
     rootViewController = pickViewController
+    pickViewController.tabBarItem.image = UIImage(named: "home")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapMain")
   }
 
   func toSale() {
@@ -26,7 +27,6 @@ final class MainCoordinator: Coordinator {
     childCoordinators.append(saleCoordinator)
     let vc = saleCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)
-    print("he")
   }
 
   func toBonusHistory() {
