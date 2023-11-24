@@ -10,19 +10,17 @@ import SwiftUI
 final class LoginCoordinator: Coordinator {
 
   var parentCoordinator: Coordinator?
-  var rootViewController: UINavigationController
-
+  var rootViewController = UIViewController()
   var childCoordinators: [Coordinator] = []
 
-  init() {
-    rootViewController = UINavigationController()
-    rootViewController.navigationBar.isHidden = true
-  }
+
 
   func start() {
     let vm = LoginViewModel(coordinator: self)
     let loginViewController = UIHostingController(rootView: LoginView(viewModel: vm))
-    self.rootViewController.viewControllers = [loginViewController]
+    let navigation = UINavigationController(rootViewController: loginViewController)
+    navigation.navigationBar.isHidden = true
+    rootViewController = navigation
   }
 
   func next(havePhone: Bool) {
@@ -33,7 +31,7 @@ final class LoginCoordinator: Coordinator {
       SMSConfirmationCoordinator.start()
       childCoordinators.append(SMSConfirmationCoordinator)
       let vc = SMSConfirmationCoordinator.rootViewController
-      self.rootViewController.pushViewController(vc, animated: true)
+      self.rootViewController.show(vc, sender: nil)
     }
   }
 }

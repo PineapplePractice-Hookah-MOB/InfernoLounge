@@ -19,7 +19,7 @@ class OtherCoordinator: Coordinator {
     let pickViewController = UIHostingController(rootView: OtherView(viewModel: vm))
 
     rootViewController = pickViewController
+    pickViewController.tabBarItem.image = UIImage(named: "others")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapOther")
   }
-  
-
 }

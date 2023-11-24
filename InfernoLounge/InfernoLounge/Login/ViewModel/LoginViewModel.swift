@@ -20,11 +20,9 @@ final class LoginViewModel: ObservableObject {
 
   func next() {
     if phoneNumber == "12345" {
-      print("no")
       coordinator.next(havePhone: true)
     } else {
       coordinator.next(havePhone: false)
-      print("yes")
     }
   }
 }
