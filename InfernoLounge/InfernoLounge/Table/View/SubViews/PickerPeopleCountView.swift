@@ -13,6 +13,7 @@ struct PickerPeopleCountView: View {
   @Binding var selectedOption: String
   @State var isExpanded: Bool = false
   @State var height: CGFloat = 45
+  @State var showAlert: Bool = false
 
   var body: some View {
     ZStack {
@@ -29,19 +30,30 @@ struct PickerPeopleCountView: View {
             .animation(.linear, value: isExpanded)
         }
         .padding([.leading, .trailing])
-
+        .alert("", isPresented: $showAlert) {
+          Button("OK") { }
+        } message: {
+          MarkText("Пожалуйста, свяжитесь с администратором для осуществления бронирования по номеру\n+7 991 167 8894", size: 15)
+        }
         if isExpanded {
           ForEach(vm.peopleCount.filter({$0 != selectedOption}), id: \.self) { count in
             HStack {
-                MarkText(count, size: 16)
-                    .foregroundColor(.white)
-                Spacer()
+              MarkText(count, size: 16)
+                .foregroundColor(.white)
+              Spacer()
             }
             .padding(.leading)
             .onTapGesture {
               selectedOption = count
               isExpanded = false
               height = 45
+              if count == "6 и более человек" {
+                showAlert = true
+                vm.buttonDisabled = true
+              } else {
+                showAlert = false
+                vm.buttonDisabled = false
+              }
             }
           }
           .transition(.scale)
@@ -60,4 +72,5 @@ struct PickerPeopleCountView: View {
     }
     .frame(height: height)
   }
+
 }

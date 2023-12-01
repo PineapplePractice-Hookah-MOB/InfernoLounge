@@ -11,8 +11,6 @@ struct RegistationView: View {
 
   @StateObject var vm: RegistrationViewModel
 
-
-
   var body: some View {
     ZStack(alignment: .bottom) {
       Color(uiColor: .darkBackground)
@@ -37,9 +35,9 @@ struct RegistationView: View {
         CustomTextField(placeHolder: "Введите дату рождения", text: $vm.birthDay)
           .padding(.top, 20)
 
-        Agree(isTap: false)
+        Agree()
+          .environmentObject(vm)
           .padding(.top, 50)
-
         Button(action: {
           vm.main()
         }, label: {
@@ -62,6 +60,7 @@ struct RegistationView: View {
                 .font(.system(size: 16, weight: .bold))
             }
           })
+          .disabled(vm.buttonDisabled)
           .padding(.top, 54)
         Spacer()
       }

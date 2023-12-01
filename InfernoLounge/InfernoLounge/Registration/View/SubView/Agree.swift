@@ -9,16 +9,18 @@ import SwiftUI
 
 struct Agree: View {
 
-  @State var isTap: Bool
-
+  @EnvironmentObject var vm: RegistrationViewModel
+//  @State var isTap: Bool
+//  @State var buttonDisabled: Bool
   var body: some View {
     ZStack {
       HStack {
         Button {
-          isTap.toggle()
+          vm.tapAgree.toggle()
+          vm.buttonDisabled.toggle()
         } label: {
           ZStack {
-            Image(systemName: isTap ? "checkmark" : "")
+            Image(systemName: vm.tapAgree ? "checkmark" : "")
               .foregroundColor(.white)
             RoundedRectangle(cornerRadius: 0)
               .stroke(.white, lineWidth: 1)
@@ -28,7 +30,6 @@ struct Agree: View {
         }
         MarkText("Я согласен на обработку персональных данных", size: 12, weight: .medium)
           .foregroundColor(.white)
-
       }
     }
   }
