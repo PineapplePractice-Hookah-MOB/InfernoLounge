@@ -12,6 +12,7 @@ struct TableView: View {
 
   @StateObject var viewModel: TableViewModel
   @State var date = Date.self
+  @State var buttonDisabled = false
 
   var body: some View {
     ZStack {
@@ -88,6 +89,7 @@ struct TableView: View {
           }
         })
         .padding([.bottom], 60)
+        .disabled(viewModel.buttonDisabled)
       }
     }
   }

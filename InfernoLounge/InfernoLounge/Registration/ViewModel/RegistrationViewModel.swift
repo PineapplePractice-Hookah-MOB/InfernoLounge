@@ -15,9 +15,10 @@ final class RegistrationViewModel: ObservableObject {
 
   @Published var name = ""
   @Published var birthDay = ""
+  @Published var buttonDisabled: Bool = true
+  @Published var tapAgree: Bool = false
 
   let coordinator: RegistrationCoordinator
-
   func main() {
     coordinator.toMain()
   }
