@@ -40,7 +40,7 @@
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
 		7F5A758B2AE3AB70006BD516 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A758A2AE3AB70006BD516 /* CustomTextField.swift */; };
-		7F5A758D2AE3AF1B006BD516 /* MarkText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A758C2AE3AF1B006BD516 /* MarkText.swift */; };
+		7F5A758D2AE3AF1B006BD516 /* MontserratText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A758C2AE3AF1B006BD516 /* MontserratText.swift */; };
 		7F5A759A2AE3C132006BD516 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75992AE3C132006BD516 /* MainView.swift */; };
 		7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A759D2AE3C14C006BD516 /* MainViewModel.swift */; };
 		7F5A75A02AE3C156006BD516 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A759F2AE3C156006BD516 /* MainCoordinator.swift */; };
@@ -107,7 +107,7 @@
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		7F5A758A2AE3AB70006BD516 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		7F5A758C2AE3AF1B006BD516 /* MarkText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkText.swift; sourceTree = "<group>"; };
+		7F5A758C2AE3AF1B006BD516 /* MontserratText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontserratText.swift; sourceTree = "<group>"; };
 		7F5A75992AE3C132006BD516 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7F5A759D2AE3C14C006BD516 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7F5A759F2AE3C156006BD516 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 				7F27BE842AFC2009005E5E39 /* Ext */,
 				7F2273092AADFBE50036BC9C /* Protocols */,
 				7F5A758A2AE3AB70006BD516 /* CustomTextField.swift */,
-				7F5A758C2AE3AF1B006BD516 /* MarkText.swift */,
+				7F5A758C2AE3AF1B006BD516 /* MontserratText.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -702,7 +702,7 @@
 				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
 				7F5A75A32AE3C249006BD516 /* Sale.swift in Sources */,
 				7F2272F12AADFAD40036BC9C /* AppDelegate.swift in Sources */,
-				7F5A758D2AE3AF1B006BD516 /* MarkText.swift in Sources */,
+				7F5A758D2AE3AF1B006BD516 /* MontserratText.swift in Sources */,
 				7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */,
 				7F27BE682AFBEB56005E5E39 /* ProfileAndPoinView.swift in Sources */,
 				7F27BE782AFC1558005E5E39 /* SaleAndBonusInfo.swift in Sources */,

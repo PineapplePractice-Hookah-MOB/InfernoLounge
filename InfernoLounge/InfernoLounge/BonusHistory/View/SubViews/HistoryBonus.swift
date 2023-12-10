@@ -19,20 +19,20 @@ struct HistoryBonus: View {
             .frame(width: 350, height: 55)
           HStack {
             VStack {
-              MarkText(bonusHistory.date, size: 12)
+              MontserratText(bonusHistory.date, size: 12)
                 .foregroundColor(.gray)
-              MarkText(bonusHistory.summ, size: 15)
+              MontserratText(bonusHistory.summ, size: 15)
                 .foregroundColor(.white)
             }
             Spacer()
             VStack {
-              MarkText("бонусные баллы", size: 12)
+              MontserratText("бонусные баллы", size: 12)
                 .foregroundColor(.gray)
               if bonusHistory.countBonus.contains("+") {
-                MarkText(bonusHistory.countBonus, size: 15)
+                MontserratText(bonusHistory.countBonus, size: 15)
                   .foregroundColor(.green)
               } else {
-                MarkText(bonusHistory.countBonus, size: 15)
+                MontserratText(bonusHistory.countBonus, size: 15)
                   .foregroundColor(.red)
               }
             }

@@ -17,7 +17,7 @@ struct MainView: View {
       VStack(alignment: .leading) {
         TopView()
           .padding(.top, 14)
-        MarkText("Бонусы", size: 25, weight: .bold)
+        MontserratText("Бонусы", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding(.leading, 20)
           .padding(.top, 90)
@@ -25,7 +25,7 @@ struct MainView: View {
           .onTapGesture {
             viewModel.toBonusHistory()
           }
-        MarkText("Акции", size: 25, weight: .bold)
+        MontserratText("Акции", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding([.top, .leading], 20)
         SaleSubView(sales: $viewModel.sale)

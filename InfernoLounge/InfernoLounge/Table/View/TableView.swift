@@ -21,11 +21,11 @@ struct TableView: View {
       VStack {
         VStack(alignment: .leading) {
           TopView()
-          MarkText("Забронировать столик", size: 25, weight: .bold)
+          MontserratText("Забронировать столик", size: 25, weight: .bold)
             .foregroundColor(.white)
             .padding(.top, 20)
             .padding(.leading)
-          MarkText("Дата и Время", size: 16, weight: .heavy)
+          MontserratText("Дата и Время", size: 16, weight: .heavy)
             .foregroundColor(.white)
             .padding(.leading)
             .padding(.top, 30)
@@ -34,7 +34,7 @@ struct TableView: View {
               .foregroundColor(Color(uiColor: .dark))
             HStack {
               Image("date")
-              MarkText("\(viewModel.selectedDate.formatted(date: .numeric, time: .shortened))", size: 15)
+              MontserratText("\(viewModel.selectedDate.formatted(date: .numeric, time: .shortened))", size: 15)
                 .foregroundColor(.white)
               Spacer()
               Image(systemName: "chevron.down")
@@ -53,14 +53,14 @@ struct TableView: View {
           .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
             DatePickerView(date: $viewModel.selectedDate)
           })
-          MarkText("Количество гостей", size: 16, weight: .heavy)
+          MontserratText("Количество гостей", size: 16, weight: .heavy)
             .foregroundColor(.white)
             .padding([.trailing, .leading, .top])
 
           PickerPeopleCountView(selectedOption: $viewModel.count)
             .environmentObject(viewModel)
             .padding([.trailing, .leading])
-          MarkText("Пожелания", size: 16, weight: .heavy)
+          MontserratText("Пожелания", size: 16, weight: .heavy)
             .foregroundColor(.white)
             .padding([.trailing, .leading, .top])
           WishesTextEditor(text: $viewModel.wishes)
@@ -83,7 +83,7 @@ struct TableView: View {
               .stroke(.white, lineWidth: 1)
               .foregroundColor(.clear)
               .frame(width: 278, height: 72)
-            MarkText("Забронировать", size: 16)
+            MontserratText("Забронировать", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
           }

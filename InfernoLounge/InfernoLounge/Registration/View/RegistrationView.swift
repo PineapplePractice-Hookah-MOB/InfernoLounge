@@ -20,10 +20,10 @@ struct RegistationView: View {
         Image("лого")
           .padding(.top, 55)
 
-        MarkText("Вход", size: 25, weight: .bold)
+        MontserratText("Вход", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding(.top, 50)
-        MarkText("Введите имя и дату вашего рождения", size: 16)
+        MontserratText("Введите имя и дату вашего рождения", size: 16)
           .foregroundColor(.white)
           .multilineTextAlignment(.center)
           .padding([.trailing, .leading], 94)
@@ -55,7 +55,7 @@ struct RegistationView: View {
                 .stroke(.white, lineWidth: 1)
                 .foregroundColor(.clear)
                 .frame(width: 278, height: 72)
-              MarkText("Далее", size: 16)
+              MontserratText("Далее", size: 16)
                 .foregroundColor(.white)
                 .font(.system(size: 16, weight: .bold))
             }

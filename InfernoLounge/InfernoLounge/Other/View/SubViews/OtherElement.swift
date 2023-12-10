@@ -19,7 +19,7 @@ struct OtherElement: View {
           .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
 
         HStack {
-          MarkText(text, size: 14, weight: .medium)
+          MontserratText(text, size: 14, weight: .medium)
             .foregroundColor(.white)
           Spacer()
           Image(image)

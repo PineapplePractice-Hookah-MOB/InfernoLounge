@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarkText: View {
+struct MontserratText: View {
   enum FontWeight: String {
     case regular = "Montserrat-Regular"
     case medium = "Montserrat-Medium"

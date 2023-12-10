@@ -13,6 +13,7 @@ struct MenuProducts {
   let image: String?
   let name: String
   let taste: String
-  let size: String
+  let size: String?
   let price: String
+  let type: String
 }
