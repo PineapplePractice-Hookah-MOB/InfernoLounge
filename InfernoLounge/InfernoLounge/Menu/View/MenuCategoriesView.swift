@@ -17,11 +17,11 @@ struct MenuCategoriesView: View {
 
   var body: some View {
     ZStack {
-RoundedRectangle(cornerRadius: 1)
+      RoundedRectangle(cornerRadius: 1)
         .frame(width: 170, height: 77)
         .background(isActive ? .white : Color(uiColor: .dark))
       HStack(spacing: 14) {
-        MarkText(name, size: 20, weight: .medium)
+        MontserratText(name, size: 20, weight: .medium)
           .foregroundColor(isActive ? .black : .white)
         Image(isActive ? tapImageName : imageName)
       }

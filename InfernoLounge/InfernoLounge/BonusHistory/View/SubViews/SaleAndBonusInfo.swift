@@ -15,9 +15,9 @@ struct SaleAndBonusInfo: View {
             .frame(width: 170, height: 77)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
           VStack {
-            MarkText("Ваша постоянная скидка", size: 12, weight: .bold)
+            MontserratText("Ваша постоянная скидка", size: 12, weight: .bold)
               .foregroundColor(.white)
-            MarkText("5%", size: 20)
+            MontserratText("5%", size: 20)
               .foregroundColor(.white)
               .padding(.top, 13)
           }
@@ -27,9 +27,9 @@ struct SaleAndBonusInfo: View {
             .frame(width: 170, height: 77)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
           VStack {
-            MarkText("Ваши баллы", size: 12, weight: .bold)
+            MontserratText("Ваши баллы", size: 12, weight: .bold)
               .foregroundColor(.white)
-            MarkText("567 баллов", size: 20)
+            MontserratText("567 баллов", size: 20)
               .foregroundColor(.white)
               .padding(.top, 13)
           }

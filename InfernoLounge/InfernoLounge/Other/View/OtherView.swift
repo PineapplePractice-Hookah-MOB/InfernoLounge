@@ -23,7 +23,7 @@ struct OtherView: View {
         OtherElement(image: "phone", text: "Контакты")
         OtherElement(image: "quit", text: "Выйти")
         Spacer()
-        MarkText("Мы в соц. сетях", size: 14, weight: .medium)
+        MontserratText("Мы в соц. сетях", size: 14, weight: .medium)
           .foregroundColor(.white)
           .padding(.bottom, 20)
         HStack(spacing: 56) {

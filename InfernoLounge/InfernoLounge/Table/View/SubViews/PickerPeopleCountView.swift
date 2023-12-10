@@ -21,7 +21,7 @@ struct PickerPeopleCountView: View {
         .foregroundColor(Color(uiColor: .dark))
       VStack(spacing: 10) {
         HStack {
-          MarkText("\(selectedOption)" , size: 16)
+          MontserratText("\(selectedOption)" , size: 16)
             .foregroundColor(.white)
           Spacer()
           Image(systemName: "chevron.down")
@@ -33,12 +33,12 @@ struct PickerPeopleCountView: View {
         .alert("", isPresented: $showAlert) {
           Button("OK") { }
         } message: {
-          MarkText("Пожалуйста, свяжитесь с администратором для осуществления бронирования по номеру\n+7 991 167 8894", size: 15)
+          MontserratText("Пожалуйста, свяжитесь с администратором для осуществления бронирования по номеру\n+7 991 167 8894", size: 15)
         }
         if isExpanded {
           ForEach(vm.peopleCount.filter({$0 != selectedOption}), id: \.self) { count in
             HStack {
-              MarkText(count, size: 16)
+              MontserratText(count, size: 16)
                 .foregroundColor(.white)
               Spacer()
             }

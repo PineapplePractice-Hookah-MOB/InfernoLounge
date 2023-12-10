@@ -19,10 +19,10 @@ struct SMSConfirmationView: View {
         VStack {
           Image("лого")
             .padding(.top, 55)
-          MarkText("Вход", size: 25, weight: .bold)
+          MontserratText("Вход", size: 25, weight: .bold)
             .foregroundColor(.white)
             .padding(.top, 50)
-          MarkText("Введите 4 последние цифры номера", size: 16)
+          MontserratText("Введите 4 последние цифры номера", size: 16)
             .foregroundColor(.white)
             .padding([.leading, .trailing], 40)
             .padding(.top, 10)
@@ -45,7 +45,7 @@ struct SMSConfirmationView: View {
                 .stroke(.white, lineWidth: 1)
                 .foregroundColor(.clear)
                 .frame(width: 278, height: 72)
-              MarkText("Далее", size: 16)
+              MontserratText("Далее", size: 16)
                 .foregroundColor(.white)
                 .font(.system(size: 16, weight: .bold))
             }

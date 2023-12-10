@@ -19,10 +19,10 @@ struct LoginView: View {
       VStack {
         Image("лого")
           .padding(.top, 55)
-        MarkText("Вход", size: 25, weight: .bold)
+        MontserratText("Вход", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding(.top, 50)
-        MarkText("Ведите номер вашего телефона в международном формате", size: 16)
+        MontserratText("Ведите номер вашего телефона в международном формате", size: 16)
           .foregroundColor(.white)
           .padding([.leading, .trailing], 64)
           .padding(.top, 10)
@@ -46,7 +46,7 @@ struct LoginView: View {
               .stroke(.white, lineWidth: 1)
               .foregroundColor(.clear)
               .frame(width: 278, height: 72)
-            MarkText("Далее", size: 16)
+            MontserratText("Далее", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
           }

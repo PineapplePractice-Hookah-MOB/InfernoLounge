@@ -9,29 +9,28 @@ import SwiftUI
 
 struct TeaAndHookahType: View {
 
-  @EnvironmentObject var vm: MenuViewModel
   let isSelected: Bool
   let name: String
+  var onChangeMenuType: (String) -> ()
 
   var body: some View {
 
     ZStack {
-      Color(uiColor: isSelected ? UIColor.white : UIColor.dark)
+      Color(isSelected ? .white : .dark)
           .frame(width: 111, height: 32)
           .clipShape(RoundedRectangle(cornerRadius: 1))
-      MarkText(name, size: 12)
+      MontserratText(name, size: 12)
         .foregroundColor(isSelected ? .black : .white)
         .clipShape(RoundedRectangle(cornerRadius: 1))
         .frame(width: 111, height: 32)
 
     }
     .onTapGesture {
-        vm.selectedCategory = name
+     onChangeMenuType(name)
     }
   }
 }
 
 #Preview {
-  TeaAndHookahType(isSelected: false, name: "Черный чай")
-    .environmentObject(MenuViewModel(coordinator: MenuCoordinator()))
+  TeaAndHookahType(isSelected: false, name: "Черный чай") { _ in}
 }

@@ -28,7 +28,7 @@ struct Agree: View {
               .foregroundColor(.clear)
           }
         }
-        MarkText("Я согласен на обработку персональных данных", size: 12, weight: .medium)
+        MontserratText("Я согласен на обработку персональных данных", size: 12, weight: .medium)
           .foregroundColor(.white)
       }
     }

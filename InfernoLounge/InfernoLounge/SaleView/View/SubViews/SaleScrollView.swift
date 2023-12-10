@@ -22,7 +22,7 @@ struct SaleScrollView: View {
               .foregroundColor(Color(uiColor: .dark))
             VStack {
               HStack {
-                MarkText("\(sale.sale)", size: 15)
+                MontserratText("\(sale.sale)", size: 15)
                   .foregroundColor(.white)
                   .multilineTextAlignment(.center)
                 Spacer()
@@ -31,7 +31,7 @@ struct SaleScrollView: View {
               Spacer()
               HStack {
                 Spacer()
-                MarkText("\(sale.price)", size: 30)
+                MontserratText("\(sale.price)", size: 30)
                   .foregroundColor(.white)
 
               }

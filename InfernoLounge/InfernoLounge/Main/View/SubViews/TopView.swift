@@ -14,7 +14,7 @@ struct TopView: View {
         Spacer()
         VStack {
           Image("profile")
-          MarkText("Андрей", size: 17, weight: .medium)
+          MontserratText("Андрей", size: 17, weight: .medium)
             .foregroundColor(.white)
         }
       }

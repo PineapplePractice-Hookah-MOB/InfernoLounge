@@ -20,7 +20,7 @@ struct SaleSubView: View {
               .stroke(.white, lineWidth: 1)
               .frame(width: 350, height: 140)
               .foregroundColor(.white)
-            MarkText("\(sale.sale)", size: 15)
+            MontserratText("\(sale.sale)", size: 15)
               .foregroundColor(.white)
           }
         }

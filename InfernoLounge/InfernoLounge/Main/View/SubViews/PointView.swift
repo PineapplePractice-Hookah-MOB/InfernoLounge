@@ -15,9 +15,9 @@ struct PointView: View {
         .frame(width: 350, height: 168)
       VStack {
         HStack {
-          MarkText("567", size: 40)
+          MontserratText("567", size: 40)
             .foregroundColor(.white)
-          MarkText("Баллов", size: 20)
+          MontserratText("Баллов", size: 20)
             .foregroundColor(.white)
           Spacer()
         }
@@ -25,9 +25,9 @@ struct PointView: View {
           .padding(.leading, 40)
         HStack {
           Spacer()
-          MarkText("Ваша постоянная скидка", size: 12)
+          MontserratText("Ваша постоянная скидка", size: 12)
             .foregroundColor(.white)
-          MarkText("5%", size: 40)
+          MontserratText("5%", size: 40)
             .foregroundColor(.white)
         }
           .padding(.trailing, 40)
