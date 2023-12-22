@@ -15,14 +15,16 @@ final class LoginViewModel: ObservableObject {
 
   private let coordinator: LoginCoordinator
 
-  @Published var phoneNumber = ""
+  @Published var login = ""
+  @Published var password = ""
 
 
-  func next() {
-    if phoneNumber == "12345" {
-      coordinator.next(havePhone: true)
-    } else {
-      coordinator.next(havePhone: false)
-    }
+
+  func goToMain() {
+    coordinator.goToMain()
+  }
+
+  func goToRegistration() {
+    coordinator.goToRegistation()
   }
 }

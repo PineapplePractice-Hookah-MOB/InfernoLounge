@@ -13,10 +13,10 @@ struct CustomTextField: View {
 
   var body: some View {
     VStack(alignment: .center) {
-      TextField("", text: $text, prompt: Text(placeHolder).foregroundColor(.white))
+      TextField("", text: $text, prompt: Text(placeHolder).foregroundColor(.gray))
         .foregroundColor(.white)
         .frame(width: 348, height: 45)
-        .multilineTextAlignment(.center)
+        .multilineTextAlignment(.leading)
         .overlay(
         Rectangle()
           .fill(Color.white)

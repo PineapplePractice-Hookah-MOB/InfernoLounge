@@ -31,11 +31,11 @@
 		7F27BE8F2AFEAAB2005E5E39 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */; };
 		7F27BE912AFEAABB005E5E39 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */; };
 		7F27BE932AFEC771005E5E39 /* Agree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE922AFEC771005E5E39 /* Agree.swift */; };
-		7F27BE962AFECB0D005E5E39 /* SMSConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE952AFECB0D005E5E39 /* SMSConfirmationView.swift */; };
-		7F27BE982AFECB1B005E5E39 /* SMSConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */; };
-		7F27BE9A2AFECB29005E5E39 /* SMSConfirmationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE992AFECB29005E5E39 /* SMSConfirmationCoordinator.swift */; };
 		7F27BEA12B00093E005E5E39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F27BEA02B00093E005E5E39 /* Assets.xcassets */; };
 		7F27BEA52B0695A1005E5E39 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */; };
+		7F294BBA2B35AA340020C17E /* TopViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BB92B35AA340020C17E /* TopViewRegistration.swift */; };
+		7F294BBC2B35AB540020C17E /* RegistationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBB2B35AB540020C17E /* RegistationDetails.swift */; };
+		7F294BBE2B35AE090020C17E /* ButtonRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
@@ -98,11 +98,11 @@
 		7F27BE8E2AFEAAB2005E5E39 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		7F27BE902AFEAABB005E5E39 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		7F27BE922AFEC771005E5E39 /* Agree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agree.swift; sourceTree = "<group>"; };
-		7F27BE952AFECB0D005E5E39 /* SMSConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmationView.swift; sourceTree = "<group>"; };
-		7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmationViewModel.swift; sourceTree = "<group>"; };
-		7F27BE992AFECB29005E5E39 /* SMSConfirmationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSConfirmationCoordinator.swift; sourceTree = "<group>"; };
 		7F27BEA02B00093E005E5E39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		7F294BB92B35AA340020C17E /* TopViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewRegistration.swift; sourceTree = "<group>"; };
+		7F294BBB2B35AB540020C17E /* RegistationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationDetails.swift; sourceTree = "<group>"; };
+		7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRegistration.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -171,7 +171,6 @@
 				7F5A75A12AE3C23C006BD516 /* Model */,
 				7F27BE8D2AFEAA9E005E5E39 /* TabBar */,
 				7F2273052AADFB990036BC9C /* Login */,
-				7F27BE942AFECAF0005E5E39 /* SMSConfirmation */,
 				7F5A75812AE3AA95006BD516 /* Registration */,
 				7F5A75982AE3C122006BD516 /* Main */,
 				7F5A75B42AE4FF35006BD516 /* SaleView */,
@@ -326,38 +325,15 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		7F27BE942AFECAF0005E5E39 /* SMSConfirmation */ = {
-			isa = PBXGroup;
-			children = (
-				7F27BE9C2AFECDF7005E5E39 /* View */,
-				7F27BE9D2AFECDFD005E5E39 /* ViewModel */,
-				7F27BE992AFECB29005E5E39 /* SMSConfirmationCoordinator.swift */,
-			);
-			path = SMSConfirmation;
-			sourceTree = "<group>";
-		};
 		7F27BE9B2AFECDEC005E5E39 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				7F294BB92B35AA340020C17E /* TopViewRegistration.swift */,
+				7F294BBB2B35AB540020C17E /* RegistationDetails.swift */,
 				7F27BE922AFEC771005E5E39 /* Agree.swift */,
+				7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */,
 			);
 			path = SubView;
-			sourceTree = "<group>";
-		};
-		7F27BE9C2AFECDF7005E5E39 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7F27BE952AFECB0D005E5E39 /* SMSConfirmationView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7F27BE9D2AFECDFD005E5E39 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7F27BE972AFECB1B005E5E39 /* SMSConfirmationViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7F27BEA62B069F2E005E5E39 /* ViewModel */ = {
@@ -660,7 +636,6 @@
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
 				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
 				7F6984892AEE47B20017720B /* MenuView.swift in Sources */,
-				7F27BE9A2AFECB29005E5E39 /* SMSConfirmationCoordinator.swift in Sources */,
 				7F27BE8F2AFEAAB2005E5E39 /* TabBarCoordinator.swift in Sources */,
 				7F27BE702AFC0128005E5E39 /* BonusHistoryViewModel.swift in Sources */,
 				7F69848F2AEE4FE40017720B /* MenuCategoriesView.swift in Sources */,
@@ -670,7 +645,6 @@
 				7F5A75A82AE3C2D0006BD516 /* PointView.swift in Sources */,
 				7F27BE6A2AFBF902005E5E39 /* OtherElement.swift in Sources */,
 				7F69849A2AF586CE0017720B /* OtherView.swift in Sources */,
-				7F27BE962AFECB0D005E5E39 /* SMSConfirmationView.swift in Sources */,
 				7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */,
 				7F27BE932AFEC771005E5E39 /* Agree.swift in Sources */,
 				7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */,
@@ -680,7 +654,6 @@
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
 				7F6984912AF26CE40017720B /* TeaAndHookahType.swift in Sources */,
-				7F27BE982AFECB1B005E5E39 /* SMSConfirmationViewModel.swift in Sources */,
 				7F27BE742AFC1439005E5E39 /* BonusHistory.swift in Sources */,
 				7F6984932AF26D7B0017720B /* MenuEnums.swift in Sources */,
 				7F6984722AED9E130017720B /* TableViewModel.swift in Sources */,
@@ -702,9 +675,12 @@
 				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
 				7F5A75A32AE3C249006BD516 /* Sale.swift in Sources */,
 				7F2272F12AADFAD40036BC9C /* AppDelegate.swift in Sources */,
+				7F294BBC2B35AB540020C17E /* RegistationDetails.swift in Sources */,
 				7F5A758D2AE3AF1B006BD516 /* MontserratText.swift in Sources */,
 				7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */,
 				7F27BE682AFBEB56005E5E39 /* ProfileAndPoinView.swift in Sources */,
+				7F294BBE2B35AE090020C17E /* ButtonRegistration.swift in Sources */,
+				7F294BBA2B35AA340020C17E /* TopViewRegistration.swift in Sources */,
 				7F27BE782AFC1558005E5E39 /* SaleAndBonusInfo.swift in Sources */,
 				7F2272F32AADFAD40036BC9C /* SceneDelegate.swift in Sources */,
 				7F5A75A02AE3C156006BD516 /* MainCoordinator.swift in Sources */,

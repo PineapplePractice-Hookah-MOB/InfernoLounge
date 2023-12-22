@@ -23,15 +23,17 @@ final class LoginCoordinator: Coordinator {
     rootViewController = navigation
   }
 
-  func next(havePhone: Bool) {
-    if havePhone {
+  func goToMain() {
+    let tabBarCoordinator = TabBarCoordinator()
+    tabBarCoordinator.start()
+    let vc = tabBarCoordinator.rootViewController
+    self.rootViewController.show(vc, sender: nil)
+  }
 
-    } else {
-      let SMSConfirmationCoordinator = SMSConfirmationCoordinator()
-      SMSConfirmationCoordinator.start()
-      childCoordinators.append(SMSConfirmationCoordinator)
-      let vc = SMSConfirmationCoordinator.rootViewController
-      self.rootViewController.show(vc, sender: nil)
-    }
+  func goToRegistation() {
+    let registrationCoordinator = RegistrationCoordinator()
+    registrationCoordinator.start()
+    let vc = registrationCoordinator.rootViewController
+    self.rootViewController.show(vc, sender: nil)
   }
 }

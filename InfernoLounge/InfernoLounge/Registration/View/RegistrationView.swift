@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegistationView: View {
 
-  @StateObject var vm: RegistrationViewModel
+  @StateObject var viewModel: RegistrationViewModel
 
   var body: some View {
     ZStack(alignment: .bottom) {
@@ -17,50 +17,18 @@ struct RegistationView: View {
         .ignoresSafeArea()
       Image("Smokemini")
       VStack {
-        Image("лого")
+        TopViewRegistration()
+          .foregroundStyle(.white)
           .padding(.top, 55)
-
-        MontserratText("Вход", size: 25, weight: .bold)
-          .foregroundColor(.white)
-          .padding(.top, 50)
-        MontserratText("Введите имя и дату вашего рождения", size: 16)
-          .foregroundColor(.white)
-          .multilineTextAlignment(.center)
-          .padding([.trailing, .leading], 94)
-          .padding(.top, 10)
-
-        CustomTextField(placeHolder: "Введите ваше имя", text: $vm.name)
-          .padding(.top, 25)
-
-        CustomTextField(placeHolder: "Введите дату рождения", text: $vm.birthDay)
-          .padding(.top, 20)
-
+        RegistationDetails(login: $viewModel.login,
+                           name: $viewModel.name,
+                           dateOfBirthday: $viewModel.birthDay,
+                           password: $viewModel.password,
+                           confirmPassword: $viewModel.confirmPassword)
         Agree()
-          .environmentObject(vm)
+          .environmentObject(viewModel)
           .padding(.top, 50)
-        Button(action: {
-          vm.main()
-        }, label: {
-            ZStack {
-              HStack {
-                Image("left")
-                  .padding(.top, 40)
-                  .padding(.leading, 52)
-                Spacer()
-                Image("right")
-                  .padding(.bottom, 40)
-                  .padding(.trailing, 52)
-              }
-              RoundedRectangle(cornerRadius: 5)
-                .stroke(.white, lineWidth: 1)
-                .foregroundColor(.clear)
-                .frame(width: 278, height: 72)
-              MontserratText("Далее", size: 16)
-                .foregroundColor(.white)
-                .font(.system(size: 16, weight: .bold))
-            }
-          })
-          .disabled(vm.buttonDisabled)
+        ButtonRegistration(disabled: viewModel.buttonDisabled)
           .padding(.top, 54)
         Spacer()
       }
@@ -70,5 +38,5 @@ struct RegistationView: View {
 }
 
 #Preview {
-  RegistationView(vm: RegistrationViewModel(coordinator: RegistrationCoordinator()))
+  RegistationView(viewModel: RegistrationViewModel(coordinator: RegistrationCoordinator()))
 }
