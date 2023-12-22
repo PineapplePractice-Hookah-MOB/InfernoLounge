@@ -15,16 +15,8 @@ final class RegistrationCoordinator: Coordinator {
 
   func start() {
     let vm = RegistrationViewModel(coordinator: self)
-    let pickViewController = UIHostingController(rootView: RegistationView(vm: vm))
+    let pickViewController = UIHostingController(rootView: RegistationView(viewModel: vm))
 
     rootViewController = pickViewController
-  }
-
-  func toMain() {
-    let tabBarCoordinator = TabBarCoordinator()
-    tabBarCoordinator.start()
-    let vc = tabBarCoordinator.rootViewController
-    self.rootViewController.navigationController?.pushViewController(vc, animated: true)
-
   }
 }

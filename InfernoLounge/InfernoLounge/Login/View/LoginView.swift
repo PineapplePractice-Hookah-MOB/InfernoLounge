@@ -21,37 +21,47 @@ struct LoginView: View {
           .padding(.top, 55)
         MontserratText("Вход", size: 25, weight: .bold)
           .foregroundColor(.white)
+          .padding(.top, 62)
+        CustomTextField(placeHolder: "Логин", text: $viewModel.login)
           .padding(.top, 50)
-        MontserratText("Ведите номер вашего телефона в международном формате", size: 16)
-          .foregroundColor(.white)
-          .padding([.leading, .trailing], 64)
-          .padding(.top, 10)
-          .multilineTextAlignment(.center)
-        CustomTextField(placeHolder: "Введите номер телефона", text: $viewModel.phoneNumber)
-          .padding(.top, 65)
+        VStack(alignment: .center) {
+          SecureField("", text: $viewModel.password, prompt: Text("Пароль").foregroundColor(.gray))
+            .foregroundColor(.white)
+            .frame(width: 348, height: 45)
+            .multilineTextAlignment(.leading)
+            .overlay(
+            Rectangle()
+              .fill(Color.white)
+              .frame(width: 348, height: 1), alignment: .bottom)
+        }
+        .padding(.top, 36)
         Button(action: {
-          viewModel.next()
+          viewModel.goToMain()
         }, label: {
           ZStack {
-            HStack {
-              Image("left")
-                .padding(.top, 40)
-                .padding(.leading, 52)
-              Spacer()
-              Image("right")
-                .padding(.bottom, 40)
-                .padding(.trailing, 52)
-            }
             RoundedRectangle(cornerRadius: 5)
               .stroke(.white, lineWidth: 1)
               .foregroundColor(.clear)
               .frame(width: 278, height: 72)
-            MontserratText("Далее", size: 16)
+            MontserratText("Вход", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
           }
         })
-        .padding(.top, 147)
+        .padding(.top, 54)
+        Button(action: {
+          viewModel.goToRegistration()
+        }, label: {
+          ZStack {
+            RoundedRectangle(cornerRadius: 5)
+              .foregroundColor(.white)
+              .frame(width: 278, height: 72)
+            MontserratText("Регистрация", size: 16)
+              .foregroundColor(.black)
+              .font(.system(size: 16, weight: .bold))
+          }
+        })
+        .padding(.top, 28)
         Spacer()
       }
     }
