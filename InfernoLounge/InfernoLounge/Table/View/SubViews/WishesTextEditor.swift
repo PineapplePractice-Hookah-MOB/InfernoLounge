@@ -11,14 +11,13 @@ struct WishesTextEditor: View {
 
   @Binding var text: String
 
-
     var body: some View {
-              TextEditor(text: $text)
-                .frame(width: 360, height: 80)
-                .lineLimit(5)
-                .foregroundColor(Color(uiColor: .gray))
-                .cornerRadius(5)
-                .scrollContentBackground(.hidden)
-                .background(Color(uiColor: .dark))
+
+      TextField("", text: $text, prompt: Text("Комментарий к брони..."))
+        .cornerRadius(5)
+        .frame(height: 80)
+        .foregroundColor(Color(uiColor: .gray))
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor: .dark))
           }
 }

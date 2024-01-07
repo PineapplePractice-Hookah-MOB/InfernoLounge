@@ -15,4 +15,8 @@ extension Color {
   var dark: Color {
     return .init(uiColor: .dark)
   }
+
+  var darkBackground: Color {
+    return .init(uiColor: .darkBackground)
+  }
 }

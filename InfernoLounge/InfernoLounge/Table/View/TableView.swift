@@ -40,17 +40,17 @@ struct TableView: View {
               Image(systemName: "chevron.down")
                 .foregroundColor(.white)
             }
-            .padding([.trailing, .leading])
+              .padding([.trailing, .leading])
           }
-          .onTapGesture {
+            .onTapGesture {
             viewModel.datePickerSheetPresenting = true
           }
-          .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
+            .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
             DatePickerView(date: $viewModel.selectedDate)
           })
-          .frame(height: 45)
-          .padding([.trailing, .leading])
-          .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
+            .frame(height: 45)
+            .padding([.trailing, .leading])
+            .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
             DatePickerView(date: $viewModel.selectedDate)
           })
           MontserratText("Количество гостей", size: 16, weight: .heavy)
@@ -62,34 +62,38 @@ struct TableView: View {
             .padding([.trailing, .leading])
           MontserratText("Пожелания", size: 16, weight: .heavy)
             .foregroundColor(.white)
-            .padding([.trailing, .leading, .top])
+            .padding([.leading, .top])
           WishesTextEditor(text: $viewModel.wishes)
-            .padding([.leading])
+            .padding([.leading, .trailing])
           Spacer()
         }
         Button(action: {
+          viewModel.postTable()
         }, label: {
-          ZStack {
-            HStack {
-              Image("left")
-                .padding(.top, 40)
-                .padding(.leading, 52)
-              Spacer()
-              Image("right")
-                .padding(.bottom, 40)
-                .padding(.trailing, 52)
-            }
-            RoundedRectangle(cornerRadius: 5)
-              .stroke(.white, lineWidth: 1)
-              .foregroundColor(.clear)
-              .frame(width: 278, height: 72)
-            MontserratText("Забронировать", size: 16)
-              .foregroundColor(.white)
-              .font(.system(size: 16, weight: .bold))
+              MontserratText("Забронировать", size: 16)
+            .foregroundColor(buttonDisabled == false ? .white : .gray)
+                .font(.system(size: 16, weight: .bold))
+          })
+        .frame(width: 278)
+          .background {
+            buttonDisabled == false ? RoundedRectangle(cornerRadius: 5)
+              .stroke()
+              .foregroundStyle(.white) : RoundedRectangle(cornerRadius: 5)
+              .stroke()
+              .foregroundStyle(.gray)
+          Spacer()
+          HStack {
+            Image("left")
+              .padding(.top, 40)
+            Spacer()
+            Image("right")
+              .padding(.bottom, 40)
           }
-        })
-        .padding([.bottom], 60)
-        .disabled(viewModel.buttonDisabled)
+            .padding(-5)
+          Spacer()
+        }
+          .padding([.bottom], 60)
+          .disabled(viewModel.buttonDisabled)
       }
     }
   }
