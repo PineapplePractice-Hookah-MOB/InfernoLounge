@@ -11,34 +11,34 @@ struct ButtonRegistration: View {
 
   @Environment(\.dismiss) var dismiss
   let disabled: Bool
+  var function: () -> ()
 
     var body: some View {
       Button(action: {
+        function()
         dismiss.callAsFunction()
               }, label: {
-          ZStack {
-            HStack {
-              Image("left")
-                .padding(.top, 40)
-                .padding(.leading, 52)
-              Spacer()
-              Image("right")
-                .padding(.bottom, 40)
-                .padding(.trailing, 52)
-            }
-            RoundedRectangle(cornerRadius: 5)
-              .stroke(.white, lineWidth: 1)
-              .foregroundColor(.clear)
-              .frame(width: 278, height: 72)
             MontserratText("Далее", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
-          }
         })
+      .frame(width: 278, height: 72)
+        .background {
+         RoundedRectangle(cornerRadius: 5)
+            .stroke()
+            .foregroundStyle(.white)
+        Spacer()
+        HStack {
+          Image("left")
+            .padding(.top, 40)
+          Spacer()
+          Image("right")
+            .padding(.bottom, 40)
+        }
+          .padding(-5)
+        Spacer()
+      }
         .disabled(disabled)
     }
 }
 
-#Preview {
-  ButtonRegistration(disabled: true)
-}

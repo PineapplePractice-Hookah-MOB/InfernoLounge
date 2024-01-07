@@ -15,12 +15,12 @@ struct CustomTextField: View {
     VStack(alignment: .center) {
       TextField("", text: $text, prompt: Text(placeHolder).foregroundColor(.gray))
         .foregroundColor(.white)
-        .frame(width: 348, height: 45)
+        .frame(height: 45)
         .multilineTextAlignment(.leading)
         .overlay(
         Rectangle()
           .fill(Color.white)
-          .frame(width: 348, height: 1), alignment: .bottom)
+          .frame(height: 1), alignment: .bottom)
     }
   }
 }

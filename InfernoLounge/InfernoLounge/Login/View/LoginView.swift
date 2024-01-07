@@ -16,6 +16,8 @@ struct LoginView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       Image("Smokemini")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
       VStack {
         Image("лого")
           .padding(.top, 55)
@@ -24,16 +26,18 @@ struct LoginView: View {
           .padding(.top, 62)
         CustomTextField(placeHolder: "Логин", text: $viewModel.login)
           .padding(.top, 50)
+          .padding([.trailing, .leading])
         VStack(alignment: .center) {
           SecureField("", text: $viewModel.password, prompt: Text("Пароль").foregroundColor(.gray))
             .foregroundColor(.white)
-            .frame(width: 348, height: 45)
+            .frame(height: 45)
             .multilineTextAlignment(.leading)
             .overlay(
             Rectangle()
               .fill(Color.white)
-              .frame(width: 348, height: 1), alignment: .bottom)
+              .frame(height: 1), alignment: .bottom)
         }
+        .padding([.trailing, .leading])
         .padding(.top, 36)
         Button(action: {
           viewModel.goToMain()

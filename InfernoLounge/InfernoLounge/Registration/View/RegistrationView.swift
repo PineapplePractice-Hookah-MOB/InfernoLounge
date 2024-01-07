@@ -16,19 +16,22 @@ struct RegistationView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       Image("Smokemini")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
       VStack {
         TopViewRegistration()
           .foregroundStyle(.white)
           .padding(.top, 55)
-        RegistationDetails(login: $viewModel.login,
+        RegistationDetails(email: $viewModel.email,
                            name: $viewModel.name,
                            dateOfBirthday: $viewModel.birthDay,
                            password: $viewModel.password,
                            confirmPassword: $viewModel.confirmPassword)
+        .padding([.trailing, .leading])
         Agree()
           .environmentObject(viewModel)
           .padding(.top, 50)
-        ButtonRegistration(disabled: viewModel.buttonDisabled)
+        ButtonRegistration(disabled: viewModel.buttonDisabled, function: viewModel.postRegistration)
           .padding(.top, 54)
         Spacer()
       }
