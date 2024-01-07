@@ -36,6 +36,8 @@
 		7F294BBA2B35AA340020C17E /* TopViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BB92B35AA340020C17E /* TopViewRegistration.swift */; };
 		7F294BBC2B35AB540020C17E /* RegistationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBB2B35AB540020C17E /* RegistationDetails.swift */; };
 		7F294BBE2B35AE090020C17E /* ButtonRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */; };
+		7F294BC22B35B0630020C17E /* CreateBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BC12B35B0630020C17E /* CreateBooking.swift */; };
+		7F294BC52B35B1450020C17E /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BC42B35B1450020C17E /* ApiManager.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
 		7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */; };
@@ -69,6 +71,9 @@
 		7F69849A2AF586CE0017720B /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984992AF586CE0017720B /* OtherView.swift */; };
 		7F69849E2AF586E90017720B /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849D2AF586E90017720B /* OtherViewModel.swift */; };
 		7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849F2AF586FD0017720B /* OtherCoordinator.swift */; };
+		7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DA2B49432A0016249F /* CalendarDate.swift */; };
+		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
+		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,8 @@
 		7F294BB92B35AA340020C17E /* TopViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewRegistration.swift; sourceTree = "<group>"; };
 		7F294BBB2B35AB540020C17E /* RegistationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationDetails.swift; sourceTree = "<group>"; };
 		7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRegistration.swift; sourceTree = "<group>"; };
+		7F294BC12B35B0630020C17E /* CreateBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBooking.swift; sourceTree = "<group>"; };
+		7F294BC42B35B1450020C17E /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		7F5A75882AE3AB23006BD516 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
@@ -136,6 +143,8 @@
 		7F6984992AF586CE0017720B /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		7F69849D2AF586E90017720B /* OtherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
 		7F69849F2AF586FD0017720B /* OtherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCoordinator.swift; sourceTree = "<group>"; };
+		7F8719DA2B49432A0016249F /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
+		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA039A72B41615B000F2388 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +211,6 @@
 		7F2273052AADFB990036BC9C /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				7F22730E2AADFDC20036BC9C /* Model */,
 				7F22730C2AADFDAE0036BC9C /* View */,
 				7F22730D2AADFDB70036BC9C /* ViewModel */,
 				7F22730F2AADFDD10036BC9C /* LoginCoordinator.swift */,
@@ -212,6 +221,7 @@
 		7F2273082AADFBDB0036BC9C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7F294BC32B35B1390020C17E /* API */,
 				7F27BE842AFC2009005E5E39 /* Ext */,
 				7F2273092AADFBE50036BC9C /* Protocols */,
 				7F5A758A2AE3AB70006BD516 /* CustomTextField.swift */,
@@ -242,13 +252,6 @@
 				7F2273112AADFE410036BC9C /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7F22730E2AADFDC20036BC9C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		7F27BE642AFBEB31005E5E39 /* SubViews */ = {
@@ -311,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				7F27BE852AFC2019005E5E39 /* ExtColor.swift */,
+				7F8719DE2B4A95BD0016249F /* ExtDate.swift */,
 			);
 			path = Ext;
 			sourceTree = "<group>";
@@ -350,6 +354,14 @@
 				7F27BEA42B0695A1005E5E39 /* CustomTabBarController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7F294BC32B35B1390020C17E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7F294BC42B35B1450020C17E /* ApiManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		7F5A75812AE3AA95006BD516 /* Registration */ = {
@@ -412,6 +424,8 @@
 				7F5A75A22AE3C249006BD516 /* Sale.swift */,
 				7F6984962AF57E040017720B /* Menu.swift */,
 				7F27BE732AFC1439005E5E39 /* BonusHistory.swift */,
+				7F294BC12B35B0630020C17E /* CreateBooking.swift */,
+				7F8719DA2B49432A0016249F /* CalendarDate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,6 +585,9 @@
 			dependencies = (
 			);
 			name = InfernoLounge;
+			packageProductDependencies = (
+				7FA039A62B41615B000F2388 /* Alamofire */,
+			);
 			productName = InfernoLounge;
 			productReference = 7F2272ED2AADFAD40036BC9C /* InfernoLounge.app */;
 			productType = "com.apple.product-type.application";
@@ -599,6 +616,9 @@
 				Base,
 			);
 			mainGroup = 7F2272E42AADFAD40036BC9C;
+			packageReferences = (
+				7FA039A52B41615B000F2388 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 7F2272EE2AADFAD40036BC9C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -650,6 +670,7 @@
 				7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */,
 				7F69846E2AED9DEF0017720B /* TableView.swift in Sources */,
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
+				7F294BC22B35B0630020C17E /* CreateBooking.swift in Sources */,
 				7F27BE722AFC0134005E5E39 /* BonusHistoryCoordinator.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
@@ -664,12 +685,15 @@
 				7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */,
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
 				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
+				7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */,
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,
 				7F2273122AADFE410036BC9C /* LoginViewModel.swift in Sources */,
 				7F27BE6D2AFC0115005E5E39 /* BonusHistoryView.swift in Sources */,
 				7F69847A2AEE3E320017720B /* WishesTextEditor.swift in Sources */,
 				7F2273102AADFDD10036BC9C /* LoginCoordinator.swift in Sources */,
+				7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */,
+				7F294BC52B35B1450020C17E /* ApiManager.swift in Sources */,
 				7F5A75AA2AE3F187006BD516 /* SaleSubView.swift in Sources */,
 				7F6984972AF57E040017720B /* Menu.swift in Sources */,
 				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
@@ -894,6 +918,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7FA039A52B41615B000F2388 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7FA039A62B41615B000F2388 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FA039A52B41615B000F2388 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F2272E52AADFAD40036BC9C /* Project object */;
 }
