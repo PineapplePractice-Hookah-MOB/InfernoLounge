@@ -73,6 +73,7 @@
 		7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849F2AF586FD0017720B /* OtherCoordinator.swift */; };
 		7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DA2B49432A0016249F /* CalendarDate.swift */; };
 		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
+		7F8719E12B4ADC060016249F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719E02B4ADC060016249F /* User.swift */; };
 		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		7F69849F2AF586FD0017720B /* OtherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCoordinator.swift; sourceTree = "<group>"; };
 		7F8719DA2B49432A0016249F /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
+		7F8719E02B4ADC060016249F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -426,6 +428,7 @@
 				7F27BE732AFC1439005E5E39 /* BonusHistory.swift */,
 				7F294BC12B35B0630020C17E /* CreateBooking.swift */,
 				7F8719DA2B49432A0016249F /* CalendarDate.swift */,
+				7F8719E02B4ADC060016249F /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				7F6984742AED9E1F0017720B /* TableCoordinator.swift in Sources */,
 				7F5A75A32AE3C249006BD516 /* Sale.swift in Sources */,
 				7F2272F12AADFAD40036BC9C /* AppDelegate.swift in Sources */,
+				7F8719E12B4ADC060016249F /* User.swift in Sources */,
 				7F294BBC2B35AB540020C17E /* RegistationDetails.swift in Sources */,
 				7F5A758D2AE3AF1B006BD516 /* MontserratText.swift in Sources */,
 				7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */,
