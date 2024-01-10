@@ -27,6 +27,9 @@ struct LoginView: View {
         CustomTextField(placeHolder: "Логин", text: $viewModel.login)
           .padding(.top, 50)
           .padding([.trailing, .leading])
+        MontserratText("Проверьте логин или пароль, либо зарегистрируйтесь", size: 12)
+          .foregroundStyle(.red)
+          .opacity(viewModel.showText ? 1 : 0)
         VStack(alignment: .center) {
           SecureField("", text: $viewModel.password, prompt: Text("Пароль").foregroundColor(.gray))
             .foregroundColor(.white)
@@ -40,7 +43,8 @@ struct LoginView: View {
         .padding([.trailing, .leading])
         .padding(.top, 36)
         Button(action: {
-          viewModel.goToMain()
+          viewModel.checkUser()
+          viewModel.showText = true
         }, label: {
           ZStack {
             RoundedRectangle(cornerRadius: 5)
@@ -55,6 +59,7 @@ struct LoginView: View {
         .padding(.top, 54)
         Button(action: {
           viewModel.goToRegistration()
+          viewModel.showText = false
         }, label: {
           ZStack {
             RoundedRectangle(cornerRadius: 5)

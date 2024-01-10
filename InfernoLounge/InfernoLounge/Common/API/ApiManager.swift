@@ -12,9 +12,19 @@ import Alamofire
 enum ApiPath: String {
   case postTable = "http://213.219.212.47:9000/api/booking"
   case postRegistration = "http://213.219.212.47:9000/api/users"
+  case getUsers = "http://213.219.212.47:9000/api/users/all?from=0&size=5"
+  case getUser = "http://213.219.212.47:9000/api/users/"
 }
 
 final class ApiManager {
+
+  init() {
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    self.decoder = decoder
+  }
+
+  let decoder: JSONDecoder
 
   func post(tableId: Int, people: Int, comment: String, bookedFrom: String, bookedTill: String) {
 
@@ -56,5 +66,34 @@ final class ApiManager {
       print(String(data: data, encoding: .utf8)!)
     }
     task.resume()
+  }
+
+  func getUsers() -> AnyPublisher<[User], Never>
+  {
+    let link = ApiPath.getUsers.rawValue
+      guard let url = URL(string: link) else {
+        return Just([User()]).eraseToAnyPublisher()
+      }
+
+      return URLSession.shared.dataTaskPublisher(for: url)
+          .map(\.data)
+          .decode(type: [User].self, decoder: JSONDecoder())
+          .catch { error in
+            Just([User()]) }
+          .receive(on: RunLoop.main)
+          .eraseToAnyPublisher()
+  }
+  func getuser(userId: Int) -> AnyPublisher<User, Never> {
+    let link = ApiPath.getUser.rawValue
+      guard let url = URL(string: link + "\(userId)") else {
+          return Just(User()).eraseToAnyPublisher()
+      }
+
+      return URLSession.shared.dataTaskPublisher(for: url)
+          .map(\.data)
+          .decode(type: User.self, decoder: decoder)
+          .catch { error in Just(User()) }
+          .receive(on: RunLoop.main)
+          .eraseToAnyPublisher()
   }
 }
