@@ -10,6 +10,7 @@ import SwiftUI
 struct OtherView: View {
 
   @StateObject var viewModel: OtherViewModel
+  @Environment(\.openURL) var openURL
 
   var body: some View {
     ZStack {
@@ -20,6 +21,7 @@ struct OtherView: View {
         ProfileAndPoinView()
           .padding(.top, 30)
         OtherElement(image: "mail", text: "Оставьте отзыв")
+        
         OtherElement(image: "phone", text: "Контакты")
         OtherElement(image: "quit", text: "Выйти")
         Spacer()
@@ -27,7 +29,11 @@ struct OtherView: View {
           .foregroundColor(.white)
           .padding(.bottom, 20)
         HStack(spacing: 56) {
-          Image("vko")
+          Button {
+            openURL(URL(string: "https://vk.com/inferno_arh")!)
+          } label: {
+            Image("vko")
+          }
           Image("insta")
           Image("fb")
         }
