@@ -11,6 +11,7 @@ struct Sale {
   let id: Int
   let sale: String
   let price: String
+  let time: String
 }
 
 

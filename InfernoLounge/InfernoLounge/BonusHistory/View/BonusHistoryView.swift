@@ -13,7 +13,7 @@ struct BonusHistoryView: View {
 
     var body: some View {
       ZStack {
-        Color(uiColor: UIColor(red: 0.118, green: 0.118, blue: 0.118, alpha: 1))
+        Color(uiColor: .darkBackground)
           .edgesIgnoringSafeArea(.all)
         VStack {
           Image("wlogo")

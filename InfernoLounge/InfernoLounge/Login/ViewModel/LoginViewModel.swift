@@ -8,13 +8,11 @@
 import SwiftUI
 import Combine
 
-
-
 final class LoginViewModel: ObservableObject {
 
   init(coordinator: LoginCoordinator) {
     self.coordinator = coordinator
-      getUsers()
+    getUsers()
   }
 
   private let coordinator: LoginCoordinator
@@ -40,17 +38,17 @@ extension LoginViewModel {
     api.getUsers()
       .receive(on: DispatchQueue.main)
       .sink { [weak self] users in
-        self?.users = users
-        print(self?.users)
-      }
+      self?.users = users
+      print(self?.users)
+    }
       .store(in: &cancellable)
   }
 
-  func checkUser()  {
+  func checkUser() {
     for user in users {
       if login != user.email {
       } else {
-        goToMain()
+    goToMain()
       }
     }
   }

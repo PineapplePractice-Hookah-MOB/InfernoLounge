@@ -14,11 +14,11 @@ struct SaleScrollView: View {
   let config = [GridItem(.fixed(140))]
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
-      LazyVGrid(columns: config, content: {
+      LazyVGrid(columns: config, spacing: 15,content: {
         ForEach(sales, id: \.id) { sale in
           ZStack {
             RoundedRectangle(cornerRadius: 5)
-              .frame(width: 350, height: 140)
+              .frame(width: UIScreen.main.bounds.width - 40, height: 140)
               .foregroundColor(Color(uiColor: .dark))
             VStack {
               HStack {
@@ -33,15 +33,13 @@ struct SaleScrollView: View {
                 Spacer()
                 MontserratText("\(sale.price)", size: 30)
                   .foregroundColor(.white)
-
               }
                 .padding(.trailing, 20)
             }
-              .padding()
+            .padding([.top, .bottom])
           }
         }
       })
     }
-      .padding([.leading, .trailing], 10)
   }
 }

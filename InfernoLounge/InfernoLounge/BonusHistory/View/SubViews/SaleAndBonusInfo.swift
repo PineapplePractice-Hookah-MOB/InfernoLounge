@@ -12,7 +12,7 @@ struct SaleAndBonusInfo: View {
       HStack {
         ZStack {
           RoundedRectangle(cornerRadius: 5)
-            .frame(width: 170, height: 77)
+            .frame(height: 77)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
           VStack {
             MontserratText("Ваша постоянная скидка", size: 12, weight: .bold)
@@ -24,7 +24,7 @@ struct SaleAndBonusInfo: View {
         }
         ZStack {
           RoundedRectangle(cornerRadius: 5)
-            .frame(width: 170, height: 77)
+            .frame(height: 77)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
           VStack {
             MontserratText("Ваши баллы", size: 12, weight: .bold)
@@ -35,6 +35,7 @@ struct SaleAndBonusInfo: View {
           }
         }
       }
+      .padding([.trailing, .leading])
     }
 }
 

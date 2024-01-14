@@ -16,7 +16,7 @@ struct HistoryBonus: View {
         ZStack {
           RoundedRectangle(cornerRadius: 5)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
-            .frame(width: 350, height: 55)
+            .frame(height: 55)
           HStack {
             VStack {
               MontserratText(bonusHistory.date, size: 12)
@@ -39,6 +39,7 @@ struct HistoryBonus: View {
           }
           .padding([.trailing, .leading], 50)
         }
+        .padding([.trailing, .leading])
       }
     }
   }

@@ -13,7 +13,7 @@ struct ProfileAndPoinView: View {
       HStack {
         ZStack {
           RoundedRectangle(cornerRadius: 5)
-            .frame(width: 170, height: 170)
+            .frame(height: 170)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
           VStack(alignment: .leading) {
             HStack(alignment: .top) {
@@ -32,7 +32,7 @@ struct ProfileAndPoinView: View {
         ZStack {
           RoundedRectangle(cornerRadius: 5)
             .foregroundColor(.init(uiColor: UIColor(red: 0.153, green: 0.153, blue: 0.153, alpha: 1)))
-            .frame(width: 170, height: 170)
+            .frame(height: 170)
           VStack {
             MontserratText("567 баллов", size: 22, weight: .medium)
               .foregroundColor(.white)
@@ -44,6 +44,7 @@ struct ProfileAndPoinView: View {
           }
         }
       }
+      .padding([.trailing, .leading])
     }
 }
 

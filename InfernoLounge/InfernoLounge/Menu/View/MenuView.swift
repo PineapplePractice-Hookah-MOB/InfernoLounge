@@ -15,7 +15,7 @@ struct MenuView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       VStack(alignment: .leading) {
-        TopView()
+        TopView(name: "")
         MontserratText("Меню", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding(.leading)
@@ -50,12 +50,13 @@ struct MenuView: View {
           }
         }
         .frame(height: 33)
-        .padding(.leading)
+        .padding([.leading, .trailing])
         ScrollView(.vertical) {
           MenuProduct(
             selectedMenuCategory: viewModel.selectedMenuCategory,
             products: viewModel.selectedMenuCategory == 0 ? viewModel.filteredTeaProductsType : viewModel.filteredTeaProductsHookah
           )
+          .padding([.trailing, .leading])
           .padding(.top, 14)
         }
         Spacer()

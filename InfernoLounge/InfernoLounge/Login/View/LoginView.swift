@@ -40,41 +40,41 @@ struct LoginView: View {
               .fill(Color.white)
               .frame(height: 1), alignment: .bottom)
         }
-        .padding([.trailing, .leading])
-        .padding(.top, 36)
+          .padding([.trailing, .leading])
+          .padding(.top, 36)
         Button(action: {
           viewModel.checkUser()
           viewModel.showText = true
         }, label: {
-          ZStack {
-            RoundedRectangle(cornerRadius: 5)
-              .stroke(.white, lineWidth: 1)
-              .foregroundColor(.clear)
-              .frame(width: 278, height: 72)
             MontserratText("Вход", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
-          }
-        })
-        .padding(.top, 54)
+          })
+          .background {
+          RoundedRectangle(cornerRadius: 5)
+            .stroke(.white, lineWidth: 1)
+            .foregroundColor(.clear)
+            .frame(width: 278, height: 72)
+        }
+          .padding(.top, 54)
         Button(action: {
           viewModel.goToRegistration()
           viewModel.showText = false
         }, label: {
-          ZStack {
-            RoundedRectangle(cornerRadius: 5)
-              .foregroundColor(.white)
-              .frame(width: 278, height: 72)
-            MontserratText("Регистрация", size: 16)
-              .foregroundColor(.black)
-              .font(.system(size: 16, weight: .bold))
-          }
-        })
-        .padding(.top, 28)
+            ZStack {
+              RoundedRectangle(cornerRadius: 5)
+                .foregroundColor(.white)
+                .frame(width: 278, height: 72)
+              MontserratText("Регистрация", size: 16)
+                .foregroundColor(.black)
+                .font(.system(size: 16, weight: .bold))
+            }
+          })
+          .padding(.top, 28)
         Spacer()
       }
     }
-    .ignoresSafeArea()
+      .ignoresSafeArea()
   }
 }
 

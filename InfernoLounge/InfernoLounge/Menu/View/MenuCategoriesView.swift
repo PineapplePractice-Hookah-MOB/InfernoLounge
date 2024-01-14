@@ -18,7 +18,7 @@ struct MenuCategoriesView: View {
   var body: some View {
     ZStack {
       RoundedRectangle(cornerRadius: 1)
-        .frame(width: 170, height: 77)
+        .frame(height: 77)
         .background(isActive ? .white : Color(uiColor: .dark))
       HStack(spacing: 14) {
         MontserratText(name, size: 20, weight: .medium)
