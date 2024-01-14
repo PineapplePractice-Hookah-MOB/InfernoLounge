@@ -25,6 +25,6 @@ final class RegistrationViewModel: ObservableObject {
   private let apiManager = ApiManager()
 
   func postRegistration() {
-    apiManager.postRegistration(email: email, name: name, birthday: birthDay)
+    apiManager.postRegistration(email: email, name: name, birthday: birthDay, phone: confirmPassword, password: password)
   }
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 enum ApiPath: String {
   case postTable = "http://213.219.212.47:9000/api/booking"
-  case postRegistration = "http://213.219.212.47:9000/api/users"
+  case postRegistration = "http://213.219.212.47:9000/api/auth/register"
   case getUsers = "http://213.219.212.47:9000/api/users/all?from=0&size=5"
   case getUser = "http://213.219.212.47:9000/api/users/"
 }
@@ -47,9 +47,9 @@ final class ApiManager {
     task.resume()
   }
 
-  func postRegistration(email: String, name: String, birthday: String) {
+  func postRegistration(email: String, name: String, birthday: String, phone: String, password: String) {
 
-    let parameters = "{\n    \"email\": \"\(email)\",\n    \"login\": \"\(name)\",\n    \"birthday\": \"\(birthday)\"\n}"
+    let parameters = "{\n    \"name\" : \"\(name)\",\n    \"phone\" : \"\(phone)\",\n    \"birthday\" : \"\(birthday)\",\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n"
     let postData = parameters.data(using: .utf8)
 
     var request = URLRequest(url: URL(string: ApiPath.postRegistration.rawValue)!,timeoutInterval: Double.infinity)
@@ -77,12 +77,13 @@ final class ApiManager {
 
       return URLSession.shared.dataTaskPublisher(for: url)
           .map(\.data)
-          .decode(type: [User].self, decoder: JSONDecoder())
+          .decode(type: [User].self, decoder: decoder)
           .catch { error in
             Just([User()]) }
           .receive(on: RunLoop.main)
           .eraseToAnyPublisher()
   }
+  
   func getuser(userId: Int) -> AnyPublisher<User, Never> {
     let link = ApiPath.getUser.rawValue
       guard let url = URL(string: link + "\(userId)") else {

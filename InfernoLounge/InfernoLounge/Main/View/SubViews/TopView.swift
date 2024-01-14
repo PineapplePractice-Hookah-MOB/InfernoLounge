@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct TopView: View {
+
+  var name: String
   var body: some View {
       HStack {
         Image("logo")
         Spacer()
         VStack {
           Image("profile")
-          MontserratText("Андрей", size: 17, weight: .medium)
+          MontserratText(name, size: 17, weight: .medium)
             .foregroundColor(.white)
         }
       }
@@ -23,5 +25,5 @@ struct TopView: View {
 }
 
 #Preview {
-  TopView()
+  TopView(name: "Андрей")
 }

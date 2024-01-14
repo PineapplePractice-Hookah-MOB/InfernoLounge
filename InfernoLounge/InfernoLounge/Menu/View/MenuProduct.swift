@@ -13,15 +13,15 @@ struct MenuProduct: View {
   var products: [MenuProducts]
 
   var body: some View {
-    LazyVGrid(columns: [GridItem(.fixed(170)), GridItem(.fixed(170))], content: {
+    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], content: {
       ForEach(products, id: \.id) { menuProduct in
           ZStack {
             RoundedRectangle(cornerRadius: 10)
               .stroke(lineWidth: 1)
-              .frame(width: 170, height: 170)
+              .frame(height: 170)
             VStack(spacing: 10) {
               Image(selectedMenuCategory == 0 ? menuProduct.image ?? "menuPlaceHolder" : menuProduct.image ?? "Кольяны")
-                .foregroundColor(.white)
+                .foregroundStyle(.white)
                 .padding(.top)
               MontserratText(menuProduct.name, size: 14)
                 .foregroundColor(.white)

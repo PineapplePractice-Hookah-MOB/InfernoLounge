@@ -16,8 +16,9 @@ struct SaleView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       VStack {
-        TopView()
+        TopView(name: "")
         SaleScrollView(sales: $viewModel.sales)
+          .padding([.trailing, .leading], 20)
         Spacer()
       }
     }

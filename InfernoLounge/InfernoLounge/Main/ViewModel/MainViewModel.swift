@@ -19,8 +19,10 @@ final class MainViewModel: ObservableObject {
   private let api = ApiManager()
   private var cancellable = Set<AnyCancellable>()
 
-  @Published var sale: [Sale] = [Sale(id: 1, sale: "Дневная чашка за 600р. - с 15:00 до 19:00.", price: "600"), Sale(id: 2, sale: "Дневная чашка за 600р. - с 15:00 до 19:00.", price: "600"), Sale(id: 3, sale: "Дневная чашка за 600р. - с 15:00 до 19:00.", price: "600")]
-@Published var user = User()
+  @Published var sale: [Sale] = [Sale(id: 1, sale: "Дневная чашка", price: "600", time: "с 15:00 до 19:00."), Sale(id: 2, sale: "Дневная чашка", price: "600", time: "с 15:00 до 19:00."), Sale(id: 3, sale: "Дневная чашка", price: "600", time: "с 15:00 до 19:00.")]
+
+  @Published var user = User()
+
   func toSale() {
     coordinator.toSale()
   }
@@ -32,12 +34,12 @@ final class MainViewModel: ObservableObject {
 
 extension MainViewModel {
   private func getUser() {
-    api.getuser(userId: 1)
+    api.getuser(userId: user.id)
       .receive(on: DispatchQueue.main)
       .sink { [weak self] user in
-        self?.user = user
-        print(self?.user)
-      }
+      self?.user = user
+        print(user)
+    }
       .store(in: &cancellable)
   }
 }

@@ -15,16 +15,15 @@ struct MainView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       VStack(alignment: .leading) {
-        TopView()
+        TopView(name: viewModel.user.name ?? "")
           .padding(.top, 14)
-        MontserratText("Бонусы", size: 25, weight: .bold)
-          .foregroundColor(.white)
-          .padding(.leading, 20)
-          .padding(.top, 90)
+
         PointView()
           .onTapGesture {
             viewModel.toBonusHistory()
           }
+          .padding(.top, 106)
+          .padding([.trailing, .leading], 20)
         MontserratText("Акции", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding([.top, .leading], 20)

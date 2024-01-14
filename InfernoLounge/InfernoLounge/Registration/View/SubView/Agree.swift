@@ -10,8 +10,7 @@ import SwiftUI
 struct Agree: View {
 
   @EnvironmentObject var vm: RegistrationViewModel
-//  @State var isTap: Bool
-//  @State var buttonDisabled: Bool
+  
   var body: some View {
     ZStack {
       HStack {

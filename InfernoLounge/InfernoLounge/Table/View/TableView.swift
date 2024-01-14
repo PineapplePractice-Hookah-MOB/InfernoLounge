@@ -20,7 +20,7 @@ struct TableView: View {
         .ignoresSafeArea()
       VStack {
         VStack(alignment: .leading) {
-          TopView()
+          TopView(name: "")
           MontserratText("Забронировать столик", size: 25, weight: .bold)
             .foregroundColor(.white)
             .padding(.top, 20)
