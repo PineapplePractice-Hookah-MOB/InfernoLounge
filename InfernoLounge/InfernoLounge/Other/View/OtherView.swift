@@ -21,7 +21,12 @@ struct OtherView: View {
         ProfileAndPoinView()
           .padding(.top, 30)
         OtherElement(image: "mail", text: "Оставьте отзыв")
-        
+          .onTapGesture {
+          viewModel.isPresenting = true
+        }
+          .sheet(isPresented: $viewModel.isPresenting, content: {
+            FeedbackView(feedback: viewModel.feedback, postFunction: viewModel.postFeedback)
+        })
         OtherElement(image: "phone", text: "Контакты")
         OtherElement(image: "quit", text: "Выйти")
         Spacer()
