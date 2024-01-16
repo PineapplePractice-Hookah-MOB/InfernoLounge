@@ -50,9 +50,6 @@ struct TableView: View {
           })
             .frame(height: 45)
             .padding([.trailing, .leading])
-            .sheet(isPresented: $viewModel.datePickerSheetPresenting, content: {
-            DatePickerView(date: $viewModel.selectedDate)
-          })
           MontserratText("Количество гостей", size: 16, weight: .heavy)
             .foregroundColor(.white)
             .padding([.trailing, .leading, .top])

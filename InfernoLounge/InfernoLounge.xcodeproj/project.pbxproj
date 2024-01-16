@@ -75,6 +75,7 @@
 		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
 		7F8719E12B4ADC060016249F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719E02B4ADC060016249F /* User.swift */; };
 		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
+		7FF20CA12B53CAF100753065 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF20CA02B53CAF100753065 /* FeedbackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +148,7 @@
 		7F8719DA2B49432A0016249F /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
 		7F8719E02B4ADC060016249F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7FF20CA02B53CAF100753065 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			children = (
 				7F27BE672AFBEB56005E5E39 /* ProfileAndPoinView.swift */,
 				7F27BE692AFBF902005E5E39 /* OtherElement.swift */,
+				7FF20CA02B53CAF100753065 /* FeedbackView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				7F27BE742AFC1439005E5E39 /* BonusHistory.swift in Sources */,
 				7F6984932AF26D7B0017720B /* MenuEnums.swift in Sources */,
 				7F6984722AED9E130017720B /* TableViewModel.swift in Sources */,
+				7FF20CA12B53CAF100753065 /* FeedbackView.swift in Sources */,
 				7F2273072AADFBD70036BC9C /* AppCoordinator.swift in Sources */,
 				7F6984782AEE37F00017720B /* PickerPeopleCountView.swift in Sources */,
 				7F69849E2AF586E90017720B /* OtherViewModel.swift in Sources */,
@@ -857,8 +861,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -885,8 +888,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
