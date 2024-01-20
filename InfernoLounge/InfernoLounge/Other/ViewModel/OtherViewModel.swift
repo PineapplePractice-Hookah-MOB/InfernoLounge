@@ -17,8 +17,14 @@ final class OtherViewModel: ObservableObject {
 
   @Published var feedback: String = ""
   @Published var isPresenting: Bool = false
+  @Published var answer = ""
 
   func postFeedback() {
-    apiManager.postFeedback( userId: "1", text: feedback)
+    answer = apiManager.postFeedback( userId: "1", text: feedback)
+  }
+
+  func makeAPhoneCall() {
+  let url: NSURL = URL(string: "TEL://80256369099")! as NSURL
+  UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
   }
 }

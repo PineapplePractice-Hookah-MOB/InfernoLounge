@@ -15,3 +15,7 @@ struct CreateBooking: Encodable {
   let bookedFrom: String
   let bookedTill: String
 }
+
+struct ReservTable: Decodable {
+  let answer: String
+}

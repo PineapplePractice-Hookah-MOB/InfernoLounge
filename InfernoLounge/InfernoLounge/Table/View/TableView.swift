@@ -13,6 +13,7 @@ struct TableView: View {
   @StateObject var viewModel: TableViewModel
   @State var date = Date.self
   @State var buttonDisabled = false
+  @State var showAlert = false
 
   var body: some View {
     ZStack {
@@ -66,18 +67,19 @@ struct TableView: View {
         }
         Button(action: {
           viewModel.postTable()
+          showAlert.toggle()
         }, label: {
-              MontserratText("Забронировать", size: 16)
-            .foregroundColor(buttonDisabled == false ? .white : .gray)
-                .font(.system(size: 16, weight: .bold))
+            MontserratText("Забронировать", size: 16)
+              .foregroundColor(buttonDisabled == false ? .white : .gray)
+              .font(.system(size: 16, weight: .bold))
           })
-        .frame(width: 278)
+          .frame(width: 278)
           .background {
-            buttonDisabled == false ? RoundedRectangle(cornerRadius: 5)
-              .stroke()
-              .foregroundStyle(.white) : RoundedRectangle(cornerRadius: 5)
-              .stroke()
-              .foregroundStyle(.gray)
+          buttonDisabled == false ? RoundedRectangle(cornerRadius: 5)
+            .stroke()
+            .foregroundStyle(.white): RoundedRectangle(cornerRadius: 5)
+            .stroke()
+            .foregroundStyle(.gray)
           Spacer()
           HStack {
             Image("left")
@@ -91,6 +93,11 @@ struct TableView: View {
         }
           .padding([.bottom], 60)
           .disabled(viewModel.buttonDisabled)
+          .alert("", isPresented: $showAlert) {
+            Button("OK") { }
+          } message: {
+            MontserratText(viewModel.answerServer, size: 15)
+          }
       }
     }
   }

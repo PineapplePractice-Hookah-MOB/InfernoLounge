@@ -72,7 +72,6 @@
 		7F69849A2AF586CE0017720B /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6984992AF586CE0017720B /* OtherView.swift */; };
 		7F69849E2AF586E90017720B /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849D2AF586E90017720B /* OtherViewModel.swift */; };
 		7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849F2AF586FD0017720B /* OtherCoordinator.swift */; };
-		7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DA2B49432A0016249F /* CalendarDate.swift */; };
 		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
 		7F8719E12B4ADC060016249F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719E02B4ADC060016249F /* User.swift */; };
 		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
@@ -150,7 +149,6 @@
 		7F6984992AF586CE0017720B /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
 		7F69849D2AF586E90017720B /* OtherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
 		7F69849F2AF586FD0017720B /* OtherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCoordinator.swift; sourceTree = "<group>"; };
-		7F8719DA2B49432A0016249F /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
 		7F8719E02B4ADC060016249F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FE809602B570C0F00B94633 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -439,7 +437,6 @@
 				7F6984962AF57E040017720B /* Menu.swift */,
 				7F27BE732AFC1439005E5E39 /* BonusHistory.swift */,
 				7F294BC12B35B0630020C17E /* CreateBooking.swift */,
-				7F8719DA2B49432A0016249F /* CalendarDate.swift */,
 				7F8719E02B4ADC060016249F /* User.swift */,
 				7FE809622B57113400B94633 /* Token.swift */,
 				7F24D11A2B5864E400B08945 /* JWT.swift */,
@@ -707,7 +704,6 @@
 				7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */,
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
 				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
-				7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */,
 				7FE809632B57113400B94633 /* Token.swift in Sources */,
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,

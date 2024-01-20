@@ -13,6 +13,7 @@ struct RegistationDetails: View {
   @Binding var dateOfBirthday: String
   @Binding var password: String
   @Binding var confirmPassword: String
+  var text: String
 
     var body: some View {
       VStack(spacing: 35) {
@@ -39,6 +40,8 @@ struct RegistationDetails: View {
               .fill(Color.white)
               .frame(height: 1), alignment: .bottom)
         }
+        MontserratText(text, size: 15)
+          .foregroundStyle(.red)
       }
     }
 }
