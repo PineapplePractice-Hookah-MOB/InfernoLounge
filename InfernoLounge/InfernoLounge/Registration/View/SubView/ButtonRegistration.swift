@@ -11,12 +11,15 @@ struct ButtonRegistration: View {
 
   @Environment(\.dismiss) var dismiss
   let disabled: Bool
-  var function: () -> ()
+  var function: () -> Bool
 
     var body: some View {
       Button(action: {
-        function()
-        dismiss.callAsFunction()
+        if function() {
+          dismiss.callAsFunction()
+        } else {
+          
+        }
               }, label: {
             MontserratText("Далее", size: 16)
               .foregroundColor(.white)

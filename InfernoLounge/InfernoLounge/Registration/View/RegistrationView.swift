@@ -26,7 +26,7 @@ struct RegistationView: View {
                            name: $viewModel.name,
                            dateOfBirthday: $viewModel.birthDay,
                            password: $viewModel.password,
-                           confirmPassword: $viewModel.confirmPassword)
+                           confirmPassword: $viewModel.confirmPassword, text: viewModel.checkPassword)
         .padding([.trailing, .leading])
         Agree()
           .environmentObject(viewModel)

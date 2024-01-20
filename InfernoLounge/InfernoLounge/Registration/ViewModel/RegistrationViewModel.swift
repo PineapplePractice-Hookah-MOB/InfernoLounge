@@ -20,11 +20,18 @@ final class RegistrationViewModel: ObservableObject {
   @Published var confirmPassword = ""
   @Published var buttonDisabled: Bool = true
   @Published var tapAgree: Bool = false
+  @Published var checkPassword: String = ""
 
   private let coordinator: RegistrationCoordinator
   private let apiManager = ApiManager()
 
-  func postRegistration() {
-    apiManager.postRegistration(email: email, name: name, birthday: birthDay, phone: confirmPassword, password: password)
+  func postRegistration() -> Bool {
+    if password == confirmPassword {
+      apiManager.postRegistration(email: email, name: name, birthday: birthDay, phone: confirmPassword, password: password)
+      return true
+    } else {
+      checkPassword = "Пороли не совпадают"
+      return false
+    }
   }
 }

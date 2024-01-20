@@ -11,6 +11,7 @@ struct OtherView: View {
 
   @StateObject var viewModel: OtherViewModel
   @Environment(\.openURL) var openURL
+  @State private var sheetShown = false
 
   var body: some View {
     ZStack {
@@ -23,11 +24,15 @@ struct OtherView: View {
         OtherElement(image: "mail", text: "Оставьте отзыв")
           .onTapGesture {
           viewModel.isPresenting = true
+
         }
           .sheet(isPresented: $viewModel.isPresenting, content: {
             FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback)
         })
         OtherElement(image: "phone", text: "Контакты")
+          .onTapGesture {
+            viewModel.makeAPhoneCall()
+          }
         OtherElement(image: "quit", text: "Выйти")
         Spacer()
         MontserratText("Мы в соц. сетях", size: 14, weight: .medium)
@@ -40,7 +45,13 @@ struct OtherView: View {
             Image("vko")
           }
           Image("insta")
+            .onTapGesture {
+              openURL(URL(string: "https://www.instagram.com/inferno_arh/")!)
+            }
           Image("fb")
+            .onTapGesture {
+              openURL(URL(string: "https://www.facebook.com/inferno.hookah.bar/")!)
+            }
         }
           .padding(.bottom, 109)
       }
