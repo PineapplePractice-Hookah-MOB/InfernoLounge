@@ -21,9 +21,9 @@ final class MainCoordinator: Coordinator {
     pickViewController.tabBarItem.selectedImage = UIImage(named: "tapMain")
   }
 
-  func toSale() {
+  func toSale(user: User) {
     let saleCoordinator = SaleCoordinator()
-    saleCoordinator.start()
+    saleCoordinator.startUser(user: user)
     childCoordinators.append(saleCoordinator)
     let vc = saleCoordinator.rootViewController
     self.rootViewController.navigationController?.pushViewController(vc, animated: true)

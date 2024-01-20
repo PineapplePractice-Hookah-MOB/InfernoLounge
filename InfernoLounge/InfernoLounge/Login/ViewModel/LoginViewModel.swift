@@ -34,21 +34,23 @@ final class LoginViewModel: ObservableObject {
 }
 
 extension LoginViewModel {
+
   private func getUsers() {
     api.getUsers()
       .receive(on: DispatchQueue.main)
       .sink { [weak self] users in
       self?.users = users
-      print(self?.users)
     }
       .store(in: &cancellable)
   }
 
-  func checkUser() {
+  func postAuth() {
     for user in users {
       if login != user.email {
+        showText.toggle()
       } else {
-    goToMain()
+        api.postAuth(email: login, password: password)
+        goToMain()
       }
     }
   }

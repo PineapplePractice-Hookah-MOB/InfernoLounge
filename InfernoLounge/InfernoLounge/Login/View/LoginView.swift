@@ -25,6 +25,7 @@ struct LoginView: View {
           .foregroundColor(.white)
           .padding(.top, 62)
         CustomTextField(placeHolder: "Логин", text: $viewModel.login)
+          .keyboardType(.emailAddress)
           .padding(.top, 50)
           .padding([.trailing, .leading])
         MontserratText("Проверьте логин или пароль, либо зарегистрируйтесь", size: 12)
@@ -43,7 +44,7 @@ struct LoginView: View {
           .padding([.trailing, .leading])
           .padding(.top, 36)
         Button(action: {
-          viewModel.checkUser()
+          viewModel.postAuth()
           viewModel.showText = true
         }, label: {
             MontserratText("Вход", size: 16)

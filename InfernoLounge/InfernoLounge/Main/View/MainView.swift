@@ -15,7 +15,7 @@ struct MainView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       VStack(alignment: .leading) {
-        TopView(name: viewModel.user.name ?? "")
+        TopView(name: viewModel.user.login)
           .padding(.top, 14)
 
         PointView()

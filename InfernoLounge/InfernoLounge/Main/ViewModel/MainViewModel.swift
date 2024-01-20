@@ -12,7 +12,10 @@ final class MainViewModel: ObservableObject {
 
   init(coordinator: MainCoordinator) {
     self.coordinator = coordinator
-    getUser()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+      self.getUser()
+    }))
+
   }
 
   private let coordinator: MainCoordinator
@@ -24,7 +27,7 @@ final class MainViewModel: ObservableObject {
   @Published var user = User()
 
   func toSale() {
-    coordinator.toSale()
+    coordinator.toSale(user: user)
   }
 
   func toBonusHistory() {
@@ -34,7 +37,7 @@ final class MainViewModel: ObservableObject {
 
 extension MainViewModel {
   private func getUser() {
-    api.getuser(userId: user.id)
+    api.getuser()
       .receive(on: DispatchQueue.main)
       .sink { [weak self] user in
       self?.user = user

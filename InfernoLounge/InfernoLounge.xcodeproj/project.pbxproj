@@ -15,6 +15,7 @@
 		7F2273102AADFDD10036BC9C /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F22730F2AADFDD10036BC9C /* LoginCoordinator.swift */; };
 		7F2273122AADFE410036BC9C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2273112AADFE410036BC9C /* LoginViewModel.swift */; };
 		7F2273142AADFE960036BC9C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2273132AADFE960036BC9C /* LoginView.swift */; };
+		7F24D11B2B5864E400B08945 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F24D11A2B5864E400B08945 /* JWT.swift */; };
 		7F27BE682AFBEB56005E5E39 /* ProfileAndPoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE672AFBEB56005E5E39 /* ProfileAndPoinView.swift */; };
 		7F27BE6A2AFBF902005E5E39 /* OtherElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE692AFBF902005E5E39 /* OtherElement.swift */; };
 		7F27BE6D2AFC0115005E5E39 /* BonusHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F27BE6C2AFC0115005E5E39 /* BonusHistoryView.swift */; };
@@ -75,6 +76,9 @@
 		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
 		7F8719E12B4ADC060016249F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719E02B4ADC060016249F /* User.swift */; };
 		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
+		7FD313922B57EFDE008C2EEA /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD313912B57EFDE008C2EEA /* SwiftKeychainWrapper */; };
+		7FE809612B570C0F00B94633 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE809602B570C0F00B94633 /* KeychainHelper.swift */; };
+		7FE809632B57113400B94633 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE809622B57113400B94633 /* Token.swift */; };
 		7FF20CA12B53CAF100753065 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF20CA02B53CAF100753065 /* FeedbackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,7 @@
 		7F22730F2AADFDD10036BC9C /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		7F2273112AADFE410036BC9C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7F2273132AADFE960036BC9C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		7F24D11A2B5864E400B08945 /* JWT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
 		7F27BE672AFBEB56005E5E39 /* ProfileAndPoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAndPoinView.swift; sourceTree = "<group>"; };
 		7F27BE692AFBF902005E5E39 /* OtherElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherElement.swift; sourceTree = "<group>"; };
 		7F27BE6C2AFC0115005E5E39 /* BonusHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusHistoryView.swift; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 		7F8719DA2B49432A0016249F /* CalendarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDate.swift; sourceTree = "<group>"; };
 		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
 		7F8719E02B4ADC060016249F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7FE809602B570C0F00B94633 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		7FE809622B57113400B94633 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7FF20CA02B53CAF100753065 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD313922B57EFDE008C2EEA /* SwiftKeychainWrapper in Frameworks */,
 				7FA039A72B41615B000F2388 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +238,7 @@
 				7F2273092AADFBE50036BC9C /* Protocols */,
 				7F5A758A2AE3AB70006BD516 /* CustomTextField.swift */,
 				7F5A758C2AE3AF1B006BD516 /* MontserratText.swift */,
+				7FE809602B570C0F00B94633 /* KeychainHelper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -432,6 +441,8 @@
 				7F294BC12B35B0630020C17E /* CreateBooking.swift */,
 				7F8719DA2B49432A0016249F /* CalendarDate.swift */,
 				7F8719E02B4ADC060016249F /* User.swift */,
+				7FE809622B57113400B94633 /* Token.swift */,
+				7F24D11A2B5864E400B08945 /* JWT.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -593,6 +604,7 @@
 			name = InfernoLounge;
 			packageProductDependencies = (
 				7FA039A62B41615B000F2388 /* Alamofire */,
+				7FD313912B57EFDE008C2EEA /* SwiftKeychainWrapper */,
 			);
 			productName = InfernoLounge;
 			productReference = 7F2272ED2AADFAD40036BC9C /* InfernoLounge.app */;
@@ -624,6 +636,7 @@
 			mainGroup = 7F2272E42AADFAD40036BC9C;
 			packageReferences = (
 				7FA039A52B41615B000F2388 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7FD313902B57EFDE008C2EEA /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 7F2272EE2AADFAD40036BC9C /* Products */;
 			projectDirPath = "";
@@ -655,10 +668,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F24D11B2B5864E400B08945 /* JWT.swift in Sources */,
 				7F27BE912AFEAABB005E5E39 /* TabBarViewModel.swift in Sources */,
 				7F22730B2AADFBF60036BC9C /* Coordinator.swift in Sources */,
 				7F27BEA52B0695A1005E5E39 /* CustomTabBarController.swift in Sources */,
 				7F27BE862AFC2019005E5E39 /* ExtColor.swift in Sources */,
+				7FE809612B570C0F00B94633 /* KeychainHelper.swift in Sources */,
 				7F5A75BA2AE4FF7A006BD516 /* SaleCoordinator.swift in Sources */,
 				7F6984952AF57D6A0017720B /* MenuProduct.swift in Sources */,
 				7F6984892AEE47B20017720B /* MenuView.swift in Sources */,
@@ -693,6 +708,7 @@
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
 				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
 				7F8719DB2B49432A0016249F /* CalendarDate.swift in Sources */,
+				7FE809632B57113400B94633 /* Token.swift in Sources */,
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,
 				7F2273122AADFE410036BC9C /* LoginViewModel.swift in Sources */,
@@ -934,6 +950,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		7FD313902B57EFDE008C2EEA /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -941,6 +965,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7FA039A52B41615B000F2388 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		7FD313912B57EFDE008C2EEA /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FD313902B57EFDE008C2EEA /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

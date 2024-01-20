@@ -13,9 +13,16 @@ final class SaleCoordinator: Coordinator {
   var childCoordinators: [Coordinator] = []
 
   func start() {
-    let vm = SaleViewModel(coordinator: self)
+    let vm = SaleViewModel(coordinator: self, user: User())
     let pickViewController = UIHostingController(rootView: SaleView(viewModel: vm))
+    rootViewController = pickViewController
+    pickViewController.tabBarItem.image = UIImage(named: "sale")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapSale")
+  }
 
+  func startUser(user: User) {
+    let vm = SaleViewModel(coordinator: self, user: user)
+    let pickViewController = UIHostingController(rootView: SaleView(viewModel: vm))
     rootViewController = pickViewController
     pickViewController.tabBarItem.image = UIImage(named: "sale")
     pickViewController.tabBarItem.selectedImage = UIImage(named: "tapSale")
