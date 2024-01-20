@@ -27,5 +27,5 @@ struct SaleView: View {
 }
 
 #Preview {
-  SaleView(viewModel: SaleViewModel(coordinator: SaleCoordinator()))
+  SaleView(viewModel: SaleViewModel(coordinator: SaleCoordinator(), user: User()))
 }

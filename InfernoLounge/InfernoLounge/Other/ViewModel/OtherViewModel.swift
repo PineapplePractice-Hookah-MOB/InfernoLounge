@@ -17,9 +17,8 @@ final class OtherViewModel: ObservableObject {
 
   @Published var feedback: String = ""
   @Published var isPresenting: Bool = false
-  @Published var userId = 1
 
   func postFeedback() {
-    apiManager.postFeedback(userId: "\(userId)", text: feedback)
+    apiManager.postFeedback( userId: "1", text: feedback)
   }
 }

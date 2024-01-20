@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedbackView: View {
 
   @Environment(\.dismiss) var dismiss
-  @State var feedback: String
+  @Binding var feedback: String
   var postFunction: () -> ()
 
   var body: some View {

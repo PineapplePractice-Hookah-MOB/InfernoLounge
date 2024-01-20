@@ -24,7 +24,7 @@ final class TableViewModel: ObservableObject {
   let peopleCount = ["1 человек", "2 человека", "3 человека", "4 человека", "5 человек", "6 и более человек"]
   let days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
 
-  var tableId: Int = 1
+  var tableId: Int = 2
 }
 
 extension TableViewModel {

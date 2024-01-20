@@ -25,7 +25,7 @@ struct OtherView: View {
           viewModel.isPresenting = true
         }
           .sheet(isPresented: $viewModel.isPresenting, content: {
-            FeedbackView(feedback: viewModel.feedback, postFunction: viewModel.postFeedback)
+            FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback)
         })
         OtherElement(image: "phone", text: "Контакты")
         OtherElement(image: "quit", text: "Выйти")
