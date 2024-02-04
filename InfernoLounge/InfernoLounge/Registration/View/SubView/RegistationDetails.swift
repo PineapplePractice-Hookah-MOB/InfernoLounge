@@ -19,7 +19,7 @@ struct RegistationDetails: View {
       VStack(spacing: 35) {
         CustomTextField(placeHolder: "Введите email", text: $email)
         CustomTextField(placeHolder: "Введите имя", text: $name)
-        CustomTextField(placeHolder: "Введите дату рождения", text: $dateOfBirthday)
+        CustomTextField(placeHolder: "2020-11-22", text: $dateOfBirthday)
         VStack(alignment: .center) {
           SecureField("", text: $password, prompt: Text("Пароль").foregroundColor(.gray))
             .foregroundColor(.white)

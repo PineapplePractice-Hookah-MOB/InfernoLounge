@@ -16,13 +16,14 @@ struct MainView: View {
         .ignoresSafeArea()
       VStack(alignment: .leading) {
         TopView(name: viewModel.user.login)
-          .padding(.top, 14)
-
+        InfoReservationView(text: viewModel.reservationText)
+          .padding([.trailing, .leading], 20)
+          .padding(.top, viewModel.reservationText == "" ? 0 : 30)
         PointView()
           .onTapGesture {
             viewModel.toBonusHistory()
           }
-          .padding(.top, 106)
+          .padding(.top, viewModel.reservationText == "" ? 106 : 20)
           .padding([.trailing, .leading], 20)
         MontserratText("Акции", size: 25, weight: .bold)
           .foregroundColor(.white)
@@ -31,10 +32,16 @@ struct MainView: View {
           .onTapGesture {
           viewModel.toSale()
         }
-          .padding(.leading, 10)
-          .padding(.top)
+          .padding([.trailing,.leading], 20)
+          .padding(.top, 20)
         Spacer()
       }
+    }
+    .onAppear {
+        viewModel.getUserTableReservation()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
+        viewModel.checkReservation()
+      }))
     }
   }
 }

@@ -15,7 +15,7 @@ struct MenuView: View {
       Color(uiColor: .darkBackground)
         .ignoresSafeArea()
       VStack(alignment: .leading) {
-        TopView(name: "")
+        TopView(name: viewModel.user.login)
         MontserratText("Меню", size: 25, weight: .bold)
           .foregroundColor(.white)
           .padding(.leading)

@@ -20,6 +20,8 @@ struct SaleScrollView: View {
             RoundedRectangle(cornerRadius: 5)
               .frame(width: UIScreen.main.bounds.width - 40, height: 140)
               .foregroundColor(Color(uiColor: .dark))
+            Image(sale.photo)
+              .resizable()
             VStack {
               HStack {
                 MontserratText("\(sale.sale)", size: 15)
@@ -38,8 +40,18 @@ struct SaleScrollView: View {
             }
             .padding([.top, .bottom])
           }
+          .scrollTransition (.interactive) { content, phase in
+            content
+              .scaleEffect (phase.isIdentity ? 1.0 : 0.2)
+              .opacity (phase.isIdentity ? 1: 0.5)
+              .rotation3DEffect ( Angle.degrees (phase .isIdentity ? 0: 90),
+                                  axis: (x: 0.5, y: 0.0, z: 0.1))
+              .offset(x: phase.value * -200)
+          }
         }
       })
+      .scrollTargetLayout ()
     }
+    .scrollTargetBehavior (.viewAligned)
   }
 }

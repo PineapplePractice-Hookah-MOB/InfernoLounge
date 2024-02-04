@@ -12,6 +12,7 @@ struct Sale {
   let sale: String
   let price: String
   let time: String
+  let photo: String
 }
 
 

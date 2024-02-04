@@ -21,7 +21,7 @@ struct TableView: View {
         .ignoresSafeArea()
       VStack {
         VStack(alignment: .leading) {
-          TopView(name: "")
+          TopView(name: viewModel.user.login)
           MontserratText("Забронировать столик", size: 25, weight: .bold)
             .foregroundColor(.white)
             .padding(.top, 20)
@@ -67,7 +67,9 @@ struct TableView: View {
         }
         Button(action: {
           viewModel.postTable()
-          showAlert.toggle()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+            showAlert.toggle()
+          }))
         }, label: {
             MontserratText("Забронировать", size: 16)
               .foregroundColor(buttonDisabled == false ? .white : .gray)

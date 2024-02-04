@@ -19,7 +19,7 @@ struct BonusHistoryView: View {
           Image("wlogo")
           Image("profileBonus")
             .padding(.top, 30)
-          MontserratText("Андрей", size: 25, weight: .medium)
+          MontserratText(viewModel.user.login, size: 25, weight: .medium)
             .foregroundColor(.white)
           SaleAndBonusInfo()
             .padding(.top, 20)
