@@ -18,6 +18,11 @@ struct TopView: View {
           Image("profile")
           MontserratText(name, size: 17, weight: .medium)
             .foregroundColor(.white)
+            .overlay {
+              if name == "" {
+                ProgressView()
+              }
+            }
         }
       }
       .padding()

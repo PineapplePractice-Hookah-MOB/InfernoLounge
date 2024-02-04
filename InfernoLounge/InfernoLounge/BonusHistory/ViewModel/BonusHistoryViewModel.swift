@@ -11,10 +11,15 @@ final class BonusHistoryViewModel: ObservableObject {
   
   init(coordinator: BonusHistoryCoordinator) {
     self.coordinator = coordinator
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
+      self.user = SinletonUser.shared.user
+    }))
+
   }
 
   private let coordinator: BonusHistoryCoordinator
 
+  @Published var user = User()
   @Published var bonusHistory: [BonusHistory] = [BonusHistory(id: 1, date: "01.11.2023", summ: "2500p", countBonus: "-75"),
                                       BonusHistory(id: 2, date: "02.11.2023", summ: "500p", countBonus: "+75"),
                                       BonusHistory(id: 3, date: "03.11.2023", summ: "1500p", countBonus: "-5"),

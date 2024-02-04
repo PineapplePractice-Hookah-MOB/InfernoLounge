@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 final class OtherViewModel: ObservableObject {
   init(coordinator: OtherCoordinator) {
     self.coordinator = coordinator
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
+      self.user = SinletonUser.shared.user
+    }))
   }
   
   private let coordinator: OtherCoordinator
@@ -18,9 +22,15 @@ final class OtherViewModel: ObservableObject {
   @Published var feedback: String = ""
   @Published var isPresenting: Bool = false
   @Published var answer = ""
+  @Published var user = User()
 
   func postFeedback() {
-    answer = apiManager.postFeedback( userId: "1", text: feedback)
+      apiManager.postFeedback(userId: "\(user.id)", text: self.feedback) { [weak self] answer in
+        DispatchQueue.main.async {
+          self?.answer = answer
+        }
+      }
+
   }
 
   func makeAPhoneCall() {

@@ -37,7 +37,7 @@
 		7F294BBA2B35AA340020C17E /* TopViewRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BB92B35AA340020C17E /* TopViewRegistration.swift */; };
 		7F294BBC2B35AB540020C17E /* RegistationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBB2B35AB540020C17E /* RegistationDetails.swift */; };
 		7F294BBE2B35AE090020C17E /* ButtonRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */; };
-		7F294BC22B35B0630020C17E /* CreateBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BC12B35B0630020C17E /* CreateBooking.swift */; };
+		7F294BC22B35B0630020C17E /* TableReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BC12B35B0630020C17E /* TableReservation.swift */; };
 		7F294BC52B35B1450020C17E /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F294BC42B35B1450020C17E /* ApiManager.swift */; };
 		7F5A75832AE3AAF2006BD516 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */; };
 		7F5A75872AE3AB15006BD516 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */; };
@@ -74,6 +74,7 @@
 		7F6984A02AF586FD0017720B /* OtherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F69849F2AF586FD0017720B /* OtherCoordinator.swift */; };
 		7F8719DF2B4A95BD0016249F /* ExtDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719DE2B4A95BD0016249F /* ExtDate.swift */; };
 		7F8719E12B4ADC060016249F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8719E02B4ADC060016249F /* User.swift */; };
+		7F93EB512B6689AE007168DB /* InfoReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F93EB502B6689AE007168DB /* InfoReservationView.swift */; };
 		7FA039A72B41615B000F2388 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA039A62B41615B000F2388 /* Alamofire */; };
 		7FD313922B57EFDE008C2EEA /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD313912B57EFDE008C2EEA /* SwiftKeychainWrapper */; };
 		7FE809612B570C0F00B94633 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE809602B570C0F00B94633 /* KeychainHelper.swift */; };
@@ -114,7 +115,7 @@
 		7F294BB92B35AA340020C17E /* TopViewRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewRegistration.swift; sourceTree = "<group>"; };
 		7F294BBB2B35AB540020C17E /* RegistationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistationDetails.swift; sourceTree = "<group>"; };
 		7F294BBD2B35AE090020C17E /* ButtonRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRegistration.swift; sourceTree = "<group>"; };
-		7F294BC12B35B0630020C17E /* CreateBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBooking.swift; sourceTree = "<group>"; };
+		7F294BC12B35B0630020C17E /* TableReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableReservation.swift; sourceTree = "<group>"; };
 		7F294BC42B35B1450020C17E /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		7F5A75822AE3AAF2006BD516 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		7F5A75862AE3AB15006BD516 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		7F69849F2AF586FD0017720B /* OtherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCoordinator.swift; sourceTree = "<group>"; };
 		7F8719DE2B4A95BD0016249F /* ExtDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtDate.swift; sourceTree = "<group>"; };
 		7F8719E02B4ADC060016249F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F93EB502B6689AE007168DB /* InfoReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoReservationView.swift; sourceTree = "<group>"; };
 		7FE809602B570C0F00B94633 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		7FE809622B57113400B94633 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7FF20CA02B53CAF100753065 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
@@ -436,7 +438,7 @@
 				7F5A75A22AE3C249006BD516 /* Sale.swift */,
 				7F6984962AF57E040017720B /* Menu.swift */,
 				7F27BE732AFC1439005E5E39 /* BonusHistory.swift */,
-				7F294BC12B35B0630020C17E /* CreateBooking.swift */,
+				7F294BC12B35B0630020C17E /* TableReservation.swift */,
 				7F8719E02B4ADC060016249F /* User.swift */,
 				7FE809622B57113400B94633 /* Token.swift */,
 				7F24D11A2B5864E400B08945 /* JWT.swift */,
@@ -450,6 +452,7 @@
 				7F5A75A52AE3C277006BD516 /* TopView.swift */,
 				7F5A75A72AE3C2D0006BD516 /* PointView.swift */,
 				7F5A75A92AE3F187006BD516 /* SaleSubView.swift */,
+				7F93EB502B6689AE007168DB /* InfoReservationView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -688,7 +691,7 @@
 				7F69848D2AEE47C60017720B /* MenuCoordinator.swift in Sources */,
 				7F69846E2AED9DEF0017720B /* TableView.swift in Sources */,
 				7F2273142AADFE960036BC9C /* LoginView.swift in Sources */,
-				7F294BC22B35B0630020C17E /* CreateBooking.swift in Sources */,
+				7F294BC22B35B0630020C17E /* TableReservation.swift in Sources */,
 				7F27BE722AFC0134005E5E39 /* BonusHistoryCoordinator.swift in Sources */,
 				7F5A75B82AE4FF71006BD516 /* SaleViewModel.swift in Sources */,
 				7F5A75892AE3AB23006BD516 /* RegistrationCoordinator.swift in Sources */,
@@ -704,6 +707,7 @@
 				7F5A75BF2AE505C5006BD516 /* SaleScrollView.swift in Sources */,
 				7F5A75A62AE3C277006BD516 /* TopView.swift in Sources */,
 				7F6984762AEDA32E0017720B /* DatePickerView.swift in Sources */,
+				7F93EB512B6689AE007168DB /* InfoReservationView.swift in Sources */,
 				7FE809632B57113400B94633 /* Token.swift in Sources */,
 				7F5A759E2AE3C14C006BD516 /* MainViewModel.swift in Sources */,
 				7F5A75B62AE4FF42006BD516 /* SaleView.swift in Sources */,
@@ -796,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -850,7 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

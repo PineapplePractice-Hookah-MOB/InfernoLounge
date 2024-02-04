@@ -16,6 +16,7 @@ enum ApiPath: String {
   case getUsers = "http://213.219.212.47:9000/api/users/all?from=0&size=100"
   case getUser = "http://213.219.212.47:9000/api/users"
   case postFeedback = "http://213.219.212.47:9000/api/comment"
+  case getTable = "http://213.219.212.47:9000/api/booking/"
 }
 
 final class ApiManager {
@@ -30,86 +31,12 @@ final class ApiManager {
     "Bearer \(KeychainHelper.token ?? "")"
   }
 
-  private var id: Int = 3
+  private var id: Int = 0
+  private var cancellable = Set<AnyCancellable>()
 
   let decoder: JSONDecoder
 
-  func post(tableId: Int, people: Int, comment: String, bookedFrom: String, bookedTill: String) -> String {
-
-    let parameters = "{\n    \"tableId\": \(tableId),\n    \"people\": \(people),\n    \"comment\": \"\(comment)\",\n    \"bookedFrom\": \"\(bookedFrom)\",\n    \"bookedTill\": \"\(bookedTill)\"\n}"
-    let postData = parameters.data(using: .utf8)
-
-    var request = URLRequest(url: URL(string: ApiPath.postTable.rawValue)!, timeoutInterval: Double.infinity)
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-    request.addValue("\(token)", forHTTPHeaderField: "Authorization")
-    request.httpMethod = "POST"
-    request.httpBody = postData
-    var answer: String = ""
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard let data = data,
-        let response = response as? HTTPURLResponse else {
-        print(String(describing: error))
-        return
-      }
-      if (200 ... 299) ~= response.statusCode {
-        answer = "Стол забронирован"
-        print(response.statusCode)
-      } else {
-        answer = "Попробуйте снова"
-        print(response.statusCode)
-      }
-      print(String(data: data, encoding: .utf8)!)
-    }
-    task.resume()
-    return answer
-  }
-
-  func postRegistration(email: String, name: String, birthday: String, phone: String, password: String) {
-
-    let parameters = "{\n    \"name\" : \"\(name)\",\n    \"birthday\" : \"\(birthday)\",\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n\n"
-    let postData = parameters.data(using: .utf8)
-
-    var request = URLRequest(url: URL(string: ApiPath.postRegistration.rawValue)!, timeoutInterval: Double.infinity)
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-    request.httpMethod = "POST"
-    request.httpBody = postData
-
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard let data = data else {
-        print(String(describing: error))
-        return
-      }
-      print(String(data: data, encoding: .utf8)!)
-    }
-    task.resume()
-  }
-
-  func postAuth(email: String, password: String) {
-
-    let parameters = "{\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n\n"
-    let postData = parameters.data(using: .utf8)
-
-    var request = URLRequest(url: URL(string: ApiPath.postAuth.rawValue)!, timeoutInterval: Double.infinity)
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-    request.httpMethod = "POST"
-    request.httpBody = postData
-
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard let data = data else {
-        print(String(describing: error))
-        return
-      }
-
-      let token: Token? = try? JSONDecoder().decode(Token.self, from: data)
-      KeychainHelper.token = token?.accessToken
-      print(self.token)
-      let jwt = JWT.decodeJWT(token: token?.accessToken ?? "")
-      self.id = jwt?.payload?.id ?? 0
-    }
-    task.resume()
-  }
+  // MARK: GET
 
   func getUsers() -> AnyPublisher<[User], Never> {
     let link = ApiPath.getUsers.rawValue
@@ -131,14 +58,10 @@ final class ApiManager {
     guard let url = URL(string: link + "/\(id)") else {
       return Just(User()).eraseToAnyPublisher()
     }
-    print(url)
     var request = URLRequest(url: url)
     request.addValue("\(token)", forHTTPHeaderField: "Authorization")
     return URLSession.shared.dataTaskPublisher(for: request)
       .map(\.data)
-      .map {
-      return $0
-    }
       .decode(type: User.self, decoder: decoder)
       .catch { error in
       print(String(describing: error))
@@ -148,9 +71,29 @@ final class ApiManager {
       .eraseToAnyPublisher()
   }
 
-  func postFeedback(userId: String, text: String) -> String {
+  func getTable(userId: Int) -> AnyPublisher<[TableReservation], Never> {
+    let link = ApiPath.getTable.rawValue
+    guard let url = URL(string: link + "\(userId)") else {
+      return Just([TableReservation()]).eraseToAnyPublisher()
+    }
+    var request = URLRequest(url: url)
+    request.addValue("\(token)", forHTTPHeaderField: "Authorization")
+    return URLSession.shared.dataTaskPublisher(for: request)
+      .map(\.data)
+      .decode(type: [TableReservation].self, decoder: decoder)
+      .catch { error in
+      print(String(describing: error))
+      return Just([TableReservation()])
+    }
+      .receive(on: RunLoop.main)
+      .eraseToAnyPublisher()
+  }
 
-    let parameters = "{\n    \"userId\" : \(id),\n    \"text\" : \"\(text)\"\n}\n\n"
+  // MARK: POST
+
+  func postFeedback(userId: String, text: String, completion: @escaping (String) -> ()) {
+
+    let parameters = "{\n    \"userId\" : \(userId),\n    \"text\" : \"\(text)\"\n}\n\n"
     let postData = parameters.data(using: .utf8)
     var request = URLRequest(url: URL(string: ApiPath.postFeedback.rawValue)!, timeoutInterval: Double.infinity)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -161,22 +104,101 @@ final class ApiManager {
     var answer: String = ""
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data,
-      let response = response as? HTTPURLResponse
-      else {
+        let response = response as? HTTPURLResponse
+        else {
         print(String(describing: error))
         return
       }
-
+      
       if (200 ... 299) ~= response.statusCode {
-        answer = "Стол забронирован"
-        print(response.statusCode)
+        answer = "Отзыв отправлен"
       } else {
         answer = "Попробуйте снова"
-        print(response.statusCode)
+      }
+      completion(answer)
+      print(String(data: data, encoding: .utf8)!)
+    }
+    task.resume()
+  }
+
+  func postAuth(email: String, password: String) {
+
+    let parameters = "{\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n\n"
+    let postData = parameters.data(using: .utf8)
+
+    var request = URLRequest(url: URL(string: ApiPath.postAuth.rawValue)!, timeoutInterval: Double.infinity)
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    request.httpMethod = "POST"
+    request.httpBody = postData
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+        return
+      }
+print(String(describing: data))
+      let token: Token? = try? JSONDecoder().decode(Token.self, from: data)
+      KeychainHelper.token = token?.accessToken
+      print(self.token)
+      let jwt = JWT.decodeJWT(token: token?.accessToken ?? "")
+      self.id = jwt?.payload?.id ?? 0
+      self.getuser()
+        .receive(on: DispatchQueue.main)
+        .sink { user in
+          SinletonUser.shared.user = user
+      }
+        .store(in: &self.cancellable)
+    }
+    task.resume()
+  }
+
+  func postTable(tableId: Int, people: Int, userId: Int, comment: String, bookedFrom: String, bookedTill: String, completion: @escaping (String) -> ()) {
+
+    let parameters = "{\n    \"tableId\": \(tableId),\n    \"userId\": \(userId),\n  \"people\": \(people),\n  \"comment\": \"\(comment)\",\n  \"bookedFrom\": \"\(bookedFrom)\",\n  \"bookedTill\": \"\(bookedTill)\"\n}\n"
+    let postData = parameters.data(using: .utf8)
+
+    var request = URLRequest(url: URL(string: ApiPath.postTable.rawValue)!, timeoutInterval: Double.infinity)
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("\(token)", forHTTPHeaderField: "Authorization")
+    request.httpMethod = "POST"
+    request.httpBody = postData
+    var answer: String = ""
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data,
+        let response = response as? HTTPURLResponse else {
+        print(String(describing: error))
+        return
+      }
+      if (200 ... 299) ~= response.statusCode {
+        answer = "Стол забронирован"
+      } else {
+        answer = "Попробуйте снова"
+      }
+      print(String(data: data, encoding: .utf8)!)
+      completion(answer)
+    }
+    task.resume()
+  }
+
+  func postRegistration(email: String, name: String, birthday: String, phone: String, password: String) {
+
+    let parameters = "{\n    \"name\" : \"\(name)\",\n    \"birthday\" : \"\(birthday)\",\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n\n"
+    let postData = parameters.data(using: .utf8)
+
+    var request = URLRequest(url: URL(string: ApiPath.postRegistration.rawValue)!, timeoutInterval: Double.infinity)
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    request.httpMethod = "POST"
+    request.httpBody = postData
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+        return
       }
       print(String(data: data, encoding: .utf8)!)
     }
     task.resume()
-    return answer
   }
 }

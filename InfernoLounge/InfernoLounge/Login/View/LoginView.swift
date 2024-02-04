@@ -45,7 +45,6 @@ struct LoginView: View {
           .padding(.top, 36)
         Button(action: {
           viewModel.postAuth()
-          viewModel.showText = true
         }, label: {
             MontserratText("Вход", size: 16)
               .foregroundColor(.white)
@@ -76,7 +75,14 @@ struct LoginView: View {
       }
     }
       .ignoresSafeArea()
+      .onAppear(perform: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+          viewModel.getUsers()
+        }))
+        viewModel.showText = false
+      })
   }
+
 }
 
 struct LoginView_Previews: PreviewProvider {

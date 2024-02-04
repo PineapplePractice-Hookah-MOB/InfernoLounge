@@ -11,6 +11,7 @@ struct OtherView: View {
 
   @StateObject var viewModel: OtherViewModel
   @Environment(\.openURL) var openURL
+  @Environment(\.dismiss) var dismiss
   @State private var sheetShown = false
 
   var body: some View {
@@ -19,7 +20,7 @@ struct OtherView: View {
         .edgesIgnoringSafeArea(.all)
       VStack {
         Image("wlogo")
-        ProfileAndPoinView()
+        ProfileAndPoinView(name: viewModel.user.login)
           .padding(.top, 30)
         OtherElement(image: "mail", text: "Оставьте отзыв")
           .onTapGesture {
@@ -27,13 +28,16 @@ struct OtherView: View {
 
         }
           .sheet(isPresented: $viewModel.isPresenting, content: {
-            FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback)
+            FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback, answer: viewModel.answer)
         })
         OtherElement(image: "phone", text: "Контакты")
           .onTapGesture {
             viewModel.makeAPhoneCall()
           }
         OtherElement(image: "quit", text: "Выйти")
+          .onTapGesture {
+            dismiss.callAsFunction()
+          }
         Spacer()
         MontserratText("Мы в соц. сетях", size: 14, weight: .medium)
           .foregroundColor(.white)

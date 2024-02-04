@@ -12,6 +12,8 @@ struct FeedbackView: View {
   @Environment(\.dismiss) var dismiss
   @Binding var feedback: String
   var postFunction: () -> ()
+  var answer: String
+  @State var showAlert = false
 
   var body: some View {
     ZStack {
@@ -29,8 +31,11 @@ struct FeedbackView: View {
           .background(Color(uiColor: .dark))
         Spacer()
         Button(action: {
-          dismiss.callAsFunction()
           postFunction()
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+            self.showAlert.toggle()
+            self.dismiss.callAsFunction()
+          }))
         }, label: {
             MontserratText("Забронировать", size: 16)
               .foregroundColor(.white)
@@ -52,6 +57,11 @@ struct FeedbackView: View {
             .padding(-5)
           Spacer()
         }
+          .alert("", isPresented: $showAlert) {
+            Button("OK") { }
+          } message: {
+            MontserratText(answer, size: 15)
+          }
           .padding([.bottom], 60)
       }
     }

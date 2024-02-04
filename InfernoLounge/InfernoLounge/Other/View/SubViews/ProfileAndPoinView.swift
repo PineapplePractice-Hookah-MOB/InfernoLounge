@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileAndPoinView: View {
+
+  var name: String
   var body: some View {
 
       HStack {
@@ -22,7 +24,7 @@ struct ProfileAndPoinView: View {
               Image("pencil")
                 .padding(.leading)
             }
-            MontserratText("Андрей", size: 20, weight: .medium)
+            MontserratText(name, size: 20, weight: .medium)
               .foregroundColor(.white)
               .padding(.top)
             MontserratText("+7 (991) 167 88 94", size: 10)
@@ -49,5 +51,5 @@ struct ProfileAndPoinView: View {
 }
 
 #Preview {
-    ProfileAndPoinView()
+    ProfileAndPoinView(name: "Андрей")
 }

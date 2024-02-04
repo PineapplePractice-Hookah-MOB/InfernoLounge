@@ -11,7 +11,7 @@ struct User: Decodable {
   let id: Int
   let email, login: String
   let name, phone, comment, card: String?
-  let birthday: [Int]
+  let birthday: String
   let groupIds: Int?
   let points: Float
 
@@ -23,9 +23,16 @@ struct User: Decodable {
     self.comment = ""
     self.card = ""
     self.login = ""
-    self.birthday = []
+    self.birthday = ""
     self.groupIds = 0
     self.points = 0.0
 
+  }
+}
+
+class SinletonUser {
+  static let shared = SinletonUser()
+  var user: User = User()
+  private init() {
   }
 }

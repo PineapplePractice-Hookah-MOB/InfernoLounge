@@ -11,6 +11,9 @@ final class TableViewModel: ObservableObject {
 
   init(coordinator: TableCoordinator) {
     self.coordinator = coordinator
+    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
+      self.user = SinletonUser.shared.user
+    }))
   }
 
   private let coordinator: TableCoordinator
@@ -22,6 +25,7 @@ final class TableViewModel: ObservableObject {
   @Published var datePickerSheetPresenting: Bool = false
   @Published var buttonDisabled: Bool = false
   @Published var answerServer: String = ""
+  @Published var user = User()
   let peopleCount = ["1 человек", "2 человека", "3 человека", "4 человека", "5 человек", "6 и более человек"]
   let days = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
   var tableId: Int = 2
@@ -29,6 +33,11 @@ final class TableViewModel: ObservableObject {
 
 extension TableViewModel {
   func postTable () {
-    answerServer = apiManager.post(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())")
+    apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())") {
+      [weak self] answer in
+      DispatchQueue.main.async {
+        self?.answerServer = answer
+      }
+    }
   }
 }
