@@ -36,6 +36,7 @@ extension TableViewModel {
     apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())") {
       [weak self] answer in
       DispatchQueue.main.async {
+        print(self?.selectedDate.dateFormat())
         self?.answerServer = answer
       }
     }

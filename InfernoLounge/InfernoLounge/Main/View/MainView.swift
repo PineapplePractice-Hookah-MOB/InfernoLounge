@@ -18,12 +18,12 @@ struct MainView: View {
         TopView(name: viewModel.user.login)
         InfoReservationView(text: viewModel.reservationText)
           .padding([.trailing, .leading], 20)
-          .padding(.top, viewModel.reservationText == "" ? 0 : 30)
+          .padding(.top, 30)
         PointView()
           .onTapGesture {
             viewModel.toBonusHistory()
           }
-          .padding(.top, viewModel.reservationText == "" ? 106 : 20)
+          .padding(.top, 20)
           .padding([.trailing, .leading], 20)
         MontserratText("Акции", size: 25, weight: .bold)
           .foregroundColor(.white)

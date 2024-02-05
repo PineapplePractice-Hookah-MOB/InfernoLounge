@@ -13,6 +13,7 @@ final class MenuViewModel: ObservableObject {
     self.coordinator = coordinator
     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
       self.user = SinletonUser.shared.user
+      print(self.user)
     }))
   }
 
