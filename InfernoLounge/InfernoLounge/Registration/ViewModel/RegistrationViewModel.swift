@@ -21,16 +21,24 @@ final class RegistrationViewModel: ObservableObject {
   @Published var buttonDisabled: Bool = true
   @Published var tapAgree: Bool = false
   @Published var checkPassword: String = ""
+  @Published var checkEmptyString: String = ""
+  @Published var answerServer: String = ""
 
   private let coordinator: RegistrationCoordinator
   private let apiManager = ApiManager()
 
   func postRegistration() -> Bool {
-    if password == confirmPassword {
-      apiManager.postRegistration(email: email, name: name, birthday: birthDay, phone: confirmPassword, password: password)
+    if password == confirmPassword && birthDay != "" && name != "" && password != "" {
+        apiManager.postRegistration(email: email, name: name, birthday: birthDay, phone: confirmPassword, password: password) {
+          [weak self] answer in
+          DispatchQueue.main.async {
+            self?.answerServer = answer
+          }
+        }
       return true
     } else {
-      checkPassword = "Пороли не совпадают"
+      checkPassword = "Пароли не совпадают"
+      checkEmptyString = "Не заполнены все данные"
       return false
     }
   }

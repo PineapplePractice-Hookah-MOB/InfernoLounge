@@ -23,5 +23,5 @@ struct InfoReservationView: View {
 }
 
 #Preview {
-  InfoReservationView(text: "У вас забронирован столик 2024-01-28 15:00:00")
+  InfoReservationView(text: "У вас забронирован столик                          2024-01-28 15:00:00")
 }

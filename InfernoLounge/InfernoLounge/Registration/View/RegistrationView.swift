@@ -31,7 +31,7 @@ struct RegistationView: View {
         Agree()
           .environmentObject(viewModel)
           .padding(.top, 50)
-        ButtonRegistration(disabled: viewModel.buttonDisabled, function: viewModel.postRegistration)
+        ButtonRegistration(disabled: viewModel.buttonDisabled, function: viewModel.postRegistration, answerServer: viewModel.answerServer, checkEmptyString: viewModel.checkEmptyString)
           .padding(.top, 54)
         Spacer()
       }

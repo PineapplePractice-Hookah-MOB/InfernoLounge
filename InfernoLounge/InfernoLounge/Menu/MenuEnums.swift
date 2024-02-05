@@ -16,7 +16,7 @@ enum CategoriesMenu: Int, CaseIterable  {
     case .tea:
       return "Чай"
     case .hookah:
-      return "Кольяны"
+      return "Кальяны"
     }
   }
     var tapImageName: String {
@@ -33,7 +33,7 @@ enum CategoriesMenu: Int, CaseIterable  {
     case .tea:
       return "Чай"
     case .hookah:
-      return "Кольяны"
+      return "Кальяны"
     }
   }
 }

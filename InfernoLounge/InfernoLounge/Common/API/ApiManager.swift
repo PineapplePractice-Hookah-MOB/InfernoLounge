@@ -76,6 +76,7 @@ final class ApiManager {
     guard let url = URL(string: link + "\(userId)") else {
       return Just([TableReservation()]).eraseToAnyPublisher()
     }
+    print(url)
     var request = URLRequest(url: url)
     request.addValue("\(token)", forHTTPHeaderField: "Authorization")
     return URLSession.shared.dataTaskPublisher(for: request)
@@ -109,7 +110,7 @@ final class ApiManager {
         print(String(describing: error))
         return
       }
-      
+
       if (200 ... 299) ~= response.statusCode {
         answer = "Отзыв отправлен"
       } else {
@@ -137,7 +138,7 @@ final class ApiManager {
         print(String(describing: error))
         return
       }
-print(String(describing: data))
+      print(String(describing: data))
       let token: Token? = try? JSONDecoder().decode(Token.self, from: data)
       KeychainHelper.token = token?.accessToken
       print(self.token)
@@ -146,7 +147,7 @@ print(String(describing: data))
       self.getuser()
         .receive(on: DispatchQueue.main)
         .sink { user in
-          SinletonUser.shared.user = user
+        SinletonUser.shared.user = user
       }
         .store(in: &self.cancellable)
     }
@@ -158,10 +159,12 @@ print(String(describing: data))
     let parameters = "{\n    \"tableId\": \(tableId),\n    \"userId\": \(userId),\n  \"people\": \(people),\n  \"comment\": \"\(comment)\",\n  \"bookedFrom\": \"\(bookedFrom)\",\n  \"bookedTill\": \"\(bookedTill)\"\n}\n"
     let postData = parameters.data(using: .utf8)
 
+    print(parameters)
     var request = URLRequest(url: URL(string: ApiPath.postTable.rawValue)!, timeoutInterval: Double.infinity)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("\(token)", forHTTPHeaderField: "Authorization")
     request.httpMethod = "POST"
+    print(token)
     request.httpBody = postData
     var answer: String = ""
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -181,7 +184,7 @@ print(String(describing: data))
     task.resume()
   }
 
-  func postRegistration(email: String, name: String, birthday: String, phone: String, password: String) {
+  func postRegistration(email: String, name: String, birthday: String, phone: String, password: String, completion: @escaping (String) -> ()) {
 
     let parameters = "{\n    \"name\" : \"\(name)\",\n    \"birthday\" : \"\(birthday)\",\n    \"email\" : \"\(email)\",\n    \"password\" : \"\(password)\"\n}\n\n"
     let postData = parameters.data(using: .utf8)
@@ -191,13 +194,22 @@ print(String(describing: data))
 
     request.httpMethod = "POST"
     request.httpBody = postData
+    
+    var answer: String = ""
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      guard let data = data else {
+      guard let data = data,
+            let response = response as? HTTPURLResponse else {
         print(String(describing: error))
         return
       }
+      if (200 ... 299) ~= response.statusCode {
+        answer = "Регистрация успешна"
+      } else {
+        answer = "Попробуйте снова"
+      }
       print(String(data: data, encoding: .utf8)!)
+      completion(answer)
     }
     task.resume()
   }

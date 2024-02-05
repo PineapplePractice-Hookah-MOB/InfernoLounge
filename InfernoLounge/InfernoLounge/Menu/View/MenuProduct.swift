@@ -20,7 +20,7 @@ struct MenuProduct: View {
               .stroke(lineWidth: 1)
               .frame(height: 170)
             VStack(spacing: 10) {
-              Image(selectedMenuCategory == 0 ? menuProduct.image ?? "menuPlaceHolder" : menuProduct.image ?? "Кольяны")
+              Image(selectedMenuCategory == 0 ? menuProduct.image ?? "menuPlaceHolder" : menuProduct.image ?? "Кальяны")
                 .foregroundStyle(.white)
                 .padding(.top)
               MontserratText(menuProduct.name, size: 14)
