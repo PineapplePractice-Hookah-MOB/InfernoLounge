@@ -11,38 +11,42 @@ struct MainView: View {
 
   @StateObject var viewModel: MainViewModel
   var body: some View {
-    ZStack {
-      Color(uiColor: .darkBackground)
-        .ignoresSafeArea()
-      VStack(alignment: .leading) {
-        TopView(name: viewModel.user.login)
-        InfoReservationView(text: viewModel.reservationText)
-          .padding([.trailing, .leading], 20)
-          .padding(.top, 30)
-        PointView()
-          .onTapGesture {
-            viewModel.toBonusHistory()
+    NavigationView {
+      ZStack {
+        Color(uiColor: .darkBackground)
+          .ignoresSafeArea()
+        VStack(alignment: .leading) {
+          TopView(name: viewModel.user.login)
+          InfoReservationView(text: viewModel.reservationText)
+            .padding([.trailing, .leading], 20)
+            .padding(.top, 30)
+          NavigationLink {
+            BonusHistoryView(viewModel: BonusHistoryViewModel(coordinator: BonusHistoryCoordinator()))
+          } label: {
+            PointView()
           }
-          .padding(.top, 20)
-          .padding([.trailing, .leading], 20)
-        MontserratText("Акции", size: 25, weight: .bold)
-          .foregroundColor(.white)
-          .padding([.top, .leading], 20)
-        SaleSubView(sales: $viewModel.sale)
-          .onTapGesture {
-          viewModel.toSale()
+            .padding(.top, 20)
+            .padding([.trailing, .leading], 20)
+          MontserratText("Акции", size: 25, weight: .bold)
+            .foregroundColor(.white)
+            .padding([.top, .leading], 20)
+          NavigationLink {
+            SaleView(viewModel: SaleViewModel(coordinator: SaleCoordinator(), user: viewModel.user))
+          } label: {
+            SaleSubView(sales: $viewModel.sale)
+          }
+            .padding([.trailing,.leading], 20)
+            .padding(.top, 20)
+          Spacer()
         }
-          .padding([.trailing,.leading], 20)
-          .padding(.top, 20)
-        Spacer()
       }
-    }
-    .onAppear {
+      .onAppear {
         viewModel.getUserTableReservation()
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
-        viewModel.checkReservation()
-      }))
-    }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
+          viewModel.checkReservation()
+        }))
+      }
+    }.accentColor(.white)
   }
 }
 
