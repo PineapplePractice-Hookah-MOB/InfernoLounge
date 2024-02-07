@@ -24,6 +24,5 @@ final class BonusHistoryViewModel: ObservableObject {
                                       BonusHistory(id: 2, date: "02.11.2023", summ: "500p", countBonus: "+75"),
                                       BonusHistory(id: 3, date: "03.11.2023", summ: "1500p", countBonus: "-5"),
                                       BonusHistory(id: 4, date: "04.11.2023", summ: "3500p", countBonus: "+50"),
-                                      BonusHistory(id: 5, date: "05.11.2023", summ: "6500p", countBonus: "-75"),
-                                      BonusHistory(id: 6, date: "06.11.2023", summ: "11500p", countBonus: "-75")]
+                                      BonusHistory(id: 5, date: "05.11.2023", summ: "6500p", countBonus: "-75")]
 }

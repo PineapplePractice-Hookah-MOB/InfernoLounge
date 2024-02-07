@@ -17,7 +17,7 @@ final class SaleCoordinator: Coordinator {
     let pickViewController = UIHostingController(rootView: SaleView(viewModel: vm))
     rootViewController = pickViewController
     pickViewController.tabBarItem.image = UIImage(named: "sale")
-    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapsale")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapsale")?.withRenderingMode(.alwaysOriginal)
   }
 
   func startUser(user: User) {
@@ -25,6 +25,6 @@ final class SaleCoordinator: Coordinator {
     let pickViewController = UIHostingController(rootView: SaleView(viewModel: vm))
     rootViewController = pickViewController
     pickViewController.tabBarItem.image = UIImage(named: "sale")
-    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapSales")
+    pickViewController.tabBarItem.selectedImage = UIImage(named: "tapSales")?.withRenderingMode(.alwaysOriginal)
   }
 }

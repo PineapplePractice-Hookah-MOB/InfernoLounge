@@ -12,17 +12,20 @@ struct SaleView: View {
   @ObservedObject var viewModel: SaleViewModel
 
   var body: some View {
-    ZStack(alignment: .bottom) {
-      Color(uiColor: .darkBackground)
-        .ignoresSafeArea()
-      VStack {
-        TopView(name: viewModel.user.login)
-        SaleScrollView(sales: $viewModel.sales)
-          .padding([.trailing, .leading], 20)
-        Spacer()
+    NavigationView {
+      ZStack(alignment: .bottom) {
+        Color(uiColor: .darkBackground)
+          .ignoresSafeArea()
+          .edgesIgnoringSafeArea(.bottom)
+        VStack {
+          TopView(name: viewModel.user.login)
+          SaleScrollView(sales: $viewModel.sales)
+            .padding([.trailing, .leading], 20)
+          Spacer()
+        }
       }
     }
-
+    .accentColor(.white)
   }
 }
 
