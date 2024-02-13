@@ -13,10 +13,12 @@ struct WishesTextEditor: View {
 
     var body: some View {
 
-      TextField("", text: $text, prompt: Text("Комментарий к брони..."))
+      TextField("", text: $text, prompt: Text("Комментарий к брони...")
+        .foregroundColor(.gray))
         .cornerRadius(5)
         .frame(height: 80)
-        .foregroundColor(Color(uiColor: .gray))
+        .multilineTextAlignment(.center)
+        .foregroundColor(Color(uiColor: .white))
         .scrollContentBackground(.hidden)
         .background(Color(uiColor: .dark))
           }
