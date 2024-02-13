@@ -20,7 +20,7 @@ final class TableViewModel: ObservableObject {
   private let apiManager = ApiManager()
 
   @Published var count = "1 человек"
-  @Published var wishes = "Комментарий к брони..."
+  @Published var wishes = ""
   @Published var selectedDate: Date = .init()
   @Published var datePickerSheetPresenting: Bool = false
   @Published var buttonDisabled: Bool = false
@@ -33,12 +33,15 @@ final class TableViewModel: ObservableObject {
 
 extension TableViewModel {
   func postTable () {
-    apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())") {
-      [weak self] answer in
-      DispatchQueue.main.async {
-        print(self?.selectedDate.dateFormat())
-        self?.answerServer = answer
+    if selectedDate >= Date.now {
+      apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())") {
+        [weak self] answer in
+        DispatchQueue.main.async {
+          self?.answerServer = answer
+        }
       }
+    } else {
+      answerServer = "Выбирете другую дату"
     }
   }
 }

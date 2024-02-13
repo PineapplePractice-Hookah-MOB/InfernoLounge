@@ -82,7 +82,6 @@ struct LoginView: View {
         viewModel.showText = false
       })
   }
-
 }
 
 struct LoginView_Previews: PreviewProvider {

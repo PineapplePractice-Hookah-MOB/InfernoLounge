@@ -11,7 +11,7 @@ struct FeedbackView: View {
 
   @Environment(\.dismiss) var dismiss
   @Binding var feedback: String
-  var postFunction: () -> ()
+  var postFunction: () -> Bool
   var answer: String
   @State var showAlert = false
 
@@ -31,13 +31,16 @@ struct FeedbackView: View {
           .background(Color(uiColor: .dark))
         Spacer()
         Button(action: {
-          postFunction()
-          DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
-            self.showAlert.toggle()
-            self.dismiss.callAsFunction()
-          }))
+          if postFunction() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+              self.showAlert.toggle()
+              self.dismiss.callAsFunction()
+            }))
+          } else {
+            showAlert.toggle()
+          }
         }, label: {
-            MontserratText("Забронировать", size: 16)
+            MontserratText("Оставить отзыв", size: 16)
               .foregroundColor(.white)
               .font(.system(size: 16, weight: .bold))
           })

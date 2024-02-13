@@ -14,4 +14,10 @@ extension Date {
     formatter.dateFormat = "YYYY-MM-dd HH:00:00"
     return formatter.string(from: self)
   }
+
+  func dateFormatForBirthday() -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "YYYY"
+    return formatter.string(from: self)
+  }
 }

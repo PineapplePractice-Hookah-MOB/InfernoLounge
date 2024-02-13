@@ -18,6 +18,7 @@ struct RegistationView: View {
       Image("Smokemini")
         .resizable()
         .aspectRatio(contentMode: .fit)
+        .padding(.bottom, -50)
       VStack {
         TopViewRegistration()
           .foregroundStyle(.white)
@@ -26,7 +27,7 @@ struct RegistationView: View {
                            name: $viewModel.name,
                            dateOfBirthday: $viewModel.birthDay,
                            password: $viewModel.password,
-                           confirmPassword: $viewModel.confirmPassword, text: viewModel.checkPassword)
+                           confirmPassword: $viewModel.confirmPassword, isEmailValid: $viewModel.isValidEmail, text: viewModel.checkPassword, checkBirthday: viewModel.checkBirthDate)
         .padding([.trailing, .leading])
         Agree()
           .environmentObject(viewModel)
@@ -36,7 +37,7 @@ struct RegistationView: View {
         Spacer()
       }
     }
-      .ignoresSafeArea()
+    .ignoresSafeArea(.all)
   }
 }
 

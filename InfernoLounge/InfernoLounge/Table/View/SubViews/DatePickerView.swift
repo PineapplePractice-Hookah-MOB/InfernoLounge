@@ -15,6 +15,7 @@ struct DatePickerView: View {
   var body: some View {
     ZStack {
       Color(uiColor: .darkBackground)
+        .ignoresSafeArea()
       VStack {
         DatePicker("", selection: $date, displayedComponents: [.date, .hourAndMinute])
           .datePickerStyle(.graphical)
