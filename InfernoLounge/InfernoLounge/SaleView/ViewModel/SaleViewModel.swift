@@ -12,8 +12,8 @@ final class SaleViewModel: ObservableObject {
   init(coordinator: SaleCoordinator, user: User) {
     self.coordinator = coordinator
     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
-      self.user = SinletonUser.shared.user
-    }))
+        self.user = SinletonUser.shared.user
+      }))
   }
 
   let coordinator: SaleCoordinator

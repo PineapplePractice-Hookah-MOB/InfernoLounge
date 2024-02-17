@@ -28,16 +28,16 @@ struct OtherView: View {
 
         }
           .sheet(isPresented: $viewModel.isPresenting, content: {
-            FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback, answer: viewModel.answer)
+          FeedbackView(feedback: $viewModel.feedback, postFunction: viewModel.postFeedback, answer: viewModel.answer)
         })
         OtherElement(image: "phone", text: "Контакты")
           .onTapGesture {
-            viewModel.makeAPhoneCall()
-          }
+          viewModel.makeAPhoneCall()
+        }
         OtherElement(image: "quit", text: "Выйти")
           .onTapGesture {
-            dismiss.callAsFunction()
-          }
+          dismiss.callAsFunction()
+        }
         Spacer()
         MontserratText("Мы в соц. сетях", size: 14, weight: .medium)
           .foregroundColor(.white)
@@ -50,12 +50,12 @@ struct OtherView: View {
           }
           Image("insta")
             .onTapGesture {
-              openURL(URL(string: "https://www.instagram.com/inferno_arh/")!)
-            }
+            openURL(URL(string: "https://www.instagram.com/inferno_arh/")!)
+          }
           Image("fb")
             .onTapGesture {
-              openURL(URL(string: "https://www.facebook.com/inferno.hookah.bar/")!)
-            }
+            openURL(URL(string: "https://www.facebook.com/inferno.hookah.bar/")!)
+          }
         }
           .padding(.bottom, 109)
       }

@@ -12,8 +12,8 @@ final class TableViewModel: ObservableObject {
   init(coordinator: TableCoordinator) {
     self.coordinator = coordinator
     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
-      self.user = SinletonUser.shared.user
-    }))
+        self.user = SinletonUser.shared.user
+      }))
   }
 
   private let coordinator: TableCoordinator
@@ -34,14 +34,14 @@ final class TableViewModel: ObservableObject {
 extension TableViewModel {
   func postTable () {
     if selectedDate >= Date.now {
-      apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60*60).dateFormat())") {
+      apiManager.postTable(tableId: tableId, people: Int(count.first?.description ?? "0") ?? 0, userId: user.id, comment: wishes, bookedFrom: "\(selectedDate.dateFormat())", bookedTill: "\(selectedDate.addingTimeInterval(60 * 60).dateFormat())") {
         [weak self] answer in
         DispatchQueue.main.async {
           self?.answerServer = answer
         }
       }
     } else {
-      answerServer = "Выбирете другую дату"
+      answerServer = "Выберите другую дату"
     }
   }
 }

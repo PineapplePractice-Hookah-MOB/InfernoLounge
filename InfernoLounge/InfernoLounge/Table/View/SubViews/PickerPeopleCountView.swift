@@ -21,7 +21,7 @@ struct PickerPeopleCountView: View {
         .foregroundColor(Color(uiColor: .dark))
       VStack(spacing: 10) {
         HStack {
-          MontserratText("\(selectedOption)" , size: 16)
+          MontserratText("\(selectedOption)", size: 16)
             .foregroundColor(.white)
           Spacer()
           Image(systemName: "chevron.down")
@@ -29,21 +29,21 @@ struct PickerPeopleCountView: View {
             .rotationEffect(.degrees(isExpanded ? -540 : 0))
             .animation(.linear, value: isExpanded)
         }
-        .padding([.leading, .trailing])
-        .alert("", isPresented: $showAlert) {
+          .padding([.leading, .trailing])
+          .alert("", isPresented: $showAlert) {
           Button("OK") { }
         } message: {
           MontserratText("Пожалуйста, свяжитесь с администратором для осуществления бронирования по номеру\n+7 991 167 8894", size: 15)
         }
         if isExpanded {
-          ForEach(vm.peopleCount.filter({$0 != selectedOption}), id: \.self) { count in
+          ForEach(vm.peopleCount.filter({ $0 != selectedOption }), id: \.self) { count in
             HStack {
               MontserratText(count, size: 16)
                 .foregroundColor(.white)
               Spacer()
             }
-            .padding(.leading)
-            .onTapGesture {
+              .padding(.leading)
+              .onTapGesture {
               selectedOption = count
               isExpanded = false
               height = 45
@@ -56,11 +56,11 @@ struct PickerPeopleCountView: View {
               }
             }
           }
-          .transition(.scale)
+            .transition(.scale)
         }
       }
     }
-    .onTapGesture {
+      .onTapGesture {
       withAnimation {
         isExpanded.toggle()
         if isExpanded {
@@ -70,7 +70,7 @@ struct PickerPeopleCountView: View {
         }
       }
     }
-    .frame(height: height)
+      .frame(height: height)
   }
 
 }

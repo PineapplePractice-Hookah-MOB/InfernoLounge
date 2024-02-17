@@ -35,16 +35,16 @@ struct MainView: View {
           } label: {
             SaleSubView(sales: $viewModel.sale)
           }
-            .padding([.trailing,.leading], 20)
+            .padding([.trailing, .leading], 20)
             .padding(.top, 20)
           Spacer()
         }
       }
-      .onAppear {
+        .onAppear {
         viewModel.getUserTableReservation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
-          viewModel.checkReservation()
-        }))
+            viewModel.checkReservation()
+          }))
       }
     }.accentColor(.white)
   }

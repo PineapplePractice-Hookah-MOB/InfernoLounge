@@ -11,7 +11,7 @@ class OtherCoordinator: Coordinator {
 
   var rootViewController = UIViewController()
   var parentCoordinator: Coordinator?
-  
+
   var childCoordinators: [Coordinator] = []
 
   func start() {

@@ -24,13 +24,13 @@ struct MenuView: View {
             Button(action: {
               viewModel.selectedMenuCategory = category.rawValue
             }, label: {
-              MenuCategoriesView(isActive: viewModel.selectedMenuCategory == category.rawValue, tapImageName: category.tapImageName, imageName: category.imageName, name: category.name)
-                .environmentObject(viewModel)
-                .foregroundColor(.clear)
-            })
+                MenuCategoriesView(isActive: viewModel.selectedMenuCategory == category.rawValue, tapImageName: category.tapImageName, imageName: category.imageName, name: category.name)
+                  .environmentObject(viewModel)
+                  .foregroundColor(.clear)
+              })
           }
         }
-        .padding([.leading, .trailing], 20)
+          .padding([.leading, .trailing], 20)
 
         MontserratText("Категории", size: 17, weight: .medium)
           .foregroundColor(.white)
@@ -38,7 +38,7 @@ struct MenuView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           LazyHStack(spacing: 5) {
             ForEach(viewModel.selectedMenuCategory == 0 ? viewModel.tea : viewModel.hookah, id: \.self) { category in
-              TeaAndHookahType(isSelected: viewModel.selectedMenuCategory == 0 ? category == viewModel.selectedCategoryTea : category == viewModel.selectedCategoryHookah, name: category) { name in
+              TeaAndHookahType(isSelected: viewModel.selectedMenuCategory == 0 ? category == viewModel.selectedCategoryTea: category == viewModel.selectedCategoryHookah, name: category) { name in
                 if viewModel.selectedMenuCategory == 0 {
                   viewModel.selectedCategoryTea = name
                 } else {
@@ -49,15 +49,15 @@ struct MenuView: View {
             }
           }
         }
-        .frame(height: 33)
-        .padding([.leading, .trailing])
+          .frame(height: 33)
+          .padding([.leading, .trailing])
         ScrollView(.vertical) {
           MenuProduct(
             selectedMenuCategory: viewModel.selectedMenuCategory,
             products: viewModel.selectedMenuCategory == 0 ? viewModel.filteredTeaProductsType : viewModel.filteredTeaProductsHookah
           )
-          .padding([.trailing, .leading])
-          .padding(.top, 14)
+            .padding([.trailing, .leading])
+            .padding(.top, 14)
         }
         Spacer()
       }

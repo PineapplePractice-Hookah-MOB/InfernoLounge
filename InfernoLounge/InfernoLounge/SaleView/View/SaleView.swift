@@ -25,7 +25,7 @@ struct SaleView: View {
         }
       }
     }
-    .accentColor(.white)
+      .accentColor(.white)
   }
 }
 

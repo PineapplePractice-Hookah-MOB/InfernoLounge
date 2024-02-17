@@ -25,7 +25,7 @@ struct JWT {
     func decodeJWTPart(part: String) -> [String: Any]? {
       let payloadPaddingString = base64StringWithPadding(encodedString: part)
       guard let payloadData = Data(base64Encoded: payloadPaddingString)
-      else {
+        else {
         return nil
       }
       return try? JSONSerialization.jsonObject(
@@ -43,7 +43,7 @@ struct JWT {
     let signature = String(describing: jwt[2])
 
     if let payloadDict = jwt[1],
-       let data = try? JSONSerialization.data(withJSONObject: payloadDict) {
+      let data = try? JSONSerialization.data(withJSONObject: payloadDict) {
       let p = try? JSONDecoder().decode(Payload.self, from: data)
       payload = p
     }
@@ -58,9 +58,8 @@ struct Payload: Decodable {
   let sub: String
   let iat: Int
   let exp: Int
-//  let header: Header
 }
 
 struct Header: Decodable {
-    let alg: String
+  let alg: String
 }

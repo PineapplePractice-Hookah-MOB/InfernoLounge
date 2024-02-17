@@ -17,20 +17,20 @@ struct TeaAndHookahType: View {
 
     ZStack {
       Color(isSelected ? .white : .dark)
-          .frame(width: 111, height: 32)
-          .clipShape(RoundedRectangle(cornerRadius: 1))
+        .frame(width: 111, height: 32)
+        .clipShape(RoundedRectangle(cornerRadius: 1))
       MontserratText(name, size: 12)
         .foregroundColor(isSelected ? .black : .white)
         .clipShape(RoundedRectangle(cornerRadius: 1))
         .frame(width: 111, height: 32)
 
     }
-    .onTapGesture {
-     onChangeMenuType(name)
+      .onTapGesture {
+      onChangeMenuType(name)
     }
   }
 }
 
 #Preview {
-  TeaAndHookahType(isSelected: false, name: "Черный чай") { _ in}
+  TeaAndHookahType(isSelected: false, name: "Черный чай") { _ in }
 }

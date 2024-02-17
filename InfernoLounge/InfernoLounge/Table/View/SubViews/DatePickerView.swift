@@ -25,15 +25,15 @@ struct DatePickerView: View {
         Button(action: {
           dismiss()
         }, label: {
-              MontserratText("Подтвердить", size: 16)
-                .foregroundColor(.white)
-                .font(.system(size: 16, weight: .bold))
+            MontserratText("Подтвердить", size: 16)
+              .foregroundColor(.white)
+              .font(.system(size: 16, weight: .bold))
           })
-        .frame(width: 278)
+          .frame(width: 278)
           .background {
-            RoundedRectangle(cornerRadius: 5)
-              .stroke()
-              .foregroundStyle(.gray)
+          RoundedRectangle(cornerRadius: 5)
+            .stroke()
+            .foregroundStyle(.gray)
           Spacer()
           HStack {
             Image("left")
@@ -45,7 +45,7 @@ struct DatePickerView: View {
             .padding(-5)
           Spacer()
         }
-        .padding(.top, 50)
+          .padding(.top, 50)
       }
     }
   }

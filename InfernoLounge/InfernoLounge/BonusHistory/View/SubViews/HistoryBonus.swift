@@ -37,14 +37,10 @@ struct HistoryBonus: View {
               }
             }
           }
-          .padding([.trailing, .leading], 50)
+            .padding([.trailing, .leading], 50)
         }
-        .padding([.trailing, .leading])
+          .padding([.trailing, .leading])
       }
     }
   }
 }
-
-//#Preview {
-//    HistoryBonus()
-//}

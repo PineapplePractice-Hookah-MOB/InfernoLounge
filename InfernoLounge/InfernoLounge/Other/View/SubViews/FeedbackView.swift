@@ -33,9 +33,9 @@ struct FeedbackView: View {
         Button(action: {
           if postFunction() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
-              self.showAlert.toggle()
-              self.dismiss.callAsFunction()
-            }))
+                self.showAlert.toggle()
+                self.dismiss.callAsFunction()
+              }))
           } else {
             showAlert.toggle()
           }
@@ -61,10 +61,10 @@ struct FeedbackView: View {
           Spacer()
         }
           .alert("", isPresented: $showAlert) {
-            Button("OK") { }
-          } message: {
-            MontserratText(answer, size: 15)
-          }
+          Button("OK") { }
+        } message: {
+          MontserratText(answer, size: 15)
+        }
           .padding([.bottom], 60)
       }
     }

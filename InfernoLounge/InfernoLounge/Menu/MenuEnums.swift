@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum CategoriesMenu: Int, CaseIterable  {
+enum CategoriesMenu: Int, CaseIterable {
   case tea = 0
   case hookah
 
@@ -19,14 +19,14 @@ enum CategoriesMenu: Int, CaseIterable  {
       return "Кальяны"
     }
   }
-    var tapImageName: String {
-      switch self {
-      case .tea:
-        return "tapЧай"
-      case .hookah:
-        return "tapКольяны"
-      }
+  var tapImageName: String {
+    switch self {
+    case .tea:
+      return "tapЧай"
+    case .hookah:
+      return "tapКольяны"
     }
+  }
 
   var name: String {
     switch self {

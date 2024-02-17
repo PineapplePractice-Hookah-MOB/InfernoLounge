@@ -16,14 +16,14 @@ final class TabBarCoordinator: Coordinator {
 
   func start() {
     let coordinators: [Coordinator] = [
-        MainCoordinator(),
-        SaleCoordinator(),
-        TableCoordinator(),
-        MenuCoordinator(),
-        OtherCoordinator()
+      MainCoordinator(),
+      SaleCoordinator(),
+      TableCoordinator(),
+      MenuCoordinator(),
+      OtherCoordinator()
     ]
     coordinators.forEach { $0.start() }
-    
+
     let controllers = coordinators.compactMap { $0.rootViewController }
 
     let tabBar = CustomTabBarController(childControllers: controllers)

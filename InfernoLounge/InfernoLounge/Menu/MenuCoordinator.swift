@@ -11,7 +11,7 @@ final class MenuCoordinator: Coordinator {
   var parentCoordinator: Coordinator?
   var rootViewController: UIViewController = UIViewController()
   var childCoordinators: [Coordinator] = []
-  
+
   func start() {
     let vm = MenuViewModel(coordinator: self)
     let pickViewController = UIHostingController(rootView: MenuView(viewModel: vm))
@@ -20,6 +20,6 @@ final class MenuCoordinator: Coordinator {
     pickViewController.tabBarItem.image = UIImage(named: "menu")
     pickViewController.tabBarItem.selectedImage = UIImage(named: "tapMenu")
   }
-  
-  
+
+
 }

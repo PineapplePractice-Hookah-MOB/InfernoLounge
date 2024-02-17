@@ -194,12 +194,12 @@ final class ApiManager {
 
     request.httpMethod = "POST"
     request.httpBody = postData
-    
+
     var answer: String = ""
 
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       guard let data = data,
-            let response = response as? HTTPURLResponse else {
+        let response = response as? HTTPURLResponse else {
         print(String(describing: error))
         return
       }

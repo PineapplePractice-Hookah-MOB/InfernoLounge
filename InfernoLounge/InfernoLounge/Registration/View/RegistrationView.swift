@@ -24,11 +24,11 @@ struct RegistationView: View {
           .foregroundStyle(.white)
           .padding(.top, 55)
         RegistationDetails(email: $viewModel.email,
-                           name: $viewModel.name,
-                           dateOfBirthday: $viewModel.birthDay,
-                           password: $viewModel.password,
-                           confirmPassword: $viewModel.confirmPassword, isEmailValid: $viewModel.isValidEmail, text: viewModel.checkPassword, checkBirthday: viewModel.checkBirthDate)
-        .padding([.trailing, .leading])
+          name: $viewModel.name,
+          dateOfBirthday: $viewModel.birthDay,
+          password: $viewModel.password,
+          confirmPassword: $viewModel.confirmPassword, isEmailValid: $viewModel.isValidEmail, text: viewModel.checkPassword, checkBirthday: viewModel.checkBirthDate)
+          .padding([.trailing, .leading])
         Agree()
           .environmentObject(viewModel)
           .padding(.top, 50)
@@ -37,7 +37,7 @@ struct RegistationView: View {
         Spacer()
       }
     }
-    .ignoresSafeArea(.all)
+      .ignoresSafeArea(.all)
   }
 }
 

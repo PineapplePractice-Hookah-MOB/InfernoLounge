@@ -13,9 +13,9 @@ final class MainViewModel: ObservableObject {
   init(coordinator: MainCoordinator) {
     self.coordinator = coordinator
     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: { [self] in
-      user = SinletonUser.shared.user
-      getUserTableReservation()
-    }))
+        user = SinletonUser.shared.user
+        getUserTableReservation()
+      }))
 
   }
 
@@ -40,7 +40,7 @@ final class MainViewModel: ObservableObject {
       .receive(on: DispatchQueue.main)
       .sink { [weak self] reservation in
       self?.table = reservation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
           self?.checkReservation()
         }))
     }

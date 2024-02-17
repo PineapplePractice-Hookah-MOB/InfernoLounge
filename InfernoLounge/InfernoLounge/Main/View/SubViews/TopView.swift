@@ -11,22 +11,22 @@ struct TopView: View {
 
   var name: String
   var body: some View {
-      HStack {
-        Image("logo")
-        Spacer()
-        VStack {
-          Image("profile")
-          MontserratText(name, size: 17, weight: .medium)
-            .foregroundColor(.white)
-            .overlay {
-              if name == "" {
-                ProgressView()
-              }
-            }
+    HStack {
+      Image("logo")
+      Spacer()
+      VStack {
+        Image("profile")
+        MontserratText(name, size: 17, weight: .medium)
+          .foregroundColor(.white)
+          .overlay {
+          if name == "" {
+            ProgressView()
+          }
         }
       }
-      .padding()
     }
+      .padding()
+  }
 }
 
 #Preview {

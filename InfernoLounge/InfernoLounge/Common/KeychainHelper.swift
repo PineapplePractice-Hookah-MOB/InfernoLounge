@@ -10,18 +10,18 @@ import SwiftKeychainWrapper
 
 final class KeychainHelper {
 
-    private static var keychainToken = "QAirSenseToken"
+  private static var keychainToken = "QAirSenseToken"
 
-    static var token: String? {
-        get {
-            KeychainWrapper.standard.string(forKey: Self.keychainToken)
-        } set {
-            if let newValue {
-                KeychainWrapper.standard.set(newValue, forKey: Self.keychainToken)
-            } else {
-                KeychainWrapper.standard.removeObject(forKey: Self.keychainToken)
-            }
-        }
+  static var token: String? {
+    get {
+      KeychainWrapper.standard.string(forKey: Self.keychainToken)
+    } set {
+      if let newValue {
+        KeychainWrapper.standard.set(newValue, forKey: Self.keychainToken)
+      } else {
+        KeychainWrapper.standard.removeObject(forKey: Self.keychainToken)
+      }
     }
+  }
 
 }

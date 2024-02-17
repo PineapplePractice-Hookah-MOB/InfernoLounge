@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class BonusHistoryCoordinator: Coordinator {
-  
+
   var parentCoordinator: Coordinator?
   var childCoordinators: [Coordinator] = []
   var rootViewController = UIViewController()

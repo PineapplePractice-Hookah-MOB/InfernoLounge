@@ -9,17 +9,17 @@ import SwiftUI
 
 struct InfoReservationView: View {
   var text: String
-    var body: some View {
-      ZStack {
-        RoundedRectangle(cornerRadius: 5)
-          .foregroundStyle(Color(uiColor: text == "" ? .clear : .dark))
-          .frame(height: 56)
-        MontserratText(text, size: 15)
-          .foregroundStyle(.white)
-          .multilineTextAlignment(.center)
-          .padding([.trailing, .leading], 20)
-      }
+  var body: some View {
+    ZStack {
+      RoundedRectangle(cornerRadius: 5)
+        .foregroundStyle(Color(uiColor: text == "" ? .clear : .dark))
+        .frame(height: 56)
+      MontserratText(text, size: 15)
+        .foregroundStyle(.white)
+        .multilineTextAlignment(.center)
+        .padding([.trailing, .leading], 20)
     }
+  }
 }
 
 #Preview {

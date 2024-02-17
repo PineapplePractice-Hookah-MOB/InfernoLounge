@@ -12,15 +12,15 @@ final class MenuViewModel: ObservableObject {
   init(coordinator: MenuCoordinator) {
     self.coordinator = coordinator
     DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
-      self.user = SinletonUser.shared.user
-      print(self.user)
-    }))
+        self.user = SinletonUser.shared.user
+        print(self.user)
+      }))
   }
 
   private let coordinator: MenuCoordinator
 
-  @Published var tea = ["Все","Черный чай", "Зеленый чай", "Улуны", "Фруктовый чай"]
-  @Published var hookah = ["Все","Экстра", "Легкий", "Медиум"]
+  @Published var tea = ["Все", "Черный чай", "Зеленый чай", "Улуны", "Фруктовый чай"]
+  @Published var hookah = ["Все", "Экстра", "Легкий", "Медиум"]
   @Published var selectedMenuCategory = 0
   @Published var selectedCategoryTea: String = "Все"
   @Published var selectedCategoryHookah: String = "Все"

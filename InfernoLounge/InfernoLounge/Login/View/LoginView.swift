@@ -76,11 +76,11 @@ struct LoginView: View {
     }
       .ignoresSafeArea()
       .onAppear(perform: {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
           viewModel.getUsers()
         }))
-        viewModel.showText = false
-      })
+      viewModel.showText = false
+    })
   }
 }
 

@@ -20,9 +20,9 @@ struct ButtonRegistration: View {
     Button(action: {
       if function() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
-          dismiss.callAsFunction()
-          showAlert.toggle()
-        }))
+            dismiss.callAsFunction()
+            showAlert.toggle()
+          }))
       } else {
         showAlert.toggle()
       }
@@ -49,7 +49,7 @@ struct ButtonRegistration: View {
     }
       .disabled(disabled)
       .alert("", isPresented: $showAlert) {
-      Button("OK") { 
+      Button("OK") {
         showAlert = false
       }
     } message: {

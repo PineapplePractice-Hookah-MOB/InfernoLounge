@@ -10,7 +10,7 @@ import SwiftUI
 struct Agree: View {
 
   @EnvironmentObject var vm: RegistrationViewModel
-  
+
   var body: some View {
     ZStack {
       HStack {

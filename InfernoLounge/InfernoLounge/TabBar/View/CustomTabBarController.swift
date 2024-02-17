@@ -99,14 +99,14 @@ class CustomTabBarController: UITabBarController {
 }
 
 extension CustomTabBarController: UITabBarControllerDelegate {
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        let selectedIndex = self.tabBar.items?.firstIndex(of: item)
-        if selectedIndex == 2 {
-          middleItem.image = UIImage(named: "tabBarMidItemw")
-          tableImageView.image = UIImage(named: "tapTable")
-        } else {
-          middleItem.image = UIImage(named: "tabBarMidItem")
-          tableImageView.image = UIImage(named: "table")
-        }
+  override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    let selectedIndex = self.tabBar.items?.firstIndex(of: item)
+    if selectedIndex == 2 {
+      middleItem.image = UIImage(named: "tabBarMidItemw")
+      tableImageView.image = UIImage(named: "tapTable")
+    } else {
+      middleItem.image = UIImage(named: "tabBarMidItem")
+      tableImageView.image = UIImage(named: "table")
     }
+  }
 }

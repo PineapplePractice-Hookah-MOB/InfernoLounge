@@ -68,8 +68,8 @@ struct TableView: View {
         Button(action: {
           viewModel.postTable()
           DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: DispatchWorkItem(block: {
-            showAlert.toggle()
-          }))
+              showAlert.toggle()
+            }))
         }, label: {
             MontserratText("Забронировать", size: 16)
               .foregroundColor(buttonDisabled == false ? .white : .gray)
@@ -96,10 +96,10 @@ struct TableView: View {
           .padding([.bottom], 60)
           .disabled(viewModel.buttonDisabled)
           .alert("", isPresented: $showAlert) {
-            Button("OK") { }
-          } message: {
-            MontserratText(viewModel.answerServer, size: 15)
-          }
+          Button("OK") { }
+        } message: {
+          MontserratText(viewModel.answerServer, size: 15)
+        }
       }
     }
   }
